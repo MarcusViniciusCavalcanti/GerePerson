@@ -17,6 +17,7 @@
  */
 public class Produto
 {
+    private int i;
     private String nome;
     private double precoDeCusto;
     private double precoDeVenda;
