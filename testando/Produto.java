@@ -17,7 +17,11 @@
  */
 public class Produto
 {
+<<<<<<< HEAD
     private int ia;
+=======
+    private int ib;
+>>>>>>> 835c1d68056e4135d95403d73dc987db859e1c86
     private String nome;
     private double precoDeCusto;
     private double precoDeVenda;
