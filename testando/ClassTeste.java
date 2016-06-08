@@ -8,6 +8,7 @@
 public class ClassTeste
 {
     // instance variables - replace the example below with your own
+
     private int outravariavel;
     
 
