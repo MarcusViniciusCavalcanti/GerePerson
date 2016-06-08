@@ -8,7 +8,7 @@
 public class ClassTeste
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int marcus;
 
     /**
      * Constructor for objects of class ClassTeste
