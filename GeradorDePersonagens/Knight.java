@@ -412,7 +412,7 @@ public class Knight extends Person{
                   limit = limit - aux;
                   isValid = true;
                 }
-            }while ( isValid == true);
+            }while ( isValid == false);
         }
     }
 
