@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=knowledge\ value\ name
+comment0.target=Knowledge(int,\ int,\ java.lang.String)
+comment1.params=
+comment1.target=int\ getKnowledge()
+comment2.params=
+comment2.target=java.lang.String\ knowledgeName()
+comment3.params=
+comment3.target=int\ pontsValue()
+comment4.params=value
+comment4.target=void\ skillPoints(int)
+numComments=5
