@@ -133,6 +133,9 @@ public class Person {
         }
     }
 
+    /**
+     * Retorna uma Array dos valores dos attributos.
+     */
     public int[] getValueAttr(String asAttribute) {
         int value[];
         value = new int[Attribute.size(asAttribute)];
@@ -156,11 +159,31 @@ public class Person {
             default:
                 return null;
         }
-        
     }
 
-    public int getValueSkill(int asSkill) {
-        return 0;
+    public int[] getValueSkill(String asSkill) {
+        int value[];
+        value = new int[Skill.size(asSkill)];
+        
+        switch ( asSkill ) {
+            case "talent":
+                for (int i = 0; i < value.length; i++) {
+                    value[i] = this.skillTalent.get(i).getValue(asSkill);
+                }
+                return value;
+            case "expertise":
+                for (int i = 0; i < value.length; i++) {
+                    value[i] = this.skillExpertise.get(i).getValue(asSkill);
+                }
+                return value;
+            case "knowledge":
+                for (int i = 0; i < value.length; i++) {
+                    value[i] = this.skillKnowledge.get(i).getValue(asSkill);
+                }
+                return value;
+            default:
+                return null;
+        }
     }
     
     /**
