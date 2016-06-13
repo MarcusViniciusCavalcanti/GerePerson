@@ -119,7 +119,7 @@ public class Knight extends Person{
          */
         for (int i = 0; i < limit; i++) {
             aux = randomPoints(limit);        
-            this.attrPhysical.get(i).addValue(aux);
+            this.attrPhysical.get(i).addValue(aux, ATTRIBUTE_PRIMARY);
             limit = limit - aux; //subtrai os pontos acrescido anteriormente
         }
     }
@@ -152,7 +152,7 @@ public class Knight extends Person{
          */
         for (int i = 0; i < limit; i++) {
             aux = randomPoints(limit);        
-            this.attrMental.get(i).addValue(aux);
+            this.attrMental.get(i).addValue(aux, ATTRIBUTE_SEGUNDARY);
             limit = limit - aux; //subtrai os pontos acrescido anteriormente
         }
     }
@@ -179,7 +179,7 @@ public class Knight extends Person{
          */
         for (int i = 0; i < limit; i++) {
             aux = randomPoints(limit);        
-            this.attrSocial.get(i).addValue(aux);
+            this.attrSocial.get(i).addValue(aux, ATTRIBUTE_TERTIARY);
             limit = limit - aux; //subtrai os pontos acrescido anteriormente
         }
     }

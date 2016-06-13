@@ -29,7 +29,7 @@ public class Attribute {
                 return this.mental[this.position].getAttrName();
             default:
                 return null;
-        }
+        }        
     }
 
     /**
@@ -37,7 +37,16 @@ public class Attribute {
      * @param asAttribute: qual atribute quer retonar o valor.
      */
     public int getValue(String asAttribute) {
-        return 0;
+        switch ( asAttribute ) {
+            case "physical":
+                return this.physical[this.position].getPontsValue();
+            case "social":
+                return this.social[this.position].getPontsValue();
+            case "mental":
+                return this.mental[this.position].getPontsValue();
+            default:
+                return 0;
+        }
     }
 
     /**
@@ -46,7 +55,19 @@ public class Attribute {
      * @param asAttribute: qual atributo.
      */
     public void addValue(int value, String asAttribute) {
-       
+        switch ( asAttribute ) {
+            case "physical":
+                this.physical[this.position].attrPonts(value);
+                break;
+            case "social":
+                this.social[this.position].attrPonts(value);
+                break;
+            case "mental":
+                this.mental[this.position].attrPonts(value);
+                break;
+            default:
+                break;
+        }
     }
     
     /**
