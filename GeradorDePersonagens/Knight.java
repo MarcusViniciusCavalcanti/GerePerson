@@ -278,7 +278,7 @@ public class Knight extends Person{
 
                   aux = randomPoints(limit);
                   //condição para não estourar o limite de 3
-                  if ( aux > 3 )
+                  if ( aux >= 3 )
                     isValid = false;
                   else {
                     this.skillExpertise.get(i).addValue(aux, SKILL_PRIMARY);

@@ -12,7 +12,7 @@ public class Person {
     protected int age;
     protected String name;
     protected String lastName;
-    protected ArrayList<Attribute> attrPhysical;
+    protected ArrayList<Physical> attrPhysical;
     protected ArrayList<Attribute> attrSocial;
     protected ArrayList<Attribute> attrMental;
     protected ArrayList<Skill> skillTalent;
