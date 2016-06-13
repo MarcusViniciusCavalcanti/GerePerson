@@ -117,10 +117,22 @@ public class Knight extends Person{
          * 1 = dextreza;
          * 2 = vigor;
          */
+        boolean isValid;
         for (int i = 0; i < limit; i++) {
-            aux = randomPoints(limit);        
-            this.attrPhysical.get(i).addValue(aux, ATTRIBUTE_PRIMARY);
-            limit = limit - aux; //subtrai os pontos acrescido anteriormente
+            //condição para não estourar pontos.
+            do {
+                aux = randomPoints(limit);
+                
+                //Condição para não estourar o valor máximo de 5.
+                if ( aux > 5 ) { 
+                  isValid = false;
+                }
+                else {
+                  this.attrPhysical.get(i).addValue(aux, ATTRIBUTE_PRIMARY);
+                  limit = limit - aux; //subtrai os pontos acrescido anteriormente
+                  isValid = true;
+                }
+            }while (isValid == false);
         }
     }
 
@@ -150,11 +162,22 @@ public class Knight extends Person{
          * 1 = Inteligência;
          * 2 = Raciocínio;
          */
+        boolean isValid;
         for (int i = 0; i < limit; i++) {
-            aux = randomPoints(limit);        
-            this.attrMental.get(i).addValue(aux, ATTRIBUTE_SEGUNDARY);
-            limit = limit - aux; //subtrai os pontos acrescido anteriormente
-        }
+            //condição para não estourar pontos.
+            aux = randomPoints(limit); 
+            do {
+                //Condição para não estourar o valor máximo de 5.
+                if (aux > 5) {
+                  isValid = false;
+                }
+                else {      
+                  this.attrMental.get(i).addValue(aux, ATTRIBUTE_SEGUNDARY);
+                  limit = limit - aux; //subtrai os pontos acrescido anteriormente
+                  isValid = true;
+                }
+            }while( isValid == false);
+         }
     }
 
     /**
@@ -237,6 +260,7 @@ public class Knight extends Person{
          * 8 = Furtividade e;
          * 9 = Sobrevivência.
          */
+        boolean isValid;
         for (int i = 0; i < limit; i++) {
             if (i == 0 || i == 5 || i == 7 ) {                           
               if ( this.skillExpertise.get(i).getValue(SKILL_PRIMARY) < 3 )     
@@ -248,11 +272,20 @@ public class Knight extends Person{
                   this.skillExpertise.get(i).addValue(2, SKILL_PRIMARY);
                   limit -= 2;
                 }
-              }
+            }
             else {
-              aux = randomPoints(limit);
-              this.skillExpertise.get(i).addValue(aux, SKILL_PRIMARY);
-              limit = limit - aux;
+              do {
+
+                  aux = randomPoints(limit);
+                  //condição para não estourar o limite de 3
+                  if ( aux > 3 )
+                    isValid = false;
+                  else {
+                    this.skillExpertise.get(i).addValue(aux, SKILL_PRIMARY);
+                    limit = limit - aux;
+                    isValid = true;
+                  }
+              }while ( isValid == false );
             }
         }
     }
@@ -308,6 +341,7 @@ public class Knight extends Person{
          * 8 = Ciência e;
          * 9 = Senescália.
          */
+        boolean isValid;
         for (int i = 1; i < limit; i++) {
             if ( i == 3 || i == 7  ||i == 9 ) {                           
               if ( this.skillKnowledge.get(i).getValue(SKILL_SEGUNDARY) <= 2 )     
@@ -321,9 +355,16 @@ public class Knight extends Person{
                 }
               }
             else {
-              aux = randomPoints(limit);
-              this.skillKnowledge.get(i).addValue(aux, SKILL_SEGUNDARY);
-              limit = limit - aux;
+                do {
+                    aux = randomPoints(limit);
+                    if ( aux > 3 )
+                      isValid = false;
+                    else {
+                      this.skillKnowledge.get(i).addValue(aux, SKILL_SEGUNDARY);
+                      limit = limit - aux; 
+                      isValid = true;
+                    }
+                }while ( isValid == false );
             }
         }
     }
@@ -359,10 +400,19 @@ public class Knight extends Person{
          * 8 = Liderança e;
          * 9 = Lábia.
          */
+        boolean  isValid;
         for (int i = 0; i < limit; i++) {
-            aux = randomPoints(limit);
-            this.skillTalent.get(i).addValue(aux, SKILL_TERTIARY);
-            limit = limit - aux;
+            //Condição para não estourar limite de 3
+            do {
+                aux = randomPoints(3);
+                if ( aux > 3 )
+                  isValid = false;
+                else {
+                  this.skillTalent.get(i).addValue(aux, SKILL_TERTIARY);
+                  limit = limit - aux;
+                  isValid = true;
+                }
+            }while ( isValid == true);
         }
     }
 

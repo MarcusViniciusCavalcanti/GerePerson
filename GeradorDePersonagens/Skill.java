@@ -55,7 +55,19 @@ public class Skill {
      * @param asSkill: qual habilidade se deseja adicionar.
      */
     public void addValue(int value, String asSkill) {
-        
+        switch ( asSkill ) {
+            case "talent":
+                this.talent[this.position].skillPoints(value);
+                break;
+            case "expertise":
+                this.expertise[this.position].skillPoints(value);
+                break;
+            case "knowledge":
+                this.knowledge[this.position].skillPoints(value);
+                break;
+            default:
+                break;
+        }
     }
 
     /**
