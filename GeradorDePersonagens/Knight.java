@@ -420,7 +420,7 @@ public class Knight extends Person{
      * Distribue os pontos bonus.
      */
     private void addPointsBonus() {
-
+        
     }
     
     /**
@@ -428,7 +428,6 @@ public class Knight extends Person{
      */
     private int randomPoints(int limit) {
         Random rand = new Random();
-        
         return rand.nextInt(limit);
     }    
 }

@@ -26,8 +26,10 @@ public class Person {
         toLineage();
         toGender();
         toAge();
-        this.name = "NomeDeTeste";
-        this.lastName = "SobrenomeDeTeste";
+        
+        //Define o nome baseado no gênero.
+        toName();
+        toLastName();
         
         //Inicializa as listas de atributos
         this.attrPhysical = new ArrayList<>();
@@ -222,7 +224,13 @@ public class Person {
      * Espera o retorno da String da classe de nomes;
      */
     private void toName() {
-
+        Name name = new Name();
+        this.name = name.getName(this.gender);
+    }
+    
+    private void toLastName() {
+        LastName lastName = new LastName();
+        this.lastName = lastName.getLastName();
     }
 
     /**
