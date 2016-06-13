@@ -37,7 +37,16 @@ public class Skill {
      * @param asSkill: qual habilidade quer retonar o valor.
      */
     public int getValue(String asSkill) {
-        return 0;
+        switch ( asSkill ) {
+            case "talent":
+                return this.talent[this.position].pontsValue();
+            case "expertise":
+                return this.expertise[this.position].pontsValue();
+            case "knowledge":
+                return this.knowledge[this.position].pontsValue();
+            default:
+                return 0;
+        }
     }
 
     /**
@@ -45,7 +54,7 @@ public class Skill {
      * @param value: o valor.
      * @param asSkill: qual habilidade se deseja adicionar.
      */
-    public void addValue(int value) {
+    public void addValue(int value, String asSkill) {
         
     }
 

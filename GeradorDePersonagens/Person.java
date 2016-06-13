@@ -85,17 +85,17 @@ public class Person {
         
         switch ( asAttribute ) {
             case "physical":
-                for (int i = 0; i < Attribute.size(asAttribute); i++) {
+                for (int i = 0; i < attribute.length; i++) {
                     attribute[i] = this.attrPhysical.get(i).getName(asAttribute);
                 }
                 return attribute;
             case "social":
-                for (int i = 0; i < Attribute.size(asAttribute); i++) {
+                for (int i = 0; i < attribute.length; i++) {
                     attribute[i] = this.attrSocial.get(i).getName(asAttribute);
                 }
                 return attribute;
             case "mental":
-                for (int i = 0; i < Attribute.size(asAttribute); i++) {
+                for (int i = 0; i < attribute.length; i++) {
                     attribute[i] = this.attrMental.get(i).getName(asAttribute);
                 }
                 return attribute;
@@ -114,17 +114,17 @@ public class Person {
         
         switch ( asSkill ) {
             case "talent":
-                for (int i = 0; i < Skill.size(asSkill); i++) {
+                for (int i = 0; i < skill.length; i++) {
                     skill[i] = this.skillTalent.get(i).getName(asSkill);
                 }
                 return skill;
             case "expertise":
-                for (int i = 0; i < Skill.size(asSkill); i++) {
+                for (int i = 0; i < skill.length; i++) {
                     skill[i] = this.skillExpertise.get(i).getName(asSkill);
                 }
                 return skill;
             case "knowledge":
-                for (int i = 0; i < Skill.size(asSkill); i++) {
+                for (int i = 0; i < skill.length; i++) {
                     skill[i] = this.skillKnowledge.get(i).getName(asSkill);
                 }
                 return skill;
@@ -133,8 +133,30 @@ public class Person {
         }
     }
 
-    public int getValueAttr(int asAttribute) {
-        return 0;
+    public int[] getValueAttr(String asAttribute) {
+        int value[];
+        value = new int[Attribute.size(asAttribute)];
+        
+        switch ( asAttribute ) {
+            case "physical":
+                for (int i = 0; i < value.length; i++) {
+                    value[i] = this.attrPhysical.get(i).getValue(asAttribute);
+                }
+                return value;
+            case "social":
+                for (int i = 0; i < value.length; i++) {
+                    value[i] = this.attrSocial.get(i).getValue(asAttribute);
+                }
+                return value;
+            case "mental":
+                for (int i = 0; i < value.length; i++) {
+                    value[i] = this.attrMental.get(i).getValue(asAttribute);
+                }
+                return value;
+            default:
+                return null;
+        }
+        
     }
 
     public int getValueSkill(int asSkill) {

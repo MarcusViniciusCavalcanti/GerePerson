@@ -239,19 +239,19 @@ public class Knight extends Person{
          */
         for (int i = 0; i < limit; i++) {
             if (i == 0 || i == 5 || i == 7 ) {                           
-              if ( this.skillExpertise.get(i).getValue() < 3 )     
-                if ( this.skillExpertise.get(i).getValue() == 2 ){
-                  this.skillExpertise.get(i).addValue(1);
+              if ( this.skillExpertise.get(i).getValue(SKILL_PRIMARY) < 3 )     
+                if ( this.skillExpertise.get(i).getValue(SKILL_PRIMARY) == 2 ){
+                  this.skillExpertise.get(i).addValue(1, SKILL_PRIMARY);
                   limit -= 1;
                 }
                 else {
-                  this.skillExpertise.get(i).addValue(2);
+                  this.skillExpertise.get(i).addValue(2, SKILL_PRIMARY);
                   limit -= 2;
                 }
               }
             else {
               aux = randomPoints(limit);
-              this.skillExpertise.get(i).addValue(aux);
+              this.skillExpertise.get(i).addValue(aux, SKILL_PRIMARY);
               limit = limit - aux;
             }
         }
@@ -281,17 +281,17 @@ public class Knight extends Person{
           
         //Habilidade Direito
         aux = 1 + randomPoints(2);
-        this.skillKnowledge.get(3).addValue(aux);
+        this.skillKnowledge.get(3).addValue(aux, SKILL_SEGUNDARY);
         limit = limit - aux;
         
         //Habilidde Polícia.
         aux = 1 + randomPoints(2);
-        this.skillKnowledge.get(7).addValue(aux);
+        this.skillKnowledge.get(7).addValue(aux, SKILL_SEGUNDARY);
         limit = limit - aux;
         
         //Habilidade Senescália.
         aux = 1 + randomPoints(2);
-        this.skillKnowledge.get(9).addValue(aux);
+        this.skillKnowledge.get(9).addValue(aux, SKILL_SEGUNDARY);
         limit = limit - aux;
         
         /*
@@ -310,19 +310,19 @@ public class Knight extends Person{
          */
         for (int i = 1; i < limit; i++) {
             if ( i == 3 || i == 7  ||i == 9 ) {                           
-              if ( this.skillKnowledge.get(i).getValue() <= 2 )     
-                if ( this.skillKnowledge.get(i).getValue() == 2 ){
-                  this.skillKnowledge.get(i).addValue(1);
+              if ( this.skillKnowledge.get(i).getValue(SKILL_SEGUNDARY) <= 2 )     
+                if ( this.skillKnowledge.get(i).getValue(SKILL_SEGUNDARY) == 2 ){
+                  this.skillKnowledge.get(i).addValue(1, SKILL_SEGUNDARY);
                   limit -= 1;
                 }
                 else {
-                  this.skillKnowledge.get(i).addValue(2);
+                  this.skillKnowledge.get(i).addValue(2, SKILL_SEGUNDARY);
                   limit -= 2;
                 }
               }
             else {
               aux = randomPoints(limit);
-              this.skillKnowledge.get(i).addValue(aux);
+              this.skillKnowledge.get(i).addValue(aux, SKILL_SEGUNDARY);
               limit = limit - aux;
             }
         }
@@ -361,7 +361,7 @@ public class Knight extends Person{
          */
         for (int i = 0; i < limit; i++) {
             aux = randomPoints(limit);
-            this.skillTalent.get(i).addValue(aux);
+            this.skillTalent.get(i).addValue(aux, SKILL_TERTIARY);
             limit = limit - aux;
         }
     }
