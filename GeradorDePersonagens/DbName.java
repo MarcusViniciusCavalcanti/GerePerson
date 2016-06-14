@@ -6,7 +6,7 @@ import java.util.Random;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class RepositoryName {
+public class DbName {
      
     private ArrayList<String> maleNames;
     private ArrayList<String> femaleNames;
@@ -14,7 +14,7 @@ public class RepositoryName {
    
     private static final Random rand = new Random();
     
-    public RepositoryName() {
+    public DbName() {
         maleNames = new ArrayList<>();
         femaleNames = new ArrayList<>();
         lastName = new ArrayList<>();

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=RepositoryName()
+comment0.target=DbName()
 comment1.params=
 comment1.target=void\ createMaleNames()
 comment1.text=\n\ Se\ o\ genero\ do\ personagem\ for\ masculino\ ele\ adiciona\ a\ ArrayList\ de\ nomes\ masculinos.\n

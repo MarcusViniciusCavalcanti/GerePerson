@@ -13,19 +13,11 @@ public class Person {
     protected String name;
     protected String lastName;
     protected ArrayList<Physical> attrPhysical;
-<<<<<<< HEAD
-    protected ArrayList<Attribute> attrSocial;
-    protected ArrayList<Attribute> attrMental;
-    protected ArrayList<Skill> skillTalent;
-    protected ArrayList<Skill> skillExpertise;
-    protected ArrayList<Skill> skillKnowledge;
-=======
-    protected ArrayList<attrSocial> attrSocial;
-    protected ArrayList<attrMental> attrMental;
-    protected ArrayList<skillTalent> skillTalent;
-    protected ArrayList<skillExpertise> skillExpertise;
-    protected ArrayList<skillKnowledge> skillKnowledge;
->>>>>>> d6d773344bd3819bf1ca56b24f5e03731ba9e122
+    protected ArrayList<Social> attrSocial;
+    protected ArrayList<Mental> attrMental;
+    protected ArrayList<Talent> skillTalent;
+    protected ArrayList<Expertise> skillExpertise;
+    protected ArrayList<Knowledge> skillKnowledge;
 
     /**
      * Construtor.
