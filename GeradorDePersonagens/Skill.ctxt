@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.params=position\ asSkill
 comment0.target=Skill(int,\ java.lang.String)
-comment0.text=\n\ Construtor.\n
+comment0.text=\r\n\ Construtor.\r\n
 comment1.params=asSkill
 comment1.target=java.lang.String\ getName(java.lang.String)
-comment1.text=\n\ Retorna\ o\ nome\ da\ habilidade.\n\ @param\ asSkill\:\ qual\ habilidade\ quer\ retonar.\n
+comment1.text=\r\n\ Retorna\ o\ nome\ da\ habilidade.\r\n\ @param\ asSkill\:\ qual\ habilidade\ quer\ retonar.\r\n
 comment2.params=asSkill
 comment2.target=int\ getValue(java.lang.String)
-comment2.text=\n\ Retorna\ o\ valor\ da\ habilidade.\n\ @param\ asSkill\:\ qual\ habilidade\ quer\ retonar\ o\ valor.\n
+comment2.text=\r\n\ Retorna\ o\ valor\ da\ habilidade.\r\n\ @param\ asSkill\:\ qual\ habilidade\ quer\ retonar\ o\ valor.\r\n
 comment3.params=value\ asSkill
 comment3.target=void\ addValue(int,\ java.lang.String)
-comment3.text=\n\ Adiciona\ valor\ na\ habilidade.\n\ @param\ value\:\ o\ valor.\n\ @param\ asSkill\:\ qual\ habilidade\ se\ deseja\ adicionar.\n
+comment3.text=\r\n\ Adiciona\ valor\ na\ habilidade.\r\n\ @param\ value\:\ o\ valor.\r\n\ @param\ asSkill\:\ qual\ habilidade\ se\ deseja\ adicionar.\r\n
 comment4.params=asSkill
 comment4.target=int\ size(java.lang.String)
-comment4.text=\n\ Retorna\ a\ quantidade\ de\ habilidades.\n
+comment4.text=\r\n\ Retorna\ a\ quantidade\ de\ habilidades.\r\n
 comment5.params=asSkill
 comment5.target=void\ createList(java.lang.String)
-comment5.text=\n\ M\u00E9todo\ que\ verifica\ qual\ lista\ se\ deseja\ criar.\n
+comment5.text=\r\n\ M\u00E9todo\ que\ verifica\ qual\ lista\ se\ deseja\ criar.\r\n
 numComments=6

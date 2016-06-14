@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+        import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -204,7 +204,7 @@ public class Person {
     /**
      * Define a Linagem do personagem.
      * S: sobrenatural, M: mortal.
-     */
+     */     
     private void toLineage() {
         /*Invoca o método randomNumber()
          * Se par: Sobrenatural.

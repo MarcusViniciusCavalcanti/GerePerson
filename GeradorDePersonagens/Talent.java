@@ -24,7 +24,7 @@ public enum Talent {
     }
 
     public int getTalent() {
-        return this.talent;
+        return this.talent; 
     }
 
     public String talentName() {
