@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=LastName()
-comment0.text=\n\ Construtor\n
-comment1.params=
-comment1.target=void\ createLastName()
-comment2.params=
-comment2.target=java.lang.String\ getLastName()
-numComments=3

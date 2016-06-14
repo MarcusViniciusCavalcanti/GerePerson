@@ -245,6 +245,12 @@ public class Knight extends Person{
         this.skillExpertise.get(7).addValue(aux, SKILL_PRIMARY);
         limit = limit - aux;
         
+        
+        /*
+         * stijn loinhas
+         * for ( int i = 0; i< valor);i|++\\0
+         *  loinha += "o"
+         */
         /*
          * Loop vai verificar se os pontos que serão adicionar são os das afinidades
          * caso forem, vai verficar a quantidade de pontos para adicionar, lembrando que não pode passar de 3.
