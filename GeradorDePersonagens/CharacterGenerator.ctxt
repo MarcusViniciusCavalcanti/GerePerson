@@ -1,5 +1,9 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ generate()
+<<<<<<< HEAD
 comment0.text=\r\n\ M\u00E9todo\ que\ vai\ fazer\ a\ sele\u00E7\u00E3o\ da\ cria\u00E7\u00E3o\ do\ objeto.\r\n
+=======
+comment0.text=\n\ M\u00E9todo\ que\ vai\ fazer\ a\ sele\u00E7\u00E3o\ da\ cria\u00E7\u00E3o\ do\ objeto.\n
+>>>>>>> aba7a4c3003e77544cf83fe8ad2edaa9455b8b8d
 numComments=1

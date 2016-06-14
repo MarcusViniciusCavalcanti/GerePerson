@@ -15,11 +15,21 @@ comment12.params=
 comment12.target=void\ toName()
 comment12.text=\r\n\ Define\ o\ nome\ do\ personagem.\r\n\ invoca\ o\ m\u00E9todo\ ------;\r\n\ Espera\ o\ retorno\ da\ String\ da\ classe\ de\ nomes;\r\n
 comment13.params=
+<<<<<<< HEAD
 comment13.target=void\ toAge()
 comment13.text=\r\n\ Define\ a\ idade.\r\n\ recebe\ valor\ aleat\u00F3rio\ de\ 0\ a\ 100.\r\n\ Caso\ valor\ aleat\u00F3rio\ for\ menor\ que\ 16\ idade\ pede\ outro\ n\u00FAmero.\r\n
 comment14.params=
 comment14.target=int\ randomNumber()
 comment14.text=\r\n\ M\u00E9todo\ que\ retonar\ um\ valor\ aleat\u00F3rio.\r\n
+=======
+comment13.target=void\ toLastName()
+comment14.params=
+comment14.target=void\ toAge()
+comment14.text=\n\ Define\ a\ idade.\n\ recebe\ valor\ aleat\u00F3rio\ de\ 0\ a\ 100.\n\ Caso\ valor\ aleat\u00F3rio\ for\ menor\ que\ 16\ idade\ pede\ outro\ n\u00FAmero.\n
+comment15.params=
+comment15.target=int\ randomNumber()
+comment15.text=\n\ M\u00E9todo\ que\ retonar\ um\ valor\ aleat\u00F3rio.\n
+>>>>>>> aba7a4c3003e77544cf83fe8ad2edaa9455b8b8d
 comment2.params=
 comment2.target=char\ getGender()
 comment2.text=\r\n\ Retorna\ g\u00EAnero\ m\:\ masculino,\ f\:\ feminino\r\n
@@ -43,4 +53,4 @@ comment8.target=int[]\ getValueAttr(java.lang.String)
 comment8.text=\r\n\ Retorna\ uma\ Array\ dos\ valores\ dos\ attributos.\r\n
 comment9.params=asSkill
 comment9.target=int[]\ getValueSkill(java.lang.String)
-numComments=15
+numComments=16

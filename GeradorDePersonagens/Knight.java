@@ -245,6 +245,12 @@ public class Knight extends Person{
         this.skillExpertise.get(7).addValue(aux, SKILL_PRIMARY);
         limit = limit - aux;
         
+        
+        /*
+         * stijn loinhas
+         * for ( int i = 0; i< valor);i|++\\0
+         *  loinha += "o"
+         */
         /*
          * Loop vai verificar se os pontos que serão adicionar são os das afinidades
          * caso forem, vai verficar a quantidade de pontos para adicionar, lembrando que não pode passar de 3.
@@ -278,7 +284,7 @@ public class Knight extends Person{
 
                   aux = randomPoints(limit);
                   //condição para não estourar o limite de 3
-                  if ( aux > 3 )
+                  if ( aux >= 3 )
                     isValid = false;
                   else {
                     this.skillExpertise.get(i).addValue(aux, SKILL_PRIMARY);
@@ -412,7 +418,7 @@ public class Knight extends Person{
                   limit = limit - aux;
                   isValid = true;
                 }
-            }while ( isValid == true);
+            }while ( isValid == false);
         }
     }
 
@@ -420,7 +426,7 @@ public class Knight extends Person{
      * Distribue os pontos bonus.
      */
     private void addPointsBonus() {
-
+        
     }
     
     /**
@@ -428,7 +434,6 @@ public class Knight extends Person{
      */
     private int randomPoints(int limit) {
         Random rand = new Random();
-        
         return rand.nextInt(limit);
     }    
 }

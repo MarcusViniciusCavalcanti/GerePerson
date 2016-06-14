@@ -14,6 +14,8 @@ public enum Physical {
         this.index = index;
         this.NAME = name;
         attrPonts(value);
+        
+        // forca = new Habilidade("Forca", 0, 1);
     }
         
     public String getAttrName() {

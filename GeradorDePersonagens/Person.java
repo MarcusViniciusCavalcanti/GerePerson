@@ -12,12 +12,20 @@ public class Person {
     protected int age;
     protected String name;
     protected String lastName;
-    protected ArrayList<Attribute> attrPhysical;
+    protected ArrayList<Physical> attrPhysical;
+<<<<<<< HEAD
     protected ArrayList<Attribute> attrSocial;
     protected ArrayList<Attribute> attrMental;
     protected ArrayList<Skill> skillTalent;
     protected ArrayList<Skill> skillExpertise;
     protected ArrayList<Skill> skillKnowledge;
+=======
+    protected ArrayList<attrSocial> attrSocial;
+    protected ArrayList<attrMental> attrMental;
+    protected ArrayList<skillTalent> skillTalent;
+    protected ArrayList<skillExpertise> skillExpertise;
+    protected ArrayList<skillKnowledge> skillKnowledge;
+>>>>>>> d6d773344bd3819bf1ca56b24f5e03731ba9e122
 
     /**
      * Construtor.
@@ -26,8 +34,10 @@ public class Person {
         toLineage();
         toGender();
         toAge();
-        this.name = "NomeDeTeste";
-        this.lastName = "SobrenomeDeTeste";
+        
+        //Define o nome baseado no gênero.
+        toName();
+        toLastName();
         
         //Inicializa as listas de atributos
         this.attrPhysical = new ArrayList<>();
@@ -73,64 +83,6 @@ public class Person {
      */
     public String getLastName() {
         return this.lastName;
-    }
-
-    /**
-     * Método que retonar os nomes dos atributos
-     * @param: nome dos atributos a qual quer os nomes
-     */
-    public String[] getAttribute(String asAttribute) {
-        String[] attribute;
-        attribute = new String[Attribute.size(asAttribute)];
-        
-        switch ( asAttribute ) {
-            case "physical":
-                for (int i = 0; i < attribute.length; i++) {
-                    attribute[i] = this.attrPhysical.get(i).getName(asAttribute);
-                }
-                return attribute;
-            case "social":
-                for (int i = 0; i < attribute.length; i++) {
-                    attribute[i] = this.attrSocial.get(i).getName(asAttribute);
-                }
-                return attribute;
-            case "mental":
-                for (int i = 0; i < attribute.length; i++) {
-                    attribute[i] = this.attrMental.get(i).getName(asAttribute);
-                }
-                return attribute;
-            default:
-                return null;
-        }
-    }
-
-    /**
-     * Método que retorna uma lista das skill.
-     * @param: nome de qual lista de habilidade quer retornar.
-     */
-    public String[] getSkill(String asSkill) {
-        String[] skill;
-        skill = new String[Skill.size(asSkill)];
-        
-        switch ( asSkill ) {
-            case "talent":
-                for (int i = 0; i < skill.length; i++) {
-                    skill[i] = this.skillTalent.get(i).getName(asSkill);
-                }
-                return skill;
-            case "expertise":
-                for (int i = 0; i < skill.length; i++) {
-                    skill[i] = this.skillExpertise.get(i).getName(asSkill);
-                }
-                return skill;
-            case "knowledge":
-                for (int i = 0; i < skill.length; i++) {
-                    skill[i] = this.skillKnowledge.get(i).getName(asSkill);
-                }
-                return skill;
-            default:
-                return null;
-        }
     }
 
     /**
@@ -222,7 +174,13 @@ public class Person {
      * Espera o retorno da String da classe de nomes;
      */
     private void toName() {
-
+        Name name = new Name();
+        this.name = name.getName(this.gender);
+    }
+    
+    private void toLastName() {
+        LastName lastName = new LastName();
+        this.lastName = lastName.getLastName();
     }
 
     /**

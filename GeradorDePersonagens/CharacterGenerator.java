@@ -8,7 +8,10 @@ import java.util.Random;
 public class CharacterGenerator {
     
     private Object person;
+<<<<<<< HEAD
     
+=======
+>>>>>>> aba7a4c3003e77544cf83fe8ad2edaa9455b8b8d
     /**
      * Método que vai fazer a seleção da criação do objeto.
      */
@@ -16,7 +19,8 @@ public class CharacterGenerator {
         Random random = new Random();
         
         int choice = random.nextInt(17); //
-        
+
+         
         switch ( choice ) {
             case 0 : 
                 person = new Knight();
@@ -74,5 +78,4 @@ public class CharacterGenerator {
                 break;
         }
     }
-
 }

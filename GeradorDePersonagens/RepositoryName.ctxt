@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=RepositoryName()
+comment1.params=
+comment1.target=void\ createMaleNames()
+comment1.text=\n\ Se\ o\ genero\ do\ personagem\ for\ masculino\ ele\ adiciona\ a\ ArrayList\ de\ nomes\ masculinos.\n
+comment2.params=
+comment2.target=void\ createFemaleNames()
+comment3.params=
+comment3.target=void\ createLastName()
+comment4.params=genero
+comment4.target=java.lang.String\ getName(char)
+comment4.text=\n\ O\ m\u00E9todo\ retorna\ um\ nome\ aleatorio\ masculino\ ou\ feminino\ dependendo\ do\ genero\n\ que\ ser\u00E1\ passado\ pelo\ personagem\ como\ parametro.\n
+comment5.params=
+comment5.target=java.lang.String\ getLastName()
+numComments=6
