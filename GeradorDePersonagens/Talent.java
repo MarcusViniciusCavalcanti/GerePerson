@@ -4,7 +4,12 @@
  */
 public class Talent extends Skill {
 
-    //Constantes com os nomes dos Talentos
+    /* 
+     * Constantes com os nomes dos Talentos
+     * A utilização dos atributos em constantes basea-se no princípio
+     * da manutenabilidade, mais fácil para alterar os nomes das mesmas, 
+     * caso haja a necessidade disto.
+     */
     private final String TALENT_01 = "Representação";
     private final String TALENT_02 = "Prontidão";
     private final String TALENT_03 = "Esportes";
@@ -116,5 +121,16 @@ public class Talent extends Skill {
         name[9] = this.TALENT_10;
         
         return name;
+    }
+    
+    /**
+     * Retornar o tamanho da lista de habilidades.
+     * Necessário para alguns métodos.
+     */
+    public static int size() {
+        int leng;
+        leng = 10;
+        
+        return leng;
     }
 }
