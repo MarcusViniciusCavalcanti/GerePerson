@@ -1,27 +1,46 @@
- 
-
 import java.util.ArrayList;
-
+/**
+ * 
+ */
 public class Expertise {
+    private String[] names = {
+        "Empatia com animais", "Arqueirismo",
+        "Artesanato", "Etiqueta",
+        "Herborismo", "Armas brancas",
+        "Música", "Cavalgar",
+        "Furtividade", "Sobrevivência"
+    };
 
-	private ArrayList<Skill> physical;
+    private String name;
+    private int value;
 
-	private String[] names = {"Empatia com animais, Arqueirismo"};
+    /**
+     * Construtor:
+     * Inicializa a lista de péricias baseado
+     * na quantidade de habilidades presentes.
+     */
+    public Expertise(int index) {
+        setSkill(index);
+    }
 
-	public void Social() {
+    public String getNameSkill(int asSkill) {
+        return this.name;
+    }
+    
+    public int getValue(int asSkill) {
+        return this.value;
+    }
 
-	}
+    public void addPoints(int value) {
+        this.value = value;
+    }
 
-	public String getNameSkill(int asSkill) {
-		return null;
-	}
-
-	public static int size() {
-		return 0;
-	}
-
-	private void creatListSkill() {
-
-	}
-
+    private void setSkill(int index) {
+        /*
+	     * a variável i seleciona a posição do nome da habilidade
+	     * de forma dinâmica caso adicionar mais um elemento, só adicionar
+	     * a lista de String mais um elemento.
+	     */
+	    this.name = names[index];
+    }
 }

@@ -1,25 +1,33 @@
- 
 
+/**
+ * Write a description of class Attribute here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class Attribute {
 
-	private String attributeName;
+    private String name;
+    private int value;
 
-	private int attributeValue;
+    public Attribute(String name) {
+        this.value = 1;
+        setName(name);
+    }
 
-	public Attribute(String asAtribute) {
+    public String getName() {
+        return this.name;
+    }
 
-	}
+    public int getValue() {
+        return this.value;
+    }
+    
+    private void setName(String name) {
+        this.name = name;
+    }
 
-	public String getName() {
-		return null;
-	}
-
-	public int getValue() {
-		return 0;
-	}
-
-	public void addValue(int value) {
-
-	}
-
+    public void addValue(int value) {
+        this.value = value;
+    }
 }

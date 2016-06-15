@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 /**
  * Super classe Personagem, define nome, gênero, liagem e idade de forma aleatória
  * para as demais classes. 
@@ -15,9 +16,9 @@ public class Person {
     protected Physical physical;
     protected Social social;
     protected Mental mental;
-    protected Talent talent;
-    protected Expertise expertise;
-    protected Knowledge knowledge;
+    protected ArrayList<Talent> talent;
+    protected ArrayList<Expertise> expertise;
+    protected ArrayList<Knowledge> knowledge;
 
     /**
      * Construtor: Inicializa os método que definiram:
@@ -51,9 +52,9 @@ public class Person {
         /*
          * Cria os objetos habilidades.
          */
-        this.talent = new Talent();
-        this.expertise = new Expertise();
-        this.knowledge = new Knowledge();
+        this.talent = new ArrayList<>();
+        this.expertise = new ArrayList<>();
+        this.knowledge = new ArrayList<>();
     }
 
     /**
@@ -102,6 +103,14 @@ public class Person {
     public void toPointsBonuts() {
 
     }
+    
+    /**
+     * Método que retonar um valor aleatório.
+     */
+    public int randomNumber(int value) {
+        Random random = new Random();
+        return random.nextInt(value);
+    }
 
     /**
      * Define a Linagem do personagem.
@@ -112,7 +121,7 @@ public class Person {
          * Se par: Sobrenatural.
          * se impar: Mortal.
          */
-        if ( randomNumber() % 2 == 0 )
+        if ( randomNumber(2) == 0 )
             this.lineage = 's';
         else
             this.lineage = 'm';
@@ -127,7 +136,7 @@ public class Person {
          * Se par: Masculino
          * se impar: feminino.
          */
-        if ( randomNumber() % 2 == 0 )
+        if ( randomNumber(2) == 0 )
             this.gender = 'm';
         else
             this.gender = 'f';
@@ -144,7 +153,7 @@ public class Person {
         
         //Loop para receber outro valor caso menor que 16
         do {
-            aux = randomNumber();
+            aux = randomNumber(100);
             
             if (aux < 16)
               isValid = false;
@@ -173,13 +182,5 @@ public class Person {
     private void toLastName() {
         DbName lastName = new DbName();
         this.lastName = lastName.getLastName();
-    }
-    
-    /**
-     * Método que retonar um valor aleatório.
-     */
-    private int randomNumber() {
-        Random random = new Random();
-        return random.nextInt(100);
     }
 }

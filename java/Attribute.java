@@ -1,12 +1,12 @@
- 
+package java;
 
-public class Skill {
+public class Attribute {
 
-	private String skillName;
+	private String attributeName;
 
-	private int skillValue;
+	private int attributeValue;
 
-	public Skill(String asSkill) {
+	public Attribute(String asAtribute) {
 
 	}
 

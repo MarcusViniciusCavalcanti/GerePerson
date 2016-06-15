@@ -1,10 +1,13 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ Social()
+comment0.params=index
+comment0.target=Expertise(int)
+comment0.text=\n\ Construtor\:\n\ Inicializa\ a\ lista\ de\ p\u00E9ricias\ baseado\n\ na\ quantidade\ de\ habilidades\ presentes.\n
 comment1.params=asSkill
 comment1.target=java.lang.String\ getNameSkill(int)
-comment2.params=
-comment2.target=int\ size()
-comment3.params=
-comment3.target=void\ creatListSkill()
-numComments=4
+comment2.params=asSkill
+comment2.target=int\ getValue(int)
+comment3.params=value
+comment3.target=void\ addPoints(int)
+comment4.params=index
+comment4.target=void\ setSkill(int)
+numComments=5
