@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=value
+comment0.target=Knight(int)
+comment1.params=
+comment1.target=void\ toPrimaryAttribute()
+comment2.params=
+comment2.target=void\ toSegundaryAttribute()
+comment3.params=
+comment3.target=void\ toTertiaryAttribute()
+comment4.params=
+comment4.target=void\ toPrimarySkill()
+comment5.params=
+comment5.target=void\ toSegundarySkill()
+comment6.params=
+comment6.target=void\ toTertiarySkill()
+numComments=7

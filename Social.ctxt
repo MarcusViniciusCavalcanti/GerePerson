@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ Social()
+comment1.params=asAttribute
+comment1.target=java.lang.String\ getNameAttribute(int)
+comment2.params=
+comment2.target=int\ size()
+comment3.params=
+comment3.target=void\ creatListAttribute()
+numComments=4
