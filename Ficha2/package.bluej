@@ -1,6 +1,6 @@
 #BlueJ package file
 objectbench.height=76
-objectbench.width=658
+objectbench.width=668
 package.editor.height=400
 package.editor.width=560
 package.editor.x=587
@@ -9,13 +9,13 @@ package.numDependencies=0
 package.numTargets=1
 package.showExtends=true
 package.showUses=true
-project.charset=UTF-8
 target1.editor.height=713
 target1.editor.width=900
 target1.editor.x=314
 target1.editor.y=66
 target1.height=50
 target1.name=Imprime
+target1.naviview.expanded=true
 target1.showInterface=false
 target1.type=ClassTarget
 target1.typeParameters=

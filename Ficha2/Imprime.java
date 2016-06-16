@@ -1,3 +1,5 @@
+package Ficha2;
+
 
 /**
  * Write a description of class Imprime here.
