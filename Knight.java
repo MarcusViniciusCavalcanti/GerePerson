@@ -144,14 +144,14 @@ public class Knight extends Person {
     }
 
     public void toSegundarySkillPoints() {
-       int points = 0;
+        int points = 0;
         
          
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
-          points = 13;
+          points = 9;
         else
-          points = 11;
+          points = 7;
                   
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
@@ -174,7 +174,33 @@ public class Knight extends Person {
     }
 
     public void toTertiarySkillPoints() {
-
+        int points = 0;
+        
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 5;
+        else
+          points = 4;
+                  
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Instrução";
+         * 1 = "Sabedoria popular";
+         * 2 = "Investigação"; 
+         * 3 = "Direito";
+         * 4 = "Linguística; 
+         * 5 = "Medicina",
+         * 6 = "Ocultismo";
+         * 7 = "Polícia;
+         * 8 = "Ciência" e; 
+         * 9 = "Senescália".
+         */
+        while( points == 0 ){
+            if ( this.knowledge.get(randomNumber(Knowledge.SIZE)).addPoints() ) {
+               points--;
+            }
+        }
     }
        
     /**
