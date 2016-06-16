@@ -3,11 +3,10 @@
  */ 
 
 public class Knight extends Person {
-
     private String concept;
 
-    public Knight(int value) {
-        super(value); //inicializa o construtor da super classe.
+    public Knight() {
+        super(); //inicializa o construtor da super classe.
         
         //define conceito
         toConcept();
@@ -29,60 +28,33 @@ public class Knight extends Person {
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
-        int aux = 0;
-        int limit = 5;
-        boolean isValid;
         
-        /*
-         * Define a quantidade de pontos baseados na linhagem
-         * Sobrenatural: 7
-         * Mortal: 6
-         */
-        if( this.lineage == 's' )
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
           points = 7;
         else
           points = 6;
-          
+                  
         /*
-         * Adiciona de forma aleatória os pontos.
-         * o loop termina quando os pontos acabam.
-         * 
-         * Parâmetros do addPoints:
-         *  aux = pontos
-         *  i = posição do elemento na lista.
-         * 
-         * 0 = força.
-         * 1 = dextreza.
-         * 2 = vigor.
+         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
+         * 0 = força;
+         * 1 = dextreza;
+         * 2 = vigor;
          */
-        for (int i = 0; i < points; i++) {            
-            /*
-             * Loop de seguraça caso o valor de pontos aleatórios iniciais
-             * seja maior que o valor limite.
-             */
-            do {
-                aux = randomNumber(points); 
-                if (aux > limit) {
-                  isValid = false;
-                }
-                else {      
-                  this.physical.addPoints(aux, i);
-                  points -= aux; //subtrai os pontos acrescido anteriormente
-                  isValid = true;
-                }
-            }while( isValid == false);
+        while( points == 0 ){
+            if ( this.physical.get(randomNumber(2)).addPoints() ) {
+               points--;
+            }
         }
     }
-   
+       
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
      * Conceitos de cavaleiros recebem como segundários atributos mentais.
      */
     public void toSegundaryAttributePoints() {
-        int points = 0;
-        int aux = 0;
-        int limit = 5;
-        boolean isValid;
+        int points;
         
         /*
          * Define a quantidade de pontos baseados na linhagem
@@ -98,30 +70,14 @@ public class Knight extends Person {
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
          * 
-         * Parâmetros do addPoints.
-         * aux = pontos
-         * i = posição do elemento na lista.
-         * 
          * 0 = carisma.
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        for (int i = 0; i < points; i++) {            
-            /*
-             * Loop de seguraça caso o valor de pontos aleatórios iniciais
-             * seja maior que o valor limite.
-             */
-            do {
-                aux = randomNumber(points); 
-                if (aux > limit) {
-                  isValid = false;
-                }
-                else {      
-                  this.physical.addPoints(aux, i);
-                  points -= aux; //subtrai os pontos acrescido anteriormente
-                  isValid = true;
-                }
-            }while( isValid == false);
+        while( points == 0 ){
+            if ( this.mental.get(randomNumber(2)).addPoints() ) {
+               points--;
+            }
         }
     }
 
@@ -131,39 +87,21 @@ public class Knight extends Person {
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
-        int aux = 0;
-        int limit = 5;
-        boolean isValid;
         
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
          * 
-         * Parâmetros do addPoints.
-         * aux = pontos
-         * i = posição do elemento na lista.
-         * 
          * 0 = carisma.
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        for (int i = 0; i < points; i++) {          
-            /*
-             * Loop de seguraça caso o valor de pontos aleatórios iniciais
-             * seja maior que o valor limite.
-             */
-            do {
-                aux = randomNumber(points); 
-                if (aux > limit) {
-                  isValid = false;
-                }
-                else {      
-                  this.physical.addPoints(aux, i);
-                  points -= aux; //subtrai os pontos acrescido anteriormente
-                  isValid = true;
-                }
-            }while( isValid == false);
+        while( points == 0 ){
+            if ( this.social.get(randomNumber(2)).addPoints() ) {
+               points--;
+            }
         }
+        
     }
     
     /**

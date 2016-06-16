@@ -1,13 +1,17 @@
 #BlueJ class context
 comment0.params=index
 comment0.target=Talent(int)
-comment0.text=\n\ Construtor\:\n\ Inicializa\ a\ lista\ de\ p\u00E9ricias\ baseado\n\ na\ quantidade\ de\ habilidades\ presentes.\n
-comment1.params=asSkill
-comment1.target=java.lang.String\ getNameSkill(int)
+comment0.text=\n\ Construtor\:\n\ Inicializa\ a\ habilidade\ pedindo\ qual\ nome\ ser\u00E1\ dado\ e\ instancia\ a\ vari\u00E1vel\ \n\ da\ inst\u00E2ncia\ value\ com\ 1.\n\ @param\ index\:\ qual\ nome\ ser\u00E1\ setado\ para\ este\ objeto.\n\ 0\ \=\ "Representa\u00E7\u00E3o";\n\ 1\ \=\ "Prontid\u00E3o";\n\ 2\ \=\ "Esportes";\ \n\ 3\ \=\ "Briga";\n\ 4\ \=\ "Esquiva";\ \n\ 5\ \=\ "Empatia",\n\ 6\ \=\ "Intimida\u00E7\u00E3o";\n\ 7\ \=\ "Crime";\n\ 8\ \=\ "Lideran\u00E7a"\ e;\ \n\ 9\ \=\ "L\u00E1bia".\n
+comment1.params=
+comment1.target=java.lang.String\ getNameSkill()
+comment1.text=\n\ @return\ O\ nome\ do\ habilidade.\n
 comment2.params=asSkill
 comment2.target=int\ getValue(int)
-comment3.params=value
-comment3.target=void\ addPoints(int)
+comment2.text=\n\ @return\ devolve\ o\ valor\ de\ pontos\ que\ o\ habilidade\ tem.\n
+comment3.params=
+comment3.target=boolean\ addPoints()
+comment3.text=\n\ Adiciona\ 1\ ponto\ ao\ habilidade\ em\ um\ m\u00E1ximo\ de\ 3\ pontos.\n\ @return\ Valida\ a\ adi\u00E7\u00E3o\ dos\ pontos\ false\ n\u00E3o\ o\ atributo\ chegou\ ao\ m\u00E1ximo\n\ de\ 5,\ true\ foi\ adicionado.\n
 comment4.params=index
-comment4.target=void\ setSkill(int)
+comment4.target=void\ toSkillName(int)
+comment4.text=\n\ Define\ o\ nome\ do\ habilidade\ baseado\ em\ uma\ lista\ pr\u00E9-definida\n\ @param\ index\:\ qual\ nome\ ser\u00E1\ setado\ para\ este\ objeto.\n\ 0\ \=\ "Representa\u00E7\u00E3o";\n\ 1\ \=\ "Prontid\u00E3o";\n\ 2\ \=\ "Esportes";\ \n\ 3\ \=\ "Briga";\n\ 4\ \=\ "Esquiva";\ \n\ 5\ \=\ "Empatia",\n\ 6\ \=\ "Intimida\u00E7\u00E3o";\n\ 7\ \=\ "Crime";\n\ 8\ \=\ "Lideran\u00E7a"\ e;\ \n\ 9\ \=\ "L\u00E1bia".\n
 numComments=5

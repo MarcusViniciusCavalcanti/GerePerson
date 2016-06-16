@@ -13,9 +13,9 @@ public class Person {
     protected String lastName;
     protected int age;
     protected int willPower;
-    protected Physical physical;
-    protected Social social;
-    protected Mental mental;
+    protected ArrayList<Physical> physical;
+    protected ArrayList<Social> social;
+    protected ArrayList<Mental> mental;
     protected ArrayList<Talent> talent;
     protected ArrayList<Expertise> expertise;
     protected ArrayList<Knowledge> knowledge;
@@ -30,7 +30,7 @@ public class Person {
      * Inicializa definindo um valor inicial de pontos de vontade.
      * @param value: espera um valor inteiro dos pontos de vontade.
      */
-    public Person(int value) {
+    public Person() {
         toGender();    //define gênero.
         toLineage();   //define linhagem. 
         toAge();       //define idade.
@@ -41,20 +41,28 @@ public class Person {
          * Inicializado no construror com o método toWillPower()
          * esperando como parâmetro um valor int.
          */
-        setWillPower(value);
+        this.willPower = 5;
         
         /*
-         * Cria os objetos atributos.
+         * Cria lista os objetos atributos.
          */
-        this.physical = new Physical();
-        this.social = new Social();
-        this.mental = new Mental();
+        this.physical = new ArrayList<>();
+        this.social = new ArrayList<>();
+        this.mental = new ArrayList<>();
         /*
-         * Cria os objetos habilidades.
+         * Cria lista os objetos habilidades.
          */
         this.talent = new ArrayList<>();
         this.expertise = new ArrayList<>();
         this.knowledge = new ArrayList<>();
+        
+        addPhysicalAttribute(); //adiciona os atributos fisicos
+        addSocialAttribute();   //adiciona os atributos sociais.
+        addMentalAttribute();    //adiciona os atributos mentais.
+        
+        addTalentSkill();       //adiciona as habilidades talentos.
+        addExpertiseSkill();    //adiciona as habilidades perícias.
+        addKnowledgeSkill();    //adiciona as habilidades conhecimentos.
     }
 
     /**
@@ -182,5 +190,65 @@ public class Person {
     private void toLastName() {
         DbName lastName = new DbName();
         this.lastName = lastName.getLastName();
+    }
+    
+    /**
+     * Adiciona atributos fisicos ao personagem.
+     */
+    private void addPhysicalAttribute() {
+        for (int i = 0; i < Physical.SIZE;i++) {
+            Physical physical = new Physical(i);
+            this.physical.add(physical);
+        }
+    }
+    
+    /**
+     * Adiciona atributos social ao personagem..
+     */
+    public void addSocialAttribute() {
+        for (int i = 0; i < Social.SIZE;i++) {
+            Social social = new Social(i);
+            this.social.add(social);
+        }
+    }
+    
+    /**
+     * Adiciona atributos mental ao personagem..
+     */
+    private void addMentalAttribute() {
+        for (int i = 0; i < Mental.SIZE;i++) {
+            Mental mental = new Mental(i);
+            this.mental.add(mental);
+        }
+    }
+    
+    /**
+     * adiciona habilidades talento ao personagem
+     */
+    private void addTalentSkill() {
+        for (int i = 0; i < Talent.SIZE;i++) {
+            Talent talent = new Talent(i);
+            this.talent.add(talent);
+        }
+    }
+    
+    /**
+     * adiciona habilidades perícia ao personagem
+     */
+    private void addExpertiseSkill() {
+        for (int i = 0; i < Expertise.SIZE;i++) {
+            Expertise expertise = new Expertise(i);
+            this.expertise.add(expertise);
+        }
+    }
+    
+    /**
+     * adiciona habilidades conhecimento ao personagem
+     */
+    private void addKnowledgeSkill() {
+        for (int i = 0; i < Knowledge.SIZE;i++) {
+            Knowledge knowledge = new Knowledge(i);
+            this.knowledge.add(knowledge);
+        }
     }
 }

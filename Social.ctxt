@@ -1,14 +1,14 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Social()
-comment0.text=\n\ Construtor\:\n\ instancia\ o\ objeto\ atributo\ e\ gera\ a\ lista\ de\ atributos\n
-comment1.params=asAttribute
-comment1.target=java.lang.String\ getNameAttribute(int)
-comment1.text=\n\ Retorna\ o\ nome\ do\ atributo.\n\ @param\ asAttribute\:\ espera\ um\ valor\ inteiro\ da\ posi\u00E7\u00E3o\ do\ elemento\n\ na\ lista.\n
-comment2.params=value\ asAttribute
-comment2.target=void\ addPoints(int,\ int)
-comment2.text=\n\ Adiciona\ pontos\ ao\ atributo\n
-comment3.params=
-comment3.target=void\ creatListAttribute()
-comment3.text=\n\ Popula\ a\ lista\ de\ atributos\ fisico.\n
+comment0.params=index
+comment0.target=Social(int)
+comment0.text=\n\ Construtor\:\n\ instancia\ o\ objeto\ atributo\ e\ gera\ a\ lista\ de\ atributos\n\ @param\ index\:\ indice\ do\ nome\ do\ atributo.\n\ 0\ \=\ carisma\n\ 1\ \=\ manipula\u00E7\u00E3o.\n\ 2\ \=\ aparencia.\n
+comment1.params=
+comment1.target=java.lang.String\ getNameAttribute()
+comment1.text=\n\ @return\ o\ nome\ do\ atributo.\n
+comment2.params=
+comment2.target=boolean\ addPoints()
+comment2.text=\n\ Adiciona\ pontos\ ao\ atributo\n\ @return\ se\ os\ pontos\ foram\ adicionados\ true\ para\ adicionado\ false\ para\ n\u00E3o\n\ caso\ o\ atributo\ j\u00E1\ tenha\ o\ valor\ m\u00E1ximo\ de\ 5\n
+comment3.params=index
+comment3.target=void\ setAttributeName(int)
+comment3.text=\n\ Popula\ a\ lista\ de\ atributos\ social.\n\ @param\ index\:\ recebe\ a\ posi\u00E7\u00E3o\ do\ nome\ do\ atributo.\n
 numComments=4

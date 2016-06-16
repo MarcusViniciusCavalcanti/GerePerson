@@ -1,49 +1,66 @@
  
 
 import java.util.ArrayList;
-
+/**
+ * 
+ */
 public class Social {
-
-	private ArrayList<Attribute> social;
-	private String[] names = {"Carisma, Manipulação", "Aparência"};
+	private String name;
+	private int value;
+	
+	public static final int SIZE = 3;
 
 	/**
      * Construtor:
      * instancia o objeto atributo e gera a lista de atributos
+     * @param index: indice do nome do atributo.
+     * 0 = carisma
+     * 1 = manipulação.
+     * 2 = aparencia.
      */
-	public Social() {
-        social = new ArrayList<>();
-        creatListAttribute();
+    public Social(int index) {
+        setAttributeName(index);
+        this.value = 1;
     }
 
      /**
-     * Retorna o nome do atributo.
-     * @param asAttribute: espera um valor inteiro da posição do elemento
-     * na lista.
+     * @return o nome do atributo.
      */
-    public String getNameAttribute(int asAttribute) {
-        return this.social.get(asAttribute).getName();
+    public String getNameAttribute() {
+        return this.name;
     }
     
     /**
      * Adiciona pontos ao atributo
+     * @return se os pontos foram adicionados true para adicionado false para não
+     * caso o atributo já tenha o valor máximo de 5
      */
-    public void addPoints(int value, int asAttribute) {
-        this.social.get(asAttribute).addValue(value);
-	}
+    public boolean addPoints() {
+        /*
+         * Caso quantidade de pontos estourar
+         * retorna false, entretanto menor que 5 adicona um ponto e
+         * retonar verdadeiro para o método que o invocou.
+         */
+        
+        if(this.value < 5) {
+            this.value++;
+            return true;
+        }
+        
+        return false;
+    }
 
-	/**
-	 * Popula a lista de atributos fisico.
-	 */
-	private void creatListAttribute() { 
-	    /*
-	     * a variável i seleciona a posição do nome do atributo
-	     * de forma dinâmica caso adicionar mais um elemento, só adicionar
-	     * a lista de String mais um elemento.
-	     */
-	    for(int i = 0; i < names.length;i++) {
-	        Attribute attribute = new Attribute(names[i]);
-	        this.social.add(attribute);
-	    }
-	}
+    /**
+     * Popula a lista de atributos social.
+     * @param index: recebe a posição do nome do atributo.
+     */
+    private void setAttributeName(int index) { 
+        /*
+         * a variável i seleciona a posição do nome do atributo
+         * de forma dinâmica caso adicionar mais um elemento, só adicionar
+         * a lista de String mais um elemento.
+         */
+        String[] names = {"Carisma, Manipulação", "Aparência"};
+        this.name = names[index];
+    }
 }

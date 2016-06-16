@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=value
-comment0.target=Knight(int)
+comment0.params=
+comment0.target=Knight()
 comment1.params=
 comment1.target=void\ toPrimaryAttributePoints()
 comment1.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ dos\ atributos\ prim\u00E1ria\ do\ personagem.\n\ Conceitos\ de\ cavaleiros\ recebem\ como\ prim\u00E1ria\ atributos\ f\u00EDsicos.\n
