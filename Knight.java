@@ -133,9 +133,17 @@ public class Knight extends Person {
          * 5 = "Armas brancas",
          * 6 = "Música";
          * 7 = "Cavalgar";
-         * 8 = "Furtividade" e; 
+         * 8 = "Furtividade"; 
          * 9 = "Sobrevivência".
          */
+        for(int i = 0; i < Expertise.SIZE; i++) {
+           if(i == 0 || i == 5 || i == 7) {
+              if ( this.knowledge.get(i).addPoints() ) {
+                 points--;
+              }
+           }
+        }
+        
         while( points == 0 ){
             if ( this.expertise.get(randomNumber(Expertise.SIZE)).addPoints() ) {
                points--;
@@ -163,9 +171,17 @@ public class Knight extends Person {
          * 5 = "Empatia",
          * 6 = "Intimidação";
          * 7 = "Crime";
-         * 8 = "Liderança" e; 
+         * 8 = "Liderança"; 
          * 9 = "Lábia".
          */
+        for(int i = 0; i < Expertise.SIZE; i++) {
+           if(i == 3 || i == 6 || i == 8) {
+              if ( this.knowledge.get(i).addPoints() ) {
+                 points--;
+              }
+           }
+        }
+        
         while( points == 0 ){
             if ( this.talent.get(randomNumber(Talent.SIZE)).addPoints() ) {
                points--;
@@ -196,6 +212,14 @@ public class Knight extends Person {
          * 8 = "Ciência" e; 
          * 9 = "Senescália".
          */
+        for(int i = 0; i < Expertise.SIZE; i++) {
+           if(i == 0 || i == 2 || i == 7) {
+              if ( this.knowledge.get(i).addPoints() ) {
+                 points--;
+              }
+           }
+        }
+        
         while( points == 0 ){
             if ( this.knowledge.get(randomNumber(Knowledge.SIZE)).addPoints() ) {
                points--;
