@@ -60,7 +60,10 @@ public class Mental {
          * de forma dinâmica caso adicionar mais um elemento, só adicionar
          * a lista de String mais um elemento.
          */
-        String[] names = {"Percepção, Inteligência", "Raciocínio"};
+        String names[] = new String[3];
+        names[0] = "Percepção"; 
+        names[1] = "Inteligência";
+        names[2] = "Raciocínio";
         this.name = names[index];
     }
 }
