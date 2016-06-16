@@ -13,12 +13,12 @@ public class CreateTxt {
     private String filePath;
     private String fileName;
     
-    public CreateTxt(String fileName, String filePath) {
+    public CreateTxt(String fileName, String filePath, String content) {
         setFileName(fileName);  // gera o nome do arquivo.
         toFilePath(filePath);   // define o caminho do arquivo.  
         
         createFile();
-        recordFile();
+        recordFile(content);
     }
     
     /**
@@ -47,10 +47,10 @@ public class CreateTxt {
         }
     }
     
-    private void recordFile() {
+    private void recordFile(String content) {
         this.recordFile = new PrintWriter(this.file);
         
-        this.recordFile.printf("testando %n");
+        this.recordFile.printf(content);
         
         this.recordFile.close();
     }
