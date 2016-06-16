@@ -144,7 +144,33 @@ public class Knight extends Person {
     }
 
     public void toSegundarySkillPoints() {
-    
+       int points = 0;
+        
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 13;
+        else
+          points = 11;
+                  
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Representação";
+         * 1 = "Prontidão";
+         * 2 = "Esportes"; 
+         * 3 = "Briga";
+         * 4 = "Esquiva"; 
+         * 5 = "Empatia",
+         * 6 = "Intimidação";
+         * 7 = "Crime";
+         * 8 = "Liderança" e; 
+         * 9 = "Lábia".
+         */
+        while( points == 0 ){
+            if ( this.talent.get(randomNumber(Talent.SIZE)).addPoints() ) {
+               points--;
+            }
+        }
     }
 
     public void toTertiarySkillPoints() {
