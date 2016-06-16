@@ -51,7 +51,7 @@ public class Physical {
          * de forma dinâmica caso adicionar mais um elemento, só adicionar
          * a lista de String mais um elemento.
          */
-        String[] names = {"Força","Destreza","Vigor"};
+        String[] names = {"Força", "Destreza", "Vigor"};
         this.name = names[index];
     }
 }

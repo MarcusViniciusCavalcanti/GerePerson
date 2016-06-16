@@ -55,7 +55,7 @@ public class Expertise {
          * retorna false, entretanto menor que 5 adicona um ponto e
          * retonar verdadeiro para o método que o invocou.
          */
-               if(this.value < MAX_POINTS) {
+        if(this.value < MAX_POINTS) {
             this.value++;
             return true;
         }

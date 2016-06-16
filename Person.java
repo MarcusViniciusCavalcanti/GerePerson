@@ -35,6 +35,7 @@ public class Person {
         toLineage();   //define linhagem. 
         toAge();       //define idade.
         toName();      //define Nome.
+        toLastName();  //define o sobrenome
         
         /*
          * Pontos de força de vontade já inicaliza com -- pontos

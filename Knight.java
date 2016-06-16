@@ -114,15 +114,117 @@ public class Knight extends Person {
      *  Sobrevivência.  
      */
     public void toPrimarySkillPoints() {
+        int points = 0;
         
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 13;
+        else
+          points = 11;
+                  
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Empatia com animais";
+         * 1 = "Arqueirismo";
+         * 2 = "Artesanato"; 
+         * 3 = "Etiqueta";
+         * 4 = "Herborismo"; 
+         * 5 = "Armas brancas",
+         * 6 = "Música";
+         * 7 = "Cavalgar";
+         * 8 = "Furtividade"; 
+         * 9 = "Sobrevivência".
+         */
+        for(int i = 0; i < Expertise.SIZE; i++) {
+           if(i == 0 || i == 5 || i == 7) {
+              if ( this.knowledge.get(i).addPoints() ) {
+                 points--;
+              }
+           }
+        }
+        
+        while( points == 0 ){
+            if ( this.expertise.get(randomNumber(Expertise.SIZE)).addPoints() ) {
+               points--;
+            }
+        }
     }
 
     public void toSegundarySkillPoints() {
-    
+        int points = 0;
+        
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 9;
+        else
+          points = 7;
+                  
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Representação";
+         * 1 = "Prontidão";
+         * 2 = "Esportes"; 
+         * 3 = "Briga";
+         * 4 = "Esquiva"; 
+         * 5 = "Empatia",
+         * 6 = "Intimidação";
+         * 7 = "Crime";
+         * 8 = "Liderança"; 
+         * 9 = "Lábia".
+         */
+        for(int i = 0; i < Expertise.SIZE; i++) {
+           if(i == 3 || i == 6 || i == 8) {
+              if ( this.knowledge.get(i).addPoints() ) {
+                 points--;
+              }
+           }
+        }
+        
+        while( points == 0 ){
+            if ( this.talent.get(randomNumber(Talent.SIZE)).addPoints() ) {
+               points--;
+            }
+        }
     }
 
     public void toTertiarySkillPoints() {
-
+        int points = 0;
+        
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 5;
+        else
+          points = 4;
+                  
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Instrução";
+         * 1 = "Sabedoria popular";
+         * 2 = "Investigação"; 
+         * 3 = "Direito";
+         * 4 = "Linguística; 
+         * 5 = "Medicina",
+         * 6 = "Ocultismo";
+         * 7 = "Polícia;
+         * 8 = "Ciência" e; 
+         * 9 = "Senescália".
+         */
+        for(int i = 0; i < Expertise.SIZE; i++) {
+           if(i == 0 || i == 2 || i == 7) {
+              if ( this.knowledge.get(i).addPoints() ) {
+                 points--;
+              }
+           }
+        }
+        
+        while( points == 0 ){
+            if ( this.knowledge.get(randomNumber(Knowledge.SIZE)).addPoints() ) {
+               points--;
+            }
+        }
     }
        
     /**
