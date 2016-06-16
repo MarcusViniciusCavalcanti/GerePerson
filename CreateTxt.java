@@ -49,6 +49,10 @@ public class CreateTxt {
     
     private void recordFile() {
         this.recordFile = new PrintWriter(this.file);
+        
+        this.recordFile.printf("testando %n");
+        
+        this.recordFile.close();
     }
         
     /**
