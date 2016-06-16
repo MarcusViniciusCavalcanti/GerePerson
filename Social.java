@@ -60,10 +60,7 @@ public class Social {
          * de forma dinâmica caso adicionar mais um elemento, só adicionar
          * a lista de String mais um elemento.
          */
-        String names[] = new String[3];
-        names[1] = "Carisma";
-        names[2] = "Manipulação";
-        names[2] = "Aparência";
+        String[] names = {"Carisma", "Manipulação", "Aparência"};
         this.name = names[index];
     }
 }
