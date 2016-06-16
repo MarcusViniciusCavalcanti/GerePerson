@@ -4,6 +4,7 @@
 
 public class Knight extends Person {
     private String concept;
+    
 
     public Knight() {
         super(); //inicializa o construtor da super classe.
@@ -43,7 +44,7 @@ public class Knight extends Person {
          * 2 = vigor;
          */
         while( points == 0 ){
-            if ( this.physical.get(randomNumber(2)).addPoints() ) {
+            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -75,7 +76,7 @@ public class Knight extends Person {
          * 2 = aparencia.
          */
         while( points == 0 ){
-            if ( this.mental.get(randomNumber(2)).addPoints() ) {
+            if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -97,7 +98,7 @@ public class Knight extends Person {
          * 2 = aparencia.
          */
         while( points == 0 ){
-            if ( this.social.get(randomNumber(2)).addPoints() ) {
+            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
         }
