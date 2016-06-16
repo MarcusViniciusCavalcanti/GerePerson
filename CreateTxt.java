@@ -29,7 +29,8 @@ public class CreateTxt {
         /*
          * APAGAR DEPOIS DE ENTENDER.
          * bloco try catch e como será tratado o erro caso algum problema
-         * aconteça, o java não termite que algo assim compile sem tratamento
+         * aconteça, como estamos lidando com criação de arquivos
+         * o java não termite que algo assim compile sem tratamento
          * de erro.
          * try = caso tudo certo faça isso
          * catch = caso de errao faça iss
