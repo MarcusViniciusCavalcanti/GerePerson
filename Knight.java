@@ -114,7 +114,33 @@ public class Knight extends Person {
      *  Sobrevivência.  
      */
     public void toPrimarySkillPoints() {
+        int points = 0;
         
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 13;
+        else
+          points = 11;
+                  
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Empatia com animais";
+         * 1 = "Arqueirismo";
+         * 2 = "Artesanato"; 
+         * 3 = "Etiqueta";
+         * 4 = "Herborismo"; 
+         * 5 = "Armas brancas",
+         * 6 = "Música";
+         * 7 = "Cavalgar";
+         * 8 = "Furtividade" e; 
+         * 9 = "Sobrevivência".
+         */
+        while( points == 0 ){
+            if ( this.expertise.get(randomNumber(Expertise.SIZE)).addPoints() ) {
+               points--;
+            }
+        }
     }
 
     public void toSegundarySkillPoints() {
