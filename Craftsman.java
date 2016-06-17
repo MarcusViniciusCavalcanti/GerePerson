@@ -125,20 +125,21 @@ public class Craftsman extends Person {
                   
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
+         * 0 = "Representação";
+         * 1 = "Prontidão";
+         * 2 = "Esportes"; 
+         * 3 = "Briga";
+         * 4 = "Esquiva"; 
+         * 5 = "Empatia",
+         * 6 = "Intimidação";
+         * 7 = "Crime";
+         * 8 = "Liderança"; 
+         * 9 = "Lábia".
          */
-        for(int i = 0; i < Expertise.SIZE; i++) {
+        
+        for(int i = 0; i < Talent.SIZE; i++) {
            if(i == 0 || i == 5 || i == 7) {
-              if ( this.expertise.get(i).addPoints() ) {
+              if ( this.talent.get(i).addPoints() ) {
                  points--;
               }
            }
@@ -147,8 +148,8 @@ public class Craftsman extends Person {
         while( points != 0 ){
             aux = randomNumber(Expertise.SIZE);
             
-            if ( this.expertise.get(aux).getValue() < 3 )
-              if ( this.expertise.get(aux).addPoints() ) {
+            if ( this.talent.get(aux).getValue() < 3 )
+              if ( this.talent.get(aux).addPoints() ) {
                  points--;
               }
         }
@@ -165,22 +166,23 @@ public class Craftsman extends Person {
         else
           points = 7;
                   
+        
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Representação";
-         * 1 = "Prontidão";
-         * 2 = "Esportes"; 
-         * 3 = "Briga";
-         * 4 = "Esquiva"; 
-         * 5 = "Empatia",
-         * 6 = "Intimidação";
-         * 7 = "Crime";
-         * 8 = "Liderança"; 
-         * 9 = "Lábia".
+         * 0 = "Instrução";
+         * 1 = "Sabedoria popular";
+         * 2 = "Investigação"; 
+         * 3 = "Direito";
+         * 4 = "Linguística; 
+         * 5 = "Medicina",
+         * 6 = "Ocultismo";
+         * 7 = "Polícia;
+         * 8 = "Ciência" e; 
+         * 9 = "Senescália".
          */
-        for(int i = 0; i < Talent.SIZE; i++) {
+        for(int i = 0; i < Knowledge.SIZE; i++) {
            if(i == 3 || i == 6 || i == 8) {
-              if ( this.talent.get(i).addPoints() ) {
+              if ( this.knowledge.get(i).addPoints() ) {
                  points--;
               }
            }
@@ -189,8 +191,8 @@ public class Craftsman extends Person {
         while( points != 0 ){
             aux = randomNumber(Talent.SIZE);
             
-            if ( this.talent.get(aux).getValue() < 3 )
-              if ( this.talent.get(aux).addPoints() ) {
+            if ( this.knowledge.get(aux).getValue() < 3 )
+              if ( this.knowledge.get(aux).addPoints() ) {
                  points--;
               }
         }
@@ -206,32 +208,33 @@ public class Craftsman extends Person {
         else
           points = 4;
                   
+        
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência" e; 
-         * 9 = "Senescália".
+         * 0 = "Empatia com animais";
+         * 1 = "Arqueirismo";
+         * 2 = "Artesanato"; 
+         * 3 = "Etiqueta";
+         * 4 = "Herborismo"; 
+         * 5 = "Armas brancas",
+         * 6 = "Música";
+         * 7 = "Cavalgar";
+         * 8 = "Furtividade"; 
+         * 9 = "Sobrevivência".
          */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
+        for(int i = 0; i < Expertise.SIZE; i++) {
            if(i == 0 || i == 2 || i == 7) {
-              if ( this.knowledge.get(i).addPoints() ) {
+              if ( this.expertise.get(i).addPoints() ) {
                  points--;
               }
            }
         }
         
         while( points != 0 ){
-            aux = randomNumber(Knowledge.SIZE);
+            aux = randomNumber(Expertise.SIZE);
             
-            if ( this.knowledge.get(aux).getValue() < 3 )
-              if ( this.knowledge.get(aux).addPoints() ) {
+            if ( this.expertise.get(aux).getValue() < 3 )
+              if ( this.expertise.get(aux).addPoints() ) {
                  points--;
               }
         }
