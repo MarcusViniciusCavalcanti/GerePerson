@@ -11,6 +11,7 @@ public class Person {
     protected char gender;
     protected String name;
     protected String lastName;
+    protected String concept;
     protected int age;
     protected int willPower;
     protected ArrayList<Physical> physical;
@@ -45,7 +46,7 @@ public class Person {
          * Inicializado no construror com o método toWillPower()
          * esperando como parâmetro um valor int.
          */
-        this.willPower = 5;
+        this.willPower = 3;
         
         /*
          * Cria lista os objetos atributos.
@@ -103,6 +104,64 @@ public class Person {
     public String getLastName() {
         return this.lastName;
     }
+    
+    public String getConcept() {
+        return this.concept;
+    }
+    
+    public String getPhysical(int asAttribute) {
+        String info = "";
+        info = toBall(this.physical.get(asAttribute).getValue());
+        return info;
+    }
+    
+    public String getSocial(int asAttribute) {
+        String info = "";
+        info = toBall(this.social.get(asAttribute).getValue());
+        return info;
+    }
+    
+    public String getMental(int asAttribute) {
+        String info = "";
+        info = toBall(this.mental.get(asAttribute).getValue());
+        return info;
+    }
+    
+    public String getTalent(int asSkill) {
+        String info = "";
+        info = toBall(this.talent.get(asSkill).getValue());
+        return info;
+    }
+    
+    public String getExpertise(int asSkill) {
+        String info = "";
+        info = toBall(this.expertise.get(asSkill).getValue());
+        return info;
+    }
+    
+    public String getKnowledge(int asSkill) {
+        String info = "";
+        info = toBall(this.knowledge.get(asSkill).getValue());
+        return info;
+    }
+    
+    public String getWillPower() {
+        String info = "";
+        
+        //adiciona as bolas
+       for (int i = 0; i < this.willPower; i++) {
+          info+= "o";
+       }
+      
+       /*
+        * A quantidade de traços (hífens) será a diferença da adição de pontos menos o resto de pontos. 
+        */
+       for (int i = 0; i < (10 - this.willPower); i++) {
+          info+= "-"; 
+       }
+        
+        return info;
+    }
 
     /**
      * Define a quantidade dos pontos de força de vontade.
@@ -133,52 +192,60 @@ public class Person {
         else
           points = 15;
           
-        while ( points == 0 ) {  
+        while ( points > 0 ) {  
             aux = randomNumber(3);
             
             switch (aux) {
                 case 0 :
                     aux = randomNumber(this.NUMBER_OF_SKILL_LIST);
-                    if ( aux == 0 ) {
-                        aux = randomNumber(Expertise.SIZE);
-                        if ( this.expertise.get(aux).addPoints() ) {
-                            points -= 2;
-                        }
-                    }
-                    else {
-                        if ( aux == 1 ) {
-                            aux = randomNumber(Talent.SIZE);
-                            if ( this.talent.get(aux).addPoints() ) {
-                                points -= 2;
-                            }   
-                        }
-                        else {              
-                            aux = randomNumber(Knowledge.SIZE);
-                            if ( this.knowledge.get(aux).addPoints() ) {
+                    if ( points > 2) {
+                        if ( aux == 0 ) {
+                            aux = randomNumber(Expertise.SIZE);
+                            if ( this.expertise.get(aux).addPoints() ) {
                                 points -= 2;
                             }
                         }
+                        else {
+                            if ( aux == 1 ) {
+                                aux = randomNumber(Talent.SIZE);
+                                if ( this.talent.get(aux).addPoints() ) {
+                                    points -= 2;
+                                }   
+                            }
+                            else {              
+                                aux = randomNumber(Knowledge.SIZE);
+                                if ( this.knowledge.get(aux).addPoints() ) {
+                                    points -= 2;
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        this.willPower++;
+                        points--;
                     }
                     break;
                 case 1 :
                     aux = randomNumber(this.NUMBER_OF_ATTRIBUTE_LIST);
-                    if ( aux == 0 ) {
-                        aux = randomNumber(Physical.SIZE);
-                        if ( this.physical.get(aux).addPoints() ) {
-                            points -= 5;
-                        }
-                    }
-                    else {
-                        if ( aux == 1 ) {
-                            aux = randomNumber(Social.SIZE);
-                            if ( this.social.get(aux).addPoints() ) {
+                    if (points > 5 ){
+                        if ( aux == 0 ) {
+                            aux = randomNumber(Physical.SIZE);
+                            if ( this.physical.get(aux).addPoints() ) {
                                 points -= 5;
                             }
                         }
                         else {
-                            aux = randomNumber(Mental.SIZE);
-                            if ( this.mental.get(aux).addPoints() ) {
-                                points -= 5;
+                            if ( aux == 1 ) {
+                                aux = randomNumber(Social.SIZE);
+                                if ( this.social.get(aux).addPoints() ) {
+                                    points -= 5;
+                                }
+                            }
+                            else {
+                                aux = randomNumber(Mental.SIZE);
+                                if ( this.mental.get(aux).addPoints() ) {
+                                    points -= 5;
+                                }
                             }
                         }
                     }
@@ -190,6 +257,29 @@ public class Person {
             }
         }
     }
+       
+    /**
+     * Espera um valor int para se transforar em uma String em "ooo--"
+     * retorna esta String.
+     */
+    private String toBall(int n) {
+       String ball = ""; 
+       
+       //adiciona as bolas
+       for (int i = 0; i < n; i++) {
+          ball+= "o";
+       }
+      
+       /*
+        * A quantidade de traços (hífens) será a diferença da adição de pontos menos o resto de pontos. 
+        */
+       for (int i = 0; i < (5 - n); i++) {
+          ball+= "-"; 
+       }
+      
+       return ball;
+    }
+    
    
     /**
      * Define a Linagem do personagem.
