@@ -26,6 +26,10 @@ public class Physical {
         return this.name;
     }
     
+    public int getValue() {
+        return this.value;
+    }
+    
     /**
      * Adiciona pontos ao atributo
      */

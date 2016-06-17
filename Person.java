@@ -111,10 +111,6 @@ public class Person {
     public void setWillPower(int value) {
         this.willPower = value;
     }
-
-    public void toPointsBonuts() {
-
-    }
     
     /**
      * Método que retonar um valor aleatório.
@@ -122,6 +118,77 @@ public class Person {
     public int randomNumber(int value) {
         Random random = new Random();
         return random.nextInt(value);
+    }
+    
+    /**
+     * Distribute os pontos bonus
+     */
+    public void toPointsBonus() {
+        int points = 0;
+        int aux = 0;
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 21;
+        else
+          points = 15;
+          
+        while ( points == 0 ) {  
+            aux = randomNumber(3);
+            
+            switch (aux) {
+                case 0 :
+                    aux = randomNumber(this.NUMBER_OF_SKILL_LIST);
+                    if ( aux == 0 ) {
+                        aux = randomNumber(Expertise.SIZE);
+                        if ( this.expertise.get(aux).addPoints() ) {
+                            points -= 2;
+                        }
+                    }
+                    else {
+                        if ( aux == 1 ) {
+                            aux = randomNumber(Talent.SIZE);
+                            if ( this.talent.get(aux).addPoints() ) {
+                                points -= 2;
+                            }   
+                        }
+                        else {              
+                            aux = randomNumber(Knowledge.SIZE);
+                            if ( this.knowledge.get(aux).addPoints() ) {
+                                points -= 2;
+                            }
+                        }
+                    }
+                    break;
+                case 1 :
+                    aux = randomNumber(this.NUMBER_OF_ATTRIBUTE_LIST);
+                    if ( aux == 0 ) {
+                        aux = randomNumber(Physical.SIZE);
+                        if ( this.physical.get(aux).addPoints() ) {
+                            points -= 5;
+                        }
+                    }
+                    else {
+                        if ( aux == 1 ) {
+                            aux = randomNumber(Social.SIZE);
+                            if ( this.social.get(aux).addPoints() ) {
+                                points -= 5;
+                            }
+                        }
+                        else {
+                            aux = randomNumber(Mental.SIZE);
+                            if ( this.mental.get(aux).addPoints() ) {
+                                points -= 5;
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    this.willPower++;
+                    points--;
+                    break;
+            }
+        }
     }
 
     /**
@@ -165,7 +232,7 @@ public class Person {
         
         //Loop para receber outro valor caso menor que 16
         do {
-            aux = randomNumber(100);
+            aux = randomNumber(40);
             
             if (aux < 16)
               isValid = false;

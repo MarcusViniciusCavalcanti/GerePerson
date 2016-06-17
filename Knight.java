@@ -21,6 +21,9 @@ public class Knight extends Person {
         toPrimarySkillPoints();
         toSegundarySkillPoints();
         toTertiarySkillPoints();
+        
+        //define a distribuição dos pontos bônus.
+        toPointsBonus();
     }
 
     /**
@@ -237,77 +240,31 @@ public class Knight extends Person {
         }
     }
     
-    /**
-     * Distribute os pontos bonus
-     */
-    private void toPointsBonus() {
-        int points = 0;
-        int aux = 0;
-         
-        //define quantidade de pontuação baseando na linhagem.
-        if ( this.lineage == 's' )
-          points = 21;
-        else
-          points = 15;
-          
-        while ( points == 0 ) {  
-            aux = randomNumber(3);
-            
-            switch (aux) {
-                case 0 :
-                    aux = randomNumber(this.NUMBER_OF_SKILL_LIST);
-                    if ( aux == 0 ) {
-                        aux = randomNumber(Expertise.SIZE);
-                        if ( this.expertise.get(aux).addPoints() ) {
-                            points -= 2;
-                        }
-                    }
-                    else {
-                        if ( aux == 1 ) {
-                            aux = randomNumber(Talent.SIZE);
-                            if ( this.talent.get(aux).addPoints() ) {
-                                points -= 2;
-                            }   
-                        }
-                        else {              
-                            aux = randomNumber(Knowledge.SIZE);
-                            if ( this.knowledge.get(aux).addPoints() ) {
-                                points -= 2;
-                            }
-                        }
-                    }
-                    break;
-                case 1 :
-                    aux = randomNumber(this.NUMBER_OF_ATTRIBUTE_LIST);
-                    if ( aux == 0 ) {
-                        aux = randomNumber(Physical.SIZE);
-                        if ( this.physical.get(aux).addPoints() ) {
-                            points -= 5;
-                        }
-                    }
-                    else {
-                        if ( aux == 1 ) {
-                            aux = randomNumber(Social.SIZE);
-                            if ( this.social.get(aux).addPoints() ) {
-                                points -= 5;
-                            }
-                        }
-                        else {
-                            aux = randomNumber(Mental.SIZE);
-                            if ( this.mental.get(aux).addPoints() ) {
-                                points -= 5;
-                            }
-                        }
-                    }
-                    break;
-                case 2:
-                    this.willPower++;
-                    points--;
-                    break;
+    public String toString() {
+        int l = 3;
+        int c = 3;
+        String[][] date;
+        date = new String[l][c];
+        String information = "";
+        
+        information = "Nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: " + this.concept + "\t" 
+                + " Idade: " + this.age + "\n";
+        
+        for(int a = 0; a < c; a++)
+            for(int b = 0; b < l; b++) {
+                date[0][b] = this.physical.get(b).getNameAttribute();
+                
             }
-        }
+        
+        for(int a = 0; a < c; a++) {
+            for(int b = 0; b < l; b++) 
+               information = information + date[b][a] + "\t";
+            information = information + "\n";
+        }        
+                
+        return information;
     }
-    
+       
     /**
      * Define o conceito do personagem de forma aleatória.
      */
