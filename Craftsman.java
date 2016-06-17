@@ -181,7 +181,7 @@ public class Craftsman extends Person {
          */
         
         for(int i = 0; i < Talent.SIZE; i++) {
-           if(i == 0 || i == 5 || i == 7) {
+           if(i == 0 || i == 5) {
               if ( this.talent.get(i).addPoints() ) {
                  points--;
               }
@@ -223,7 +223,7 @@ public class Craftsman extends Person {
          * 9 = "Senescália".
          */
         for(int i = 0; i < Knowledge.SIZE; i++) {
-           if(i == 0 || i == 4 || i == 8) {
+           if(i == 0 || i == 4) {
               if ( this.knowledge.get(i).addPoints() ) {
                  points--;
               }
