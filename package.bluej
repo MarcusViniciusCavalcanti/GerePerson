@@ -45,11 +45,11 @@ dependency9.from=GerePerson
 dependency9.to=Knight
 dependency9.type=UsesDependency
 objectbench.height=100
-objectbench.width=1010
+objectbench.width=1297
 package.editor.height=587
 package.editor.width=1189
-package.editor.x=31
-package.editor.y=18
+package.editor.x=354
+package.editor.y=67
 package.numDependencies=15
 package.numTargets=12
 package.showExtends=true
@@ -84,7 +84,11 @@ target10.y=10
 target11.editor.height=729
 target11.editor.width=1335
 target11.editor.x=31
+<<<<<<< HEAD
 target11.editor.y=39
+=======
+target11.editor.y=23
+>>>>>>> 4f6b32ef351645ee7935e39a20e0c07fa763395c
 target11.height=50
 target11.name=Person
 target11.naviview.expanded=false

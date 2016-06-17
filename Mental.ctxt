@@ -6,6 +6,7 @@ comment1.params=
 comment1.target=java.lang.String\ getNameAttribute()
 comment1.text=\n\ @return\ o\ nome\ do\ atributo.\n
 comment2.params=
+<<<<<<< HEAD
 comment2.target=int\ getValue()
 comment2.text=\n\ @return\:\ valor\ da\ quantidade\ de\ pontos\ do\ atributo.\n
 comment3.params=
@@ -14,4 +15,14 @@ comment3.text=\n\ Adiciona\ pontos\ ao\ atributo\n\ @return\ se\ os\ pontos\ for
 comment4.params=index
 comment4.target=void\ setAttributeName(int)
 comment4.text=\n\ Popula\ a\ lista\ de\ atributos\ mentais.\n\ @param\ index\:\ recebe\ a\ posi\u00E7\u00E3o\ do\ nome\ do\ atributo.\n\ 0\ \=\ Percep\u00E7\u00E3o;\n\ 1\ \=\ Intelig\u00EAncia;\n\ 2\ \=\ Racioc\u00EDnio.\n
+=======
+comment2.target=boolean\ addPoints()
+comment2.text=\n\ Adiciona\ pontos\ ao\ atributo\n\ @return\ se\ os\ pontos\ foram\ adicionados\ true\ para\ adicionado\ false\ para\ n\u00E3o\n\ caso\ o\ atributo\ j\u00E1\ tenha\ o\ valor\ m\u00E1ximo\ de\ 5\n
+comment3.params=
+comment3.target=int\ getValue()
+comment3.text=\n\ Retorna\ os\ valores\ dos\ pontos\n
+comment4.params=index
+comment4.target=void\ setAttributeName(int)
+comment4.text=\n\ Popula\ a\ lista\ de\ atributos\ mentais.\n\ @param\ index\:\ recebe\ a\ posi\u00E7\u00E3o\ do\ nome\ do\ atributo.\n
+>>>>>>> 4f6b32ef351645ee7935e39a20e0c07fa763395c
 numComments=5

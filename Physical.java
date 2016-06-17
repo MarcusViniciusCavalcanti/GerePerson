@@ -36,8 +36,12 @@ public class Physical {
     }
     
     /**
+<<<<<<< HEAD
      * Valor das quantidade de pontos que o atributo tem.
      * @return: quantidade de pontos.
+=======
+     * Retorna os valores dos pontos
+>>>>>>> 4f6b32ef351645ee7935e39a20e0c07fa763395c
      */
     public int getValue() {
         return this.value;

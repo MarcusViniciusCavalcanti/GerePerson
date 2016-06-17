@@ -45,7 +45,7 @@ public class Knight extends Person {
          * 1 = dextreza;
          * 2 = vigor;
          */
-        while( points == 0 ){
+        while( points != 0 ){
             if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                points--;
             }
@@ -77,7 +77,7 @@ public class Knight extends Person {
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        while( points == 0 ){
+        while( points != 0 ){
             if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
                points--;
             }
@@ -99,7 +99,7 @@ public class Knight extends Person {
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        while( points == 0 ){
+        while( points != 0 ){
             if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
@@ -146,7 +146,7 @@ public class Knight extends Person {
            }
         }
         
-        while( points == 0 ){
+        while( points != 0 ){
             aux = randomNumber(Expertise.SIZE);
             
             if ( this.expertise.get(aux).getValue() < 3 )
@@ -188,7 +188,7 @@ public class Knight extends Person {
            }
         }
         
-        while( points == 0 ){
+        while( points != 0 ){
             aux = randomNumber(Talent.SIZE);
             
             if ( this.talent.get(aux).getValue() < 3 )
@@ -229,7 +229,7 @@ public class Knight extends Person {
            }
         }
         
-        while( points == 0 ){
+        while( points != 0 ){
             aux = randomNumber(Knowledge.SIZE);
             
             if ( this.knowledge.get(aux).getValue() < 3 )
@@ -239,8 +239,48 @@ public class Knight extends Person {
         }
     }
     
-    
+    public String toString() {
+        int l = 3;
+        int c = 3;
+        String[][] date;
+        date = new String[l][c];
+        String information = "";
+        
+        information = "Nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: " + this.concept + "\t" 
+                + " Idade: " + this.age + "\n";
+        
+        for(int b = 0; b < l; b++) {
+           date[0][b] = this.physical.get(b).getNameAttribute() + " " + toBall(this.physical.get(b).getValue());
+           date[1][b] = this.social.get(b).getNameAttribute() + " " + toBall(this.social.get(b).getValue());
+           date[2][b] = this.mental.get(b).getNameAttribute() + " " + toBall(this.mental.get(b).getValue());
+        }
+        
+        for(int a = 0; a < c; a++) {
+            for(int b = 0; b < l; b++) 
+               information = information + date[b][a] + "\t";
+            information = information + "\n";
+        }        
+                
+        return information;
+    }
        
+    /**
+     * Espera um valor int para se transforar em uma String em "ooo--"
+     * retorna esta String.
+     */
+    private String toBall(int n) {
+       String ball = ""; 
+       for (int i = 0; i < n; i++) {
+          ball+= "o";
+       }
+      
+       for (int i = 0; i < (5 - n); i++) {
+          ball+= "-"; 
+       }
+      
+       return ball;
+    }
+    
     /**
      * Define o conceito do personagem de forma aleatória.
      */
