@@ -32,6 +32,13 @@ public class Social {
     }
     
     /**
+     * Retorna os valores dos pontos
+     */
+    public int getValue() {
+        return this.value;
+    }
+    
+    /**
      * Adiciona pontos ao atributo
      * @return se os pontos foram adicionados true para adicionado false para não
      * caso o atributo já tenha o valor máximo de 5

@@ -26,6 +26,9 @@ public class Physical {
         return this.name;
     }
     
+    /**
+     * Retorna os valores dos pontos
+     */
     public int getValue() {
         return this.value;
     }

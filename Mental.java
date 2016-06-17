@@ -52,6 +52,13 @@ public class Mental {
     }
 
     /**
+     * Retorna os valores dos pontos
+     */
+    public int getValue() {
+        return this.value;
+    }
+    
+    /**
      * Popula a lista de atributos mentais.
      * @param index: recebe a posição do nome do atributo.
      */
