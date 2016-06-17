@@ -77,11 +77,14 @@ public class Mumper extends Person {
          * 2 = vigor;
          */
         while( points != 0 ){
-            aux = 0; //randomNumber(Physical.SIZE);
-            if ( !(aux == 0)  && !(this.concept == "aleijado" || this.concept == "aleijada") )
-              if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
-                 points--;
-              }
+            aux = randomNumber(Physical.SIZE);
+            
+            //condição para impedir a adição de pontos em força caso o conceito for aleijado(a)
+            if ( aux == 0 && ( this.concept.equals("aleijado") || this.concept.equals("aleijada")) )
+              continue; // instrução para o loop voltar ao inicio.
+            else 
+              if( this.physical.get(aux).addPoints() )
+                points--;
         }
     }
 
@@ -279,7 +282,7 @@ public class Mumper extends Person {
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "aleijada";
+                  this.concept = "aleijado";
                 else
                   this.concept = "aleijada";
                 break;

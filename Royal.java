@@ -25,7 +25,7 @@ public class Royal extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cavaleiros recebem como primária atributos físicos.
+     * Nobres recebem como primária atributos sociais.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -44,7 +44,7 @@ public class Royal extends Person {
          * 2 = vigor;
          */
         while( points != 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+            if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -52,7 +52,7 @@ public class Royal extends Person {
        
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de cavaleiros recebem como segundários atributos mentais.
+     * Nobres recebem como segundários atributos mentais.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -70,10 +70,9 @@ public class Royal extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
+         * 0 = Percepção.
+         * 1 = Inteligência.
+         * 2 = Raciocínio.
          */
         while( points != 0 ){
             if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
@@ -84,7 +83,7 @@ public class Royal extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Nobres recebem como terceários atributos físicos.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -92,13 +91,12 @@ public class Royal extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
+         * 0 = força;
+         * 1 = dextreza;
+         * 2 = vigor;
          */
         while( points != 0 ){
-            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -106,12 +104,11 @@ public class Royal extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Cavalerios tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Cavalgar;
-     *  Empatia com animais;
-     *  Armas brancas e;
-     *  Sobrevivência.  
+     * Define a distribuição dos pontos das Habilidades dos Nobres, num máximo de 3 níveis.
+     * Nobres tem como habilidade principal Conhecimento, entretanto eles tende a ter mais afinidade com:
+     *  Instrução;
+     *  Linguística e;
+     *  Senescália.  
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -124,21 +121,21 @@ public class Royal extends Person {
           points = 11;
                   
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
+         * Adiciona os valores das Habilidades finaliza o for quando os pontos acabarem.
+         * 0 = "Instrução";
+         * 1 = "Sabedoria popular";
+         * 2 = "Investigação"; 
+         * 3 = "Direito";
+         * 4 = "Linguística; 
+         * 5 = "Medicina",
+         * 6 = "Ocultismo";
+         * 7 = "Polícia;
+         * 8 = "Ciência" e; 
+         * 9 = "Senescália".
          */
-        for(int i = 0; i < Expertise.SIZE; i++) {
-           if(i == 0 || i == 5 || i == 7) {
-              if ( this.expertise.get(i).addPoints() ) {
+        for(int i = 0; i < Knowledge.SIZE; i++) {
+           if(i == 0 || i == 4 || i == 9) {
+              if ( this.knowledge.get(i).addPoints() ) {
                  points--;
               }
            }
@@ -153,7 +150,13 @@ public class Royal extends Person {
               }
         }
     }
-
+    
+    /**
+     * Define a distribuição dos pontos das Habilidades dos Nobres, num máximo de 3 níveis.
+     * Nobres tem como habilidade segundária Perícias, entretanto eles tende a ter mais afinidade com:
+     *  Representação e;
+     *  Liderança.  
+     */
     public void toSegundarySkillPoints() {
         int points = 0;
         int aux = 0;
@@ -179,7 +182,7 @@ public class Royal extends Person {
          * 9 = "Lábia".
          */
         for(int i = 0; i < Talent.SIZE; i++) {
-           if(i == 3 || i == 6 || i == 8) {
+           if( i == 0 || i == 8 ) {
               if ( this.talent.get(i).addPoints() ) {
                  points--;
               }
@@ -195,7 +198,13 @@ public class Royal extends Person {
               }
         }
     }
-
+    
+    /**
+     * Define a distribuição dos pontos das Habilidades dos Nobres, num máximo de 3 níveis.
+     * Nobres tem como habilidade segundária Perícias, entretanto eles tende a ter mais afinidade com:
+     *  Etiqueta e;
+     *  Cavalgar.  
+     */
     public void toTertiarySkillPoints() {
         int points = 0;
         int aux = 0;
@@ -208,19 +217,19 @@ public class Royal extends Person {
                   
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência" e; 
-         * 9 = "Senescália".
+         * 0 = "Empatia com animais";
+         * 1 = "Arqueirismo";
+         * 2 = "Artesanato"; 
+         * 3 = "Etiqueta";
+         * 4 = "Herborismo"; 
+         * 5 = "Armas brancas",
+         * 6 = "Música";
+         * 7 = "Cavalgar";
+         * 8 = "Furtividade"; 
+         * 9 = "Sobrevivência".
          */
         for(int i = 0; i < Knowledge.SIZE; i++) {
-           if(i == 0 || i == 2 || i == 7) {
+           if( i == 3 || i == 7 ) {
               if ( this.knowledge.get(i).addPoints() ) {
                  points--;
               }
@@ -246,28 +255,31 @@ public class Royal extends Person {
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "Escudeiro";
+                  this.concept = "barão,";
                 else
-                  this.concept = "Escudeira";
+                  this.concept = "baronesa";
                 break;
             case 1:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro Errante";
+                  this.concept = " herdeiro real";
                 else
-                  this.concept = "Cavaleira Errante";
+                  this.concept = "herdeira real";
                 break;
             case 2:
                 if ( this.gender == 'm' )
-                  this.concept = "Cortesão";
-                else
-                  this.concept = "Cortesã";
+                  this.concept = "cruzado";
                 break;
             case 3:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro nobre";
+                  this.concept = "bastardo";
                 else
-                  this.concept = "Cavaleira nobre";
+                  this.concept = "bastarda";
                 break;
+            case 4:
+                if (this.gender == 'm' )
+                  this.concept = "libertino";
+                else
+                  this.concept = "libertino";
         }
     }
 }
