@@ -28,7 +28,7 @@ public class Knowledge {
      */
     public Knowledge(int index) {
         toSkillName(index);
-        this.value = 1;
+        this.value = 0;
     }
 
     /**

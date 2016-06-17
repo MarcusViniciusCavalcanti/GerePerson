@@ -25,7 +25,7 @@ public class Talent {
      */
     public Talent(int index) {
         toSkillName(index);
-        this.value = 1;
+        this.value = 0;
     }
 
     /**
