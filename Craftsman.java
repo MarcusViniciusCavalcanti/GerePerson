@@ -3,9 +3,7 @@
  */ 
 
 public class Craftsman extends Person {
-    private String concept;
     
-
     public Craftsman() {
         super(); //inicializa o construtor da super classe.
         

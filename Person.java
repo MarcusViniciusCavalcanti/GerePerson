@@ -11,6 +11,7 @@ public class Person {
     protected char gender;
     protected String name;
     protected String lastName;
+    protected String concept;
     protected int age;
     protected int willPower;
     protected ArrayList<Physical> physical;
