@@ -32,6 +32,8 @@ public class Physical {
     
     /**
      * Adiciona pontos ao atributo
+     * @return : retorna se a quantidade de pontos ultrapassou o limite pré-estabelecido.
+     * verdadeiro para sim, e não adiciona mais nenhum ponto, false para não e adiciona o ponto
      */
     public boolean addPoints() {
         /*
