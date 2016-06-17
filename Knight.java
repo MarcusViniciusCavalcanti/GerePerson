@@ -250,11 +250,11 @@ public class Knight extends Person {
         information = "Nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: " + this.concept + "\t" 
                 + " Idade: " + this.age + "\n";
         
-        for(int a = 0; a < c; a++)
-            for(int b = 0; b < l; b++) {
-                date[0][b] = this.physical.get(b).getNameAttribute();
-                
-            }
+        for(int b = 0; b < l; b++) {
+           date[0][b] = this.physical.get(b).getNameAttribute() + " " + toBall(this.physical.get(b).getValue());
+           date[1][b] = this.social.get(b).getNameAttribute() + " " + toBall(this.social.get(b).getValue());
+           date[2][b] = this.mental.get(b).getNameAttribute() + " " + toBall(this.mental.get(b).getValue());
+        }
         
         for(int a = 0; a < c; a++) {
             for(int b = 0; b < l; b++) 
