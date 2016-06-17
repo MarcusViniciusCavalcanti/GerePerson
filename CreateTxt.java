@@ -1,6 +1,6 @@
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.IOException;
 /**
  * Write a description of class CreatTxt here.
  * 

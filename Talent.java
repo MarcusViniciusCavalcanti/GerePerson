@@ -4,7 +4,7 @@ public class Talent {
     private String name;
     private int value;
     
-    private final int MAX_POINTS = 3;
+    private final int MAX_POINTS = 5;
     public static int SIZE = 10;
 
     /**
@@ -38,7 +38,7 @@ public class Talent {
     /**
      * @return devolve o valor de pontos que o habilidade tem.
      */
-    public int getValue(int asSkill) {
+    public int getValue() {
         return this.value;
     }
 

@@ -8,6 +8,7 @@ public class Mental {
 	private String name;
 	private int value;
 
+	private final int MAX_POINTS = 5;
 	public static final int SIZE = 3;
 
 	/**
@@ -42,7 +43,7 @@ public class Mental {
          * retonar verdadeiro para o método que o invocou.
          */
         
-        if(this.value < 5) {
+        if(this.value < MAX_POINTS) {
             this.value++;
             return true;
         }
