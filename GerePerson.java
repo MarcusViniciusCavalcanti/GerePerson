@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 /**
  * Write a description of class GerePerson here.
  * 
@@ -9,6 +10,7 @@ public class GerePerson
 {   
     public static void main(String[] args) {  
         Scanner read = new Scanner(System.in);
+        Random  rand = new Random();
         
         
         System.out.println("########################################################################");
@@ -20,7 +22,63 @@ public class GerePerson
         
         boolean exit = false;
         while (exit == false) {
-            Person person = new Knight();
+            int aux = 0;
+            aux = rand.nextInt(3);
+            Person person = null;
+            
+            switch (aux) {
+                case 0:
+                    person = new Knight();
+                    break;
+                case 1:
+                    person = new Craftsman();
+                    break;
+                case 2:
+                    person = new Artist();
+                    break;
+//                 case 3:
+//                     person = new Knight();
+//                     break;
+//                 case 4:
+//                     person = new Knight();
+//                     break;
+//                 case 5:
+//                     person = new Knight();
+//                     break;
+//                 case 6:
+//                     person = new Knight();
+//                     break;
+//                 case 7:
+//                     person = new Knight();
+//                     break;
+//                 case 8:
+//                     person = new Knight();
+//                     break;
+//                 case 9:
+//                     person = new Knight();
+//                     break;
+//                 case 10:
+//                     person = new Knight();
+//                     break;
+//                case 11:
+//                     person = new Knight();
+//                     break;
+//                case 12:
+//                     person = new Knight();
+//                     break;
+//                case 13:
+//                     person = new Knight();
+//                     break;
+//                case 14:
+//                     person = new Knight();
+//                     break;
+//                case 15:
+//                     person = new Knight();
+//                     break;
+//                case 16:
+//                     person = new Knight();
+//                     break;
+            }
             
             System.out.println("nome: " + person.getName() + " " + person.getLastName() + "\t\t" + "Conceito: "+ person.getConcept() + "\t\t" + "Idade: " + person.getAge());
             System.out.println();
@@ -45,10 +103,11 @@ public class GerePerson
             
             System.out.println("                        Força de Vontade:");
             System.out.println("                        " + person.getWillPower());
-            
+            System.out.print("\n\n");
             
             
             System.out.println("deseja criar outro personagem? \n Sim[s]\n Não[n]");
+            System.out.print("O que deseja fazer? ");
             char op = read.next().charAt(0);
             switch (op) {
                 case 's': case 'S':

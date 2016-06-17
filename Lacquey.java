@@ -1,10 +1,9 @@
 /**
- * Classe Cavaleiro:
+ * Classe Lacaio:
  */ 
 
-public class Knight extends Person {
-   
-    public Knight() {
+public class Lacquey extends Person {
+    public Lacquey() {
         super(); //inicializa o construtor da super classe.
         
         //define conceito
@@ -77,7 +76,7 @@ public class Knight extends Person {
          * 2 = aparencia.
          */
         while( points != 0 ){
-            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -99,7 +98,7 @@ public class Knight extends Person {
          * 2 = aparencia.
          */
         while( points != 0 ){
-            if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
+            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
         }
