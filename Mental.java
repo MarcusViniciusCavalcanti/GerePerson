@@ -1,17 +1,23 @@
- 
-
 import java.util.ArrayList;
 /**
- * 
+ * Classe que define os atributos da categoria mentais:
+ * Nome;
+ * Pontos;
+ * O nome é definido em tempo de execução recebendo no construtor qual nome o atributo terá 
+ * em uma lista já estabelecida.
+ * 0 = percepção.
+ * 1 = inteligência.
+ * 2 = raciocínio.
+ * constate publica que armazena a quantidade de atributos diferentes baseados no nome.
  */
 public class Mental {
-	private String name;
-	private int value;
+    private String name;
+    private int value;
 
-	private final int MAX_POINTS = 5;
-	public static final int SIZE = 3;
+    private final int MAX_POINTS = 5;
+    public static final int SIZE = 3;
 
-	/**
+    /**
      * Construtor:
      * instancia o objeto atributo e gera a lista de atributos
      * @param index: indice do nome do atributo.
@@ -29,6 +35,13 @@ public class Mental {
      */
     public String getNameAttribute() {
         return this.name;
+    }
+    
+    /**
+     * @return: valor da quantidade de pontos do atributo.
+     */
+    public int getValue() {
+        return this.value;
     }
     
     /**
@@ -54,6 +67,9 @@ public class Mental {
     /**
      * Popula a lista de atributos mentais.
      * @param index: recebe a posição do nome do atributo.
+     * 0 = Percepção;
+     * 1 = Inteligência;
+     * 2 = Raciocínio.
      */
     private void setAttributeName(int index) { 
         /*

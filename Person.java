@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.ArrayList;
 /**
- * Super classe Personagem, define nome, gênero, liagem e idade de forma aleatória
+ * Super classe Personagem, define nome, gênero, linhagem e idade de forma aleatória
  * para as demais classes. 
  * Além de definir a coleção de atributos e de habilidades.
  */ 
@@ -190,7 +190,7 @@ public class Person {
             }
         }
     }
-
+   
     /**
      * Define a Linagem do personagem.
      * S: sobrenatural, M: mortal.

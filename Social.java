@@ -1,8 +1,14 @@
- 
-
 import java.util.ArrayList;
 /**
- * 
+ * Classe que define os atributos da categoria fisico:
+ *  Nome;
+ *  Pontos;
+ *  O nome é definido em tempo de execução recebendo no construtor qual nome o atributo terá 
+ *  em uma lista já estabelecida.
+ *  0 = carisma;
+ *  1 = manipulação;
+ *  2 = aparencia.
+ *  constate publica que armazena a quantidade de atributos diferentes baseados no nome.
  */
 public class Social {
 	private String name;
@@ -32,6 +38,13 @@ public class Social {
     }
     
     /**
+     * @return o valor dos pontos do atributo.
+     */
+    public int getValue() {
+        return this.value;
+    }
+    
+    /**
      * Adiciona pontos ao atributo
      * @return se os pontos foram adicionados true para adicionado false para não
      * caso o atributo já tenha o valor máximo de 5
@@ -54,6 +67,9 @@ public class Social {
     /**
      * Popula a lista de atributos social.
      * @param index: recebe a posição do nome do atributo.
+     * 0 = carisma
+     * 1 = manipulação.
+     * 2 = aparencia.
      */
     private void setAttributeName(int index) { 
         /*

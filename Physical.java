@@ -1,7 +1,14 @@
 import java.util.ArrayList;
-
 /**
- * 
+ * Classe que define os atributos da categoria fisico:
+ *  Nome;
+ *  Pontos;
+ *  O nome é definido em tempo de execução recebendo no construtor qual nome o atributo terá 
+ *  em uma lista já estabelecida.
+ *  0 = Força;
+ *  1 = Destreza;
+ *  2 = Vigor.
+ *  constate publica que armazena a quantidade de atributos diferentes baseados no nome.
  */
 public class Physical {
     private String name;
@@ -12,20 +19,26 @@ public class Physical {
     
     /**
      * Construtor:
-     * instancia o objeto atributo e gera a lista de atributos
+     * instancia o objeto atributo e gera a lista de atributos.
+     * Todos os atributos tem valor inicial de 1 ponto.
+     * @param: index da lista de nomes que o objeto pode ter.
      */
     public Physical(int index) {
         setAttributeName(index);
         this.value = 1;
     }
 
-     /**
-     * Retorna o nome do atributo.
+    /**
+     * @return: nome do atributo.
      */
     public String getNameAttribute() {
         return this.name;
     }
     
+    /**
+     * Valor das quantidade de pontos que o atributo tem.
+     * @return: quantidade de pontos.
+     */
     public int getValue() {
         return this.value;
     }
@@ -52,6 +65,10 @@ public class Physical {
 
     /**
      * Popula a lista de atributos fisico.
+     * @param: posição do nome na Array de nomes. 
+     *  0 = Força;
+     *  1 = Destreza;
+     *  2 = Vigor.
      */
     private void setAttributeName(int index) { 
         /*

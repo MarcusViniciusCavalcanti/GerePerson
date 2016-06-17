@@ -1,16 +1,17 @@
 #BlueJ class context
 comment0.params=index
 comment0.target=Physical(int)
-comment0.text=\n\ Construtor\:\n\ instancia\ o\ objeto\ atributo\ e\ gera\ a\ lista\ de\ atributos\n
+comment0.text=\n\ Construtor\:\n\ instancia\ o\ objeto\ atributo\ e\ gera\ a\ lista\ de\ atributos.\n\ Todos\ os\ atributos\ tem\ valor\ inicial\ de\ 1\ ponto.\n\ @param\:\ index\ da\ lista\ de\ nomes\ que\ o\ objeto\ pode\ ter.\n
 comment1.params=
 comment1.target=java.lang.String\ getNameAttribute()
-comment1.text=\n\ Retorna\ o\ nome\ do\ atributo.\n
+comment1.text=\n\ @return\:\ nome\ do\ atributo.\n
 comment2.params=
 comment2.target=int\ getValue()
+comment2.text=\n\ Valor\ das\ quantidade\ de\ pontos\ que\ o\ atributo\ tem.\n\ @return\:\ quantidade\ de\ pontos.\n
 comment3.params=
 comment3.target=boolean\ addPoints()
 comment3.text=\n\ Adiciona\ pontos\ ao\ atributo\n\ @return\ \:\ retorna\ se\ a\ quantidade\ de\ pontos\ ultrapassou\ o\ limite\ pr\u00E9-estabelecido.\n\ verdadeiro\ para\ sim,\ e\ n\u00E3o\ adiciona\ mais\ nenhum\ ponto,\ false\ para\ n\u00E3o\ e\ adiciona\ o\ ponto\n
 comment4.params=index
 comment4.target=void\ setAttributeName(int)
-comment4.text=\n\ Popula\ a\ lista\ de\ atributos\ fisico.\n
+comment4.text=\n\ Popula\ a\ lista\ de\ atributos\ fisico.\n\ @param\:\ posi\u00E7\u00E3o\ do\ nome\ na\ Array\ de\ nomes.\ \n\ \ 0\ \=\ For\u00E7a;\n\ \ 1\ \=\ Destreza;\n\ \ 2\ \=\ Vigor.\n
 numComments=5

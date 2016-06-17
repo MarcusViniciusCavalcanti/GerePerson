@@ -49,9 +49,7 @@ public class CreateTxt {
     
     private void recordFile(String content) {
         this.recordFile = new PrintWriter(this.file);
-        
         this.recordFile.printf(content);
-        
         this.recordFile.close();
     }
         

@@ -4,8 +4,7 @@
 
 public class Knight extends Person {
     private String concept;
-    
-
+   
     public Knight() {
         super(); //inicializa o construtor da super classe.
         
@@ -240,30 +239,7 @@ public class Knight extends Person {
         }
     }
     
-    public String toString() {
-        int l = 3;
-        int c = 3;
-        String[][] date;
-        date = new String[l][c];
-        String information = "";
-        
-        information = "Nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: " + this.concept + "\t" 
-                + " Idade: " + this.age + "\n";
-        
-        for(int a = 0; a < c; a++)
-            for(int b = 0; b < l; b++) {
-                date[0][b] = this.physical.get(b).getNameAttribute();
-                
-            }
-        
-        for(int a = 0; a < c; a++) {
-            for(int b = 0; b < l; b++) 
-               information = information + date[b][a] + "\t";
-            information = information + "\n";
-        }        
-                
-        return information;
-    }
+    
        
     /**
      * Define o conceito do personagem de forma aleatória.
