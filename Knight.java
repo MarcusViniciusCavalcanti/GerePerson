@@ -266,6 +266,23 @@ public class Knight extends Person {
     }
        
     /**
+     * Espera um valor int para se transforar em uma String em "ooo--"
+     * retorna esta String.
+     */
+    private String toBall(int n) {
+       String ball = ""; 
+       for (int i = 0; i < n; i++) {
+          ball+= "o";
+       }
+      
+       for (int i = 0; i < (5 - n); i++) {
+          ball+= "-"; 
+       }
+      
+       return ball;
+    }
+    
+    /**
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
