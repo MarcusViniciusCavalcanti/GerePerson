@@ -25,12 +25,14 @@ public class GerePerson
             System.out.println("nome: " + person.getName() + " " + person.getLastName() + "\t\t" + "Conceito: "+ person.getConcept() + "\t\t" + "Idade: " + person.getAge());
             System.out.println();
         
-            System.out.println("                                   ----------- A T R I B U T O S -----------\n\n");             
+            System.out.println("                                   ----------- A T R I B U T O S -----------\n\n"); 
+            System.out.println("     Físicos    \t\t\t Sociais \t\t\t\t Mentais\n");
             System.out.println("   Força: " + person.getPhysical(0) + "\t\t\t\t" + "    Carisma: " + person.getSocial(0) + "\t\t      " + "   Percepção: " + person.getMental(0));
             System.out.println("Destreza: " + person.getPhysical(1) + "\t\t\t\t" + "Manipulação: " + person.getSocial(1) + "\t\t      " + "Inteligência: " + person.getMental(1));
             System.out.println("   Vigor: " + person.getPhysical(2) + "\t\t\t\t" + "  Aparência: " + person.getSocial(2) + "\t\t      " + "  Raciocínio: " + person.getMental(2));
 
             System.out.println("\n\n                                 ----------- H A B I L I D A D E S -----------\n\n");
+            System.out.println("     Talentos    \t\t\t Perícias \t\t\t\t Conhecimentos\n");
             System.out.println("Representação: " + person.getTalent(0) + "\t\t" + "Empatia com animais: " + person.getExpertise(0) + "\t\t" + "        Instrução: " + person.getKnowledge(0));
             System.out.println("    Prontidão: " + person.getTalent(1) + "\t\t" + "        Arqueirismo: " + person.getExpertise(1) + "\t\t" + "Sabedoria popular: " + person.getKnowledge(1));
             System.out.println("     Esportes: " + person.getTalent(2) + "\t\t" + "         Artesanato: " + person.getExpertise(2) + "\t\t" + "     Investigação: " + person.getKnowledge(2));
