@@ -39,13 +39,14 @@ public class Craftsman extends Person {
           points = 6;
                   
         /*
-         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
-         * 0 = força;
-         * 1 = dextreza;
-         * 2 = vigor;
+         * Adiciona de forma aleatória os pontos.
+         * o loop termina quando os pontos acabam.
+         * Percapção
+         * Inteligência
+         * Raciocínio
          */
         while( points != 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -77,7 +78,7 @@ public class Craftsman extends Person {
          * 2 = aparencia.
          */
         while( points != 0 ){
-            if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+            if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -91,15 +92,13 @@ public class Craftsman extends Person {
         int points = 3;
         
         /*
-         * Adiciona de forma aleatória os pontos.
-         * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
+         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
+         * 0 = força;
+         * 1 = dextreza;
+         * 2 = vigor;
          */
         while( points != 0 ){
-            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                points--;
             }
         }
