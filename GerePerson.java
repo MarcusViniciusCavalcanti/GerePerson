@@ -48,18 +48,18 @@ public class GerePerson
                 case 6:
                     person = new Bum();
                     break;
-//                 case 7:
-//                     person = new Knight();
-//                     break;
-//                 case 8:
-//                     person = new Knight();
-//                     break;
-//                 case 9:
-//                     person = new Knight();
-//                     break;
-//                 case 10:
-//                     person = new Knight();
-//                     break;
+                 case 7:
+                     person = new Cleric();
+                     break;
+                 case 8:
+                     person = new Royal();
+                     break;
+                 case 9:
+                     person = new Soldier();
+                     break;
+                 case 10:
+                     person = new Erudite();
+                     break;
 //                case 11:
 //                     person = new Knight();
 //                     break;
