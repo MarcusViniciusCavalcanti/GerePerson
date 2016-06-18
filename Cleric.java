@@ -35,7 +35,6 @@ public class Cleric extends Person {
     public void toPrimaryAttributePoints() {
         int points = 0;
         
-         
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 7;
