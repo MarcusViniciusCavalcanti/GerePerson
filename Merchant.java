@@ -1,5 +1,6 @@
 /**
- * Classe Cavaleiro:
+ * Classe Mercador:
+ * Mercadores criadores de animais tem habilidades diferentes das demais.
  */ 
 
 public class Merchant extends Person {
@@ -29,8 +30,7 @@ public class Merchant extends Person {
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
-        
-         
+
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 7;
@@ -43,7 +43,7 @@ public class Merchant extends Person {
          * 1 = dextreza;
          * 2 = vigor;
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                points--;
             }
@@ -75,7 +75,7 @@ public class Merchant extends Person {
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
                points--;
             }
@@ -97,7 +97,7 @@ public class Merchant extends Person {
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
@@ -122,7 +122,7 @@ public class Merchant extends Person {
           points = 13;
         else
           points = 11;
-                  
+        
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
          * 0 = "Empatia com animais";
@@ -136,15 +136,23 @@ public class Merchant extends Person {
          * 8 = "Furtividade"; 
          * 9 = "Sobrevivência".
          */
-        for(int i = 0; i < Expertise.SIZE; i++) {
-           if(i == 0 || i == 5 || i == 7) {
-              if ( this.expertise.get(i).addPoints() ) {
+        if ( this.concept.equals("Treinador de animais") ) {
+           for (int i = 0; i < 2;i++ )       
+               if ( this.expertise.get(0).addPoints() )
                  points--;
-              }
-           }
         }
-        
-        while( points != 0 ){
+        else {
+            if ( this.expertise.get(0).addPoints() )
+              points--;
+            
+            if ( this.expertise.get(5).addPoints() )
+              points--;
+            
+            if ( this.expertise.get(7).addPoints() )
+              points--;
+        }
+          
+        while( points > 0 ){
             aux = randomNumber(Expertise.SIZE);
             
             if ( this.expertise.get(aux).getValue() < 3 )
@@ -178,15 +186,16 @@ public class Merchant extends Person {
          * 8 = "Liderança"; 
          * 9 = "Lábia".
          */
-        for(int i = 0; i < Talent.SIZE; i++) {
-           if(i == 3 || i == 6 || i == 8) {
-              if ( this.talent.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
+        if ( this.talent.get(3).addPoints() )
+          points--;
+          
+        if ( this.talent.get(6).addPoints() )
+          points--;
         
-        while( points != 0 ){
+        if ( this.talent.get(8).addPoints() )
+          points--;
+        
+        while( points > 0 ){
             aux = randomNumber(Talent.SIZE);
             
             if ( this.talent.get(aux).getValue() < 3 )
@@ -219,15 +228,16 @@ public class Merchant extends Person {
          * 8 = "Ciência" e; 
          * 9 = "Senescália".
          */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
-           if(i == 0 || i == 2 || i == 7) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
+        if ( this.knowledge.get(0).addPoints() )
+          points--;
+          
+        if ( this.knowledge.get(2).addPoints() )
+          points--;
         
-        while( points != 0 ){
+        if ( this.knowledge.get(7).addPoints() )
+          points--;
+        
+        while( points > 0 ){
             aux = randomNumber(Knowledge.SIZE);
                     
             if ( this.knowledge.get(aux).getValue() < 3 )
@@ -241,32 +251,32 @@ public class Merchant extends Person {
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
-        int i = randomNumber(4);
+        int i = randomNumber(3);
         
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "Escudeiro";
+                  this.concept = "Bardo";
                 else
-                  this.concept = "Escudeira";
+                  this.concept = "Trovadora";
                 break;
             case 1:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro Errante";
+                  this.concept = "Estalajadeira";
                 else
-                  this.concept = "Cavaleira Errante";
+                  this.concept = "Estalajadeira";
                 break;
             case 2:
                 if ( this.gender == 'm' )
-                  this.concept = "Cortesão";
+                  this.concept = "Vendedor ambulante";
                 else
-                  this.concept = "Cortesã";
+                  this.concept = "Vendedora ambulante";
                 break;
             case 3:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro nobre";
+                  this.concept = "Treinador de animais";
                 else
-                  this.concept = "Cavaleira nobre";
+                  this.concept = "Treinadora de animais";
                 break;
         }
     }

@@ -1,10 +1,11 @@
 /**
- * Classe Cavaleiro:
+ * Classe Pelegrino:
+ * 
  */ 
 
-public class Pelegrino extends Person {
+public class Pilgrim extends Person {
    
-    public Pelegrino() {
+    public Pilgrim() {
         super(); //inicializa o construtor da super classe.
         
         //define conceito

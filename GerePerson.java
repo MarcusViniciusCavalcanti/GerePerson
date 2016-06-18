@@ -36,18 +36,18 @@ public class GerePerson
                 case 2:
                     person = new Artist();
                     break;
-//                 case 3:
-//                     person = new Knight();
-//                     break;
-//                 case 4:
-//                     person = new Knight();
-//                     break;
-//                 case 5:
-//                     person = new Knight();
-//                     break;
-//                 case 6:
-//                     person = new Knight();
-//                     break;
+                case 3:
+                    person = new Mumper();
+                    break;
+                case 4:
+                    person = new Royal();
+                    break;
+                case 5:
+                    person = new Merchant();
+                    break;
+                case 6:
+                    person = new Bum();
+                    break;
 //                 case 7:
 //                     person = new Knight();
 //                     break;
@@ -104,7 +104,7 @@ public class GerePerson
             System.out.println();
             
             System.out.println("                        Força de Vontade:");
-            System.out.println("                        " + person.getWillPower());
+            System.out.println("                            " + person.getWillPower());
             System.out.print("\n\n");
             
             

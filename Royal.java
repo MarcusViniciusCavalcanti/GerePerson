@@ -60,7 +60,7 @@ public class Royal extends Person {
              * 1 = dextreza;
              * 2 = vigor;
              */
-            while( points != 0 ){
+            while( points > 0 ){
                 if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                    points--;
                 }
@@ -73,7 +73,7 @@ public class Royal extends Person {
              * 1 = Manipulação;
              * 2 = Aparência;
              */
-            while( points != 0 ){
+            while( points > 0 ){
                 if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
                    points--;
                 }
@@ -105,7 +105,7 @@ public class Royal extends Person {
              * 1 = Manipulação;
              * 2 = Aparência;
              */
-            while( points != 0 ){
+            while( points > 0 ){
                 if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
                    points--;
                 }
@@ -119,7 +119,7 @@ public class Royal extends Person {
              * 1 = Inteligência.
              * 2 = Raciocínio.
              */
-            while( points != 0 ){
+            while( points > 0 ){
                 if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
                    points--;
                 }
@@ -142,7 +142,7 @@ public class Royal extends Person {
              * 1 = Inteligência.
              * 2 = Raciocínio.
              */
-            while( points != 0 ){
+            while( points > 0 ){
                 if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
                    points--;
                 }
@@ -156,7 +156,7 @@ public class Royal extends Person {
              * 1 = dextreza;
              * 2 = vigor;
              */
-            while( points != 0 ){
+            while( points > 0 ){
                 if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                    points--;
                 }
@@ -199,15 +199,16 @@ public class Royal extends Person {
              * 8 = "Liderança"; 
              * 9 = "Lábia".
              */
-            for(int i = 0; i < Talent.SIZE; i++) {
-               if( i == 1 || i == 2 || i == 8 ) {
-                  if ( this.talent.get(i).addPoints() ) {
-                     points--;
-                  }
-               }
-            }
+            if ( this.talent.get(1).addPoints() ) 
+              points--;
+              
+            if ( this.talent.get(2).addPoints() ) 
+              points--;
+              
+            if ( this.talent.get(8).addPoints() ) 
+              points--;
             
-            while( points != 0 ){
+            while( points > 0 ){
                 aux = randomNumber(Talent.SIZE);
                 
                 if ( this.talent.get(aux).getValue() < 3 )
@@ -230,19 +231,20 @@ public class Royal extends Person {
              * 8 = "Ciência" e; 
              * 9 = "Senescália".
              */
-            for(int i = 0; i < Knowledge.SIZE; i++) {
-               if(i == 0 || i == 4 || i == 9) {
-                  if ( this.knowledge.get(i).addPoints() ) {
-                     points--;
-                  }
-               }
-            }
-            
-            while( points != 0 ){
+            if ( this.knowledge.get(0).addPoints() ) 
+              points--;
+          
+            if ( this.knowledge.get(4).addPoints() ) 
+              points--;
+          
+            if ( this.knowledge.get(9).addPoints() ) 
+              points--;
+              
+            while( points > 0 ){
                 aux = randomNumber(Expertise.SIZE);
                 
-                if ( this.expertise.get(aux).getValue() < 3 )
-                  if ( this.expertise.get(aux).addPoints() ) {
+                if ( this.knowledge.get(aux).getValue() < 3 )
+                  if ( this.knowledge.get(aux).addPoints() ) {
                      points--;
                   }
             }
@@ -285,19 +287,23 @@ public class Royal extends Person {
              * 8 = "Furtividade"; 
              * 9 = "Sobrevivência".
              */
-            for(int i = 0; i < Knowledge.SIZE; i++) {
-               if( i == 0 || i == 3 || i == 5 || i == 7 ) {
-                  if ( this.knowledge.get(i).addPoints() ) {
-                     points--;
-                  }
-               }
-            }
+            if ( this.expertise.get(0).addPoints() ) 
+              points--;
+          
+            if ( this.expertise.get(3).addPoints() ) 
+              points--;
+          
+            if ( this.expertise.get(5).addPoints() ) 
+              points--;
+          
+            if ( this.expertise.get(7).addPoints() ) 
+              points--;
             
-            while( points != 0 ){
+            while( points > 0 ){
                 aux = randomNumber(Knowledge.SIZE);
                         
-                if ( this.knowledge.get(aux).getValue() < 3 )
-                  if ( this.knowledge.get(aux).addPoints() ) {
+                if ( this.expertise.get(aux).getValue() < 3 )
+                  if ( this.expertise.get(aux).addPoints() ) {
                      points--;
                   }
             }
@@ -316,15 +322,13 @@ public class Royal extends Person {
              * 8 = "Liderança"; 
              * 9 = "Lábia".
              */
-            for(int i = 0; i < Talent.SIZE; i++) {
-               if( i == 0 || i == 8 ) {
-                  if ( this.talent.get(i).addPoints() ) {
-                     points--;
-                  }
-               }
-            }
+            if ( this.talent.get(0).addPoints() ) 
+              points--;
+          
+            if ( this.talent.get(8).addPoints() ) 
+              points--;
             
-            while( points != 0 ){
+            while( points > 0 ){
                 aux = randomNumber(Talent.SIZE);
                 
                 if ( this.talent.get(aux).getValue() < 3 )
@@ -369,51 +373,52 @@ public class Royal extends Person {
              * 8 = "Ciência" e; 
              * 9 = "Senescália".
              */
-            for(int i = 0; i < Knowledge.SIZE; i++) {
-               if(i == 0 || i == 4 || i == 9) {
-                  if ( this.knowledge.get(i).addPoints() ) {
-                     points--;
-                  }
-               }
-            }
+            if ( this.knowledge.get(0).addPoints() ) 
+              points--;
+          
+            if ( this.knowledge.get(4).addPoints() ) 
+              points--;
+          
+            if ( this.knowledge.get(9).addPoints() ) 
+              points--;
             
             while( points != 0 ){
                 aux = randomNumber(Expertise.SIZE);
                 
+                if ( this.knowledge.get(aux).getValue() < 3 )
+                  if ( this.knowledge.get(aux).addPoints() ) {
+                     points--;
+                  }
+            }
+        }
+        else {
+            /*
+             * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+             * 0 = "Empatia com animais";
+             * 1 = "Arqueirismo";
+             * 2 = "Artesanato"; 
+             * 3 = "Etiqueta";
+             * 4 = "Herborismo"; 
+             * 5 = "Armas brancas",
+             * 6 = "Música";
+             * 7 = "Cavalgar";
+             * 8 = "Furtividade"; 
+             * 9 = "Sobrevivência".
+             */
+            if ( this.expertise.get(3).addPoints() ) 
+              points--;
+              
+            if ( this.expertise.get(7).addPoints() ) 
+              points--;
+            
+            while( points != 0 ){
+                aux = randomNumber(Knowledge.SIZE);
+                        
                 if ( this.expertise.get(aux).getValue() < 3 )
                   if ( this.expertise.get(aux).addPoints() ) {
                      points--;
                   }
             }
-        }
-        /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
-         */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
-           if( i == 3 || i == 7 ) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points != 0 ){
-            aux = randomNumber(Knowledge.SIZE);
-                    
-            if ( this.knowledge.get(aux).getValue() < 3 )
-              if ( this.knowledge.get(aux).addPoints() ) {
-                 points--;
-              }
         }
     }
     
@@ -426,31 +431,30 @@ public class Royal extends Person {
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "barão,";
+                  this.concept = "Barão,";
                 else
-                  this.concept = "baronesa";
+                  this.concept = "Baronesa";
                 break;
             case 1:
                 if ( this.gender == 'm' )
-                  this.concept = " herdeiro real";
+                  this.concept = " Herdeiro real";
                 else
-                  this.concept = "herdeira real";
+                  this.concept = "Herdeira real";
                 break;
             case 2:
-                if ( this.gender == 'm' )
-                  this.concept = "cruzado";
+                this.concept = "Cruzado";
                 break;
             case 3:
                 if ( this.gender == 'm' )
-                  this.concept = "bastardo";
+                  this.concept = "Bastardo";
                 else
-                  this.concept = "bastarda";
+                  this.concept = "Bastarda";
                 break;
             case 4:
                 if (this.gender == 'm' )
-                  this.concept = "libertino";
+                  this.concept = "Libertino";
                 else
-                  this.concept = "libertino";
+                  this.concept = "Libertino";
         }
     }
 }

@@ -44,7 +44,7 @@ public class Knight extends Person {
          * 1 = dextreza;
          * 2 = vigor;
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                points--;
             }
@@ -76,7 +76,7 @@ public class Knight extends Person {
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
@@ -98,7 +98,7 @@ public class Knight extends Person {
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
                points--;
             }
@@ -145,7 +145,7 @@ public class Knight extends Person {
            }
         }
         
-        while( points != 0 ){
+        while( points > 0 ){
             aux = randomNumber(Expertise.SIZE);
             
             if ( this.expertise.get(aux).getValue() < 3 )
@@ -187,7 +187,7 @@ public class Knight extends Person {
            }
         }
         
-        while( points != 0 ){
+        while( points > 0 ){
             aux = randomNumber(Talent.SIZE);
             
             if ( this.talent.get(aux).getValue() < 3 )
@@ -228,7 +228,7 @@ public class Knight extends Person {
            }
         }
         
-        while( points != 0 ){
+        while( points > 0 ){
             aux = randomNumber(Knowledge.SIZE);
                     
             if ( this.knowledge.get(aux).getValue() < 3 )

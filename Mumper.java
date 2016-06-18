@@ -21,7 +21,7 @@ public class Mumper extends Person {
         toTertiarySkillPoints();
         
         //define a distribuição dos pontos bônus.
-        toPointsBonus();
+        //toPointsBonus();
     }
 
     /**
@@ -43,7 +43,7 @@ public class Mumper extends Person {
          * 1 = Inteligência.
          * 2 = Raciocínio.
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
@@ -52,7 +52,7 @@ public class Mumper extends Person {
        
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Mendigos recebem como segundários atributos mentais, entretanto atributos força não são pontuados
+     * Mendigos recebem como segundários atributos fisicos, entretanto atributos força não são pontuados
      * para aleijados
      */
     public void toSegundaryAttributePoints() {
@@ -65,9 +65,9 @@ public class Mumper extends Person {
          * Mortal: 6
          */
         if( this.lineage == 's' )
-          points = 7;
+          points = 4;
         else
-          points = 6;
+          points = 5;
           
         /*
          * Adiciona de forma aleatória os pontos, com exceção de pontos de força para aleijados.
@@ -76,7 +76,7 @@ public class Mumper extends Person {
          * 1 = dextreza;
          * 2 = vigor;
          */
-        while( points != 0 ){
+        while( points > 0 ){
             aux = randomNumber(Physical.SIZE);
             
             //condição para impedir a adição de pontos em força caso o conceito for aleijado(a)
@@ -104,7 +104,7 @@ public class Mumper extends Person {
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        while( points != 0 ){
+        while( points > 0 ){
             aux = randomNumber(Social.SIZE);
             if ( aux != 2 )
               if ( this.social.get(aux).addPoints() ) {
@@ -149,15 +149,14 @@ public class Mumper extends Person {
          * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
          * não adiciona pontos as habilidades as quais não tem como caracteristicas
          */
-        for(int i = 0; i < Expertise.SIZE; i++) {
-           if(i == 0 || i == 8 || i == 9) {
-              if ( this.expertise.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
         
-        while( points != 0 ){
+        if ( this.expertise.get(8).addPoints() ) 
+          points--;
+        
+        if ( this.expertise.get(9).addPoints() ) 
+          points--;
+                
+        while( points > 0 ){
             aux = randomNumber(Expertise.SIZE);
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 1 || aux != 3 || aux != 7 )
@@ -201,21 +200,19 @@ public class Mumper extends Person {
          * 9 = "Lábia".
          * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
          * não adiciona pontos as habilidades as quais não tem como caracteristicas.
-         */
-        for(int i = 0; i < Talent.SIZE; i++) {
-           if( i == 6 || i == 9 ) {
-              if ( this.talent.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
+         */       
+        if ( this.talent.get(6).addPoints() ) 
+          points--;
+          
+        if ( this.talent.get(9).addPoints() ) 
+          points--;
         
-        while( points != 0 ){
+        while( points > 0 ){
             aux = randomNumber(Expertise.SIZE);
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 2 || aux != 3 || aux != 8 )
-               if ( this.expertise.get(aux).getValue() < 3 )
-                 if ( this.expertise.get(aux).addPoints() )
+               if ( this.talent.get(aux).getValue() < 3 )
+                 if ( this.talent.get(aux).addPoints() )
                       points--;
         }
     }
@@ -256,20 +253,18 @@ public class Mumper extends Person {
          * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
          * não adiciona pontos as habilidades as quais não tem como caracteristicas.
          */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
-           if( i == 1 || i == 6 ) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
+        if ( this.knowledge.get(1).addPoints() ) 
+          points--;
         
-        while( points != 0 ){
+        if ( this.knowledge.get(6).addPoints() ) 
+          points--;
+        
+        while( points > 0 ){
             aux = randomNumber(Knowledge.SIZE);
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 0 || aux != 3 || aux != 4 || aux != 8 )
-               if ( this.expertise.get(aux).getValue() < 3 )
-                 if ( this.expertise.get(aux).addPoints() )
+               if ( this.knowledge.get(aux).getValue() < 3 )
+                 if ( this.knowledge.get(aux).addPoints() )
                       points--;
         }
     }

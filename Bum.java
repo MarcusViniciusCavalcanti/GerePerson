@@ -1,5 +1,5 @@
 /**
- * Classe Cavaleiro:
+ * Classe Ordinário:
  */ 
 
 public class Bum extends Person {
@@ -26,7 +26,7 @@ public class Bum extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cavaleiros recebem como primária atributos físicos.
+     * Ordinários recebem como primária atributos sociais.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -40,20 +40,21 @@ public class Bum extends Person {
                   
         /*
          * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
-         * 0 = força;
-         * 1 = dextreza;
-         * 2 = vigor;
+         * o loop termina quando os pontos acabam.
+         * 0 = carisma.
+         * 1 = manipulação.
+         * 2 = aparencia.
          */
-        while( points != 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+        while( points > 0 ){
+            if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
                points--;
             }
         }
     }
        
     /**
-     * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de cavaleiros recebem como segundários atributos mentais.
+     * Define a distribuição dos pontos dos atributos primária do personagem.
+     * Ordinários recebem como secundários atributos físicos.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -71,21 +72,20 @@ public class Bum extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
+         * 0 = força;
+         * 1 = dextreza;
+         * 2 = vigor;
          */
-        while( points != 0 ){
-            if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+        while( points > 0 ){
+            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                points--;
             }
         }
     }
-
+    
     /**
-     * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Define a distribuição dos pontos dos atributos primária do personagem.
+     * Ordinários recebem como secundários atributos mentais.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -94,12 +94,12 @@ public class Bum extends Person {
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
          * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
+         * 0 = Percepção.
+         * 1 = Inteligência.
+         * 2 = Raciocínio.
          */
-        while( points != 0 ){
-            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
+        while( points > 0 ){
+            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -123,49 +123,7 @@ public class Bum extends Person {
           points = 13;
         else
           points = 11;
-                  
-        /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
-         */
-        for(int i = 0; i < Expertise.SIZE; i++) {
-           if(i == 0 || i == 5 || i == 7) {
-              if ( this.expertise.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points != 0 ){
-            aux = randomNumber(Expertise.SIZE);
-            
-            if ( this.expertise.get(aux).getValue() < 3 )
-              if ( this.expertise.get(aux).addPoints() ) {
-                 points--;
-              }
-        }
-    }
-
-    public void toSegundarySkillPoints() {
-        int points = 0;
-        int aux = 0;
-        
-         
-        //define quantidade de pontuação baseando na linhagem.
-        if ( this.lineage == 's' )
-          points = 9;
-        else
-          points = 7;
-                  
+               
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
          * 0 = "Representação";
@@ -179,19 +137,61 @@ public class Bum extends Person {
          * 8 = "Liderança"; 
          * 9 = "Lábia".
          */
-        for(int i = 0; i < Talent.SIZE; i++) {
-           if(i == 3 || i == 6 || i == 8) {
-              if ( this.talent.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
         
-        while( points != 0 ){
+        if ( this.talent.get(3).addPoints() ) 
+          points--;
+        
+        if ( this.talent.get(7).addPoints() ) 
+          points--;
+        
+        if ( this.talent.get(9).addPoints() ) 
+          points--;
+        
+        while( points > 0 ){
             aux = randomNumber(Talent.SIZE);
             
             if ( this.talent.get(aux).getValue() < 3 )
               if ( this.talent.get(aux).addPoints() ) {
+                 points--;
+              }
+        }
+        
+    }
+
+    public void toSegundarySkillPoints() {
+        int points = 0;
+        int aux = 0;
+        
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 9;
+        else
+          points = 7;
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Empatia com animais";
+         * 1 = "Arqueirismo";
+         * 2 = "Artesanato"; 
+         * 3 = "Etiqueta";
+         * 4 = "Herborismo"; 
+         * 5 = "Armas brancas",
+         * 6 = "Música";
+         * 7 = "Cavalgar";
+         * 8 = "Furtividade"; 
+         * 9 = "Sobrevivência".
+         */
+        if ( this.expertise.get(5).addPoints() ) 
+          points--;
+        
+        if ( this.expertise.get(8).addPoints() ) 
+          points--;
+                
+        while( points > 0 ){
+            aux = randomNumber(Expertise.SIZE);
+            
+            if ( this.expertise.get(aux).getValue() < 3 )
+              if ( this.expertise.get(aux).addPoints() ) {
                  points--;
               }
         }
@@ -219,16 +219,14 @@ public class Bum extends Person {
          * 7 = "Polícia;
          * 8 = "Ciência" e; 
          * 9 = "Senescália".
-         */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
-           if(i == 0 || i == 2 || i == 7) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
+         */        
+        if ( this.expertise.get(1).addPoints() ) 
+          points--;
         
-        while( points != 0 ){
+        if ( this.expertise.get(6).addPoints() ) 
+          points--;
+        
+        while( points > 0 ){
             aux = randomNumber(Knowledge.SIZE);
                     
             if ( this.knowledge.get(aux).getValue() < 3 )
@@ -242,32 +240,41 @@ public class Bum extends Person {
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
-        int i = randomNumber(4);
+        int i = randomNumber(5);
         
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "Escudeiro";
+                  this.concept = "Bêbado";
                 else
-                  this.concept = "Escudeira";
+                  this.concept = "Bêbada";
                 break;
             case 1:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro Errante";
+                  this.concept = "Garoto de programa";
                 else
-                  this.concept = "Cavaleira Errante";
+                  this.concept = "Prostituta";
                 break;
             case 2:
-                if ( this.gender == 'm' )
-                  this.concept = "Cortesão";
-                else
-                  this.concept = "Cortesã";
+                this.concept = "agiota,";
                 break;
             case 3:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro nobre";
+                  this.concept = "Jogador viajante";
                 else
-                  this.concept = "Cavaleira nobre";
+                  this.concept = "Jogadora viajante";
+                break;
+            case 4:
+                if ( this.gender == 'm' )
+                  this.concept = "Briguenta";
+                else
+                  this.concept = "Briguenta";
+                  break;
+            case 5:
+                if ( this.gender == 'm' )
+                  this.concept = "Clérigo excumungado";
+                else 
+                  this.concept = "Freira excumungada";
                 break;
         }
     }
