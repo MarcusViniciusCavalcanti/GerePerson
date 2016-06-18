@@ -61,7 +61,7 @@ public class Royal extends Person {
              * 2 = vigor;
              */
             while( points > 0 ){
-                if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+                if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                    points--;
                 }
             }
@@ -74,7 +74,7 @@ public class Royal extends Person {
              * 2 = Aparência;
              */
             while( points > 0 ){
-                if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
+                if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                    points--;
                 }
             }
@@ -106,7 +106,7 @@ public class Royal extends Person {
              * 2 = Aparência;
              */
             while( points > 0 ){
-                if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
+                if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                    points--;
                 }
             }
@@ -120,7 +120,7 @@ public class Royal extends Person {
              * 2 = Raciocínio.
              */
             while( points > 0 ){
-                if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+                if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                    points--;
                 }
             }
@@ -143,7 +143,7 @@ public class Royal extends Person {
              * 2 = Raciocínio.
              */
             while( points > 0 ){
-                if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+                if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                    points--;
                 }
             }
@@ -157,7 +157,7 @@ public class Royal extends Person {
              * 2 = vigor;
              */
             while( points > 0 ){
-                if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+                if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                    points--;
                 }
             }
@@ -209,7 +209,7 @@ public class Royal extends Person {
               points--;
             
             while( points > 0 ){
-                aux = randomNumber(Talent.SIZE);
+                aux = randomNumber(this.talent.size());
                 
                 if ( this.talent.get(aux).getValue() < 3 )
                   if ( this.talent.get(aux).addPoints() ) {
@@ -241,7 +241,7 @@ public class Royal extends Person {
               points--;
               
             while( points > 0 ){
-                aux = randomNumber(Expertise.SIZE);
+                aux = randomNumber(this.knowledge.size());
                 
                 if ( this.knowledge.get(aux).getValue() < 3 )
                   if ( this.knowledge.get(aux).addPoints() ) {
@@ -300,7 +300,7 @@ public class Royal extends Person {
               points--;
             
             while( points > 0 ){
-                aux = randomNumber(Knowledge.SIZE);
+                aux = randomNumber(this.expertise.size());
                         
                 if ( this.expertise.get(aux).getValue() < 3 )
                   if ( this.expertise.get(aux).addPoints() ) {
@@ -329,7 +329,7 @@ public class Royal extends Person {
               points--;
             
             while( points > 0 ){
-                aux = randomNumber(Talent.SIZE);
+                aux = randomNumber(this.talent.size());
                 
                 if ( this.talent.get(aux).getValue() < 3 )
                   if ( this.talent.get(aux).addPoints() ) {
@@ -383,7 +383,7 @@ public class Royal extends Person {
               points--;
             
             while( points != 0 ){
-                aux = randomNumber(Expertise.SIZE);
+                aux = randomNumber(this.knowledge.size());
                 
                 if ( this.knowledge.get(aux).getValue() < 3 )
                   if ( this.knowledge.get(aux).addPoints() ) {
@@ -412,7 +412,7 @@ public class Royal extends Person {
               points--;
             
             while( points != 0 ){
-                aux = randomNumber(Knowledge.SIZE);
+                aux = randomNumber(this.expertise.size());
                         
                 if ( this.expertise.get(aux).getValue() < 3 )
                   if ( this.expertise.get(aux).addPoints() ) {
