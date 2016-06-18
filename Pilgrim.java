@@ -46,7 +46,7 @@ public class Pilgrim extends Person {
          * 2 = vigor;
          */
         while( points != 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+            if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                points--;
             }
         }
