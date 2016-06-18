@@ -72,9 +72,9 @@ public class Pilgrim extends Person {
         
         // Define a quantidade de pontos baseados na linhagem
         if( this.lineage == 's' )
-          points = 7;
+          points = 5;
         else
-          points = 6;
+          points = 4;
           
         /*
          * Adiciona os valores dos atributos finaliza 

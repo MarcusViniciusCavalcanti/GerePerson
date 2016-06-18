@@ -71,9 +71,9 @@ public class Bum extends Person {
         
         //define quantidade de pontuação baseando na linhagem.
         if( this.lineage == 's' )
-          points = 7;
+          points = 5;
         else
-          points = 6;
+          points = 4;
           
         /*
          * Adiciona de forma aleatória os pontos.

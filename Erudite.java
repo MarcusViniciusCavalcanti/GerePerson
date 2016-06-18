@@ -69,9 +69,9 @@ public class Erudite extends Person {
          * Mortal: 6
          */
         if( this.lineage == 's' )
-          points = 7;
+          points = 5;
         else
-          points = 6;
+          points = 4;
         
         
         /*
