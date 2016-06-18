@@ -1,5 +1,9 @@
 /**
- * Classe Artista:
+ * Classe Artist: Classe responsável pelo conceitos artista elencados me:
+ *  Pintor, músico, tecelão, ator;
+ *  Define os atributos primários como social, segundários como mental, terceários como físicos.
+ *  Suas habilidades princípal consistem na categoria de Talento suas habilidades segundárias
+ *  estão na categoia conhecimento e suas habilidades terciárias são perícia.
  */ 
 
 public class Artist extends Person {
