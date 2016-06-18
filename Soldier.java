@@ -45,7 +45,7 @@ public class Soldier extends Person {
          * 2 = vigor;
          */
         while( points != 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+            if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                points--;
             }
         }
@@ -77,7 +77,7 @@ public class Soldier extends Person {
          * 2 = aparencia.
          */
         while( points != 0 ){
-            if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }
         }
@@ -99,7 +99,7 @@ public class Soldier extends Person {
          * 2 = aparencia.
          */
         while( points != 0 ){
-            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                points--;
             }
         }
@@ -137,7 +137,7 @@ public class Soldier extends Person {
          * 8 = "Furtividade"; 
          * 9 = "Sobrevivência".
          */
-        for(int i = 0; i < Expertise.SIZE; i++) {
+        for(int i = 0; i < this.expertise.size(); i++) {
            if(i == 0 || i == 5 || i == 7) {
               if ( this.expertise.get(i).addPoints() ) {
                  points--;
@@ -146,7 +146,7 @@ public class Soldier extends Person {
         }
         
         while( points != 0 ){
-            aux = randomNumber(Expertise.SIZE);
+            aux = randomNumber(this.expertise.size());
             
             if ( this.expertise.get(aux).getValue() < 3 )
               if ( this.expertise.get(aux).addPoints() ) {
@@ -179,7 +179,7 @@ public class Soldier extends Person {
          * 8 = "Liderança"; 
          * 9 = "Lábia".
          */
-        for(int i = 0; i < Talent.SIZE; i++) {
+        for(int i = 0; i < this.talent.size(); i++) {
            if(i == 3 || i == 6 || i == 8) {
               if ( this.talent.get(i).addPoints() ) {
                  points--;
@@ -188,7 +188,7 @@ public class Soldier extends Person {
         }
         
         while( points != 0 ){
-            aux = randomNumber(Talent.SIZE);
+            aux = randomNumber(this.talent.size());
             
             if ( this.talent.get(aux).getValue() < 3 )
               if ( this.talent.get(aux).addPoints() ) {
@@ -220,7 +220,7 @@ public class Soldier extends Person {
          * 8 = "Ciência" e; 
          * 9 = "Senescália".
          */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
+        for(int i = 0; i < this.knowledge.size(); i++) {
            if(i == 0 || i == 2 || i == 7) {
               if ( this.knowledge.get(i).addPoints() ) {
                  points--;
@@ -229,7 +229,7 @@ public class Soldier extends Person {
         }
         
         while( points != 0 ){
-            aux = randomNumber(Knowledge.SIZE);
+            aux = randomNumber(this.knowledge.size());
                     
             if ( this.knowledge.get(aux).getValue() < 3 )
               if ( this.knowledge.get(aux).addPoints() ) {
