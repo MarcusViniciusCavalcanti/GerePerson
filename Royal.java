@@ -1,23 +1,28 @@
 /**
- * Classe Royal: Classe responsável pelo conceitos nobres elencados me:
- *  barão, herdeiro real, cruzado, bastardo, libertino;
- *  Define os atributos primários como sociais, segundários como conhecimento, terceários como físicos.
- *  Suas habilidades princípal consistem na categoria de conhecimento, porém tende a ter maior afinidade com:
- *   Instrução;
- *   Linguística.
- *  Suas habilidades segundárias estão entra as das categoia perícia com afinidade em:
- *   Representação e;
- *   Liderança.  
- *  Por ultimo suas habilidades terceárias são talentos com maior afinidade:
- *   Etiqueta e;
- *   Cavalgar.
- *   Obs:
+ * Classe responsável pelo conceitos nobres elencados barão, herdeiro real, cruzado, bastardo, libertino;
+ * Define os atributos primários como sociais, segundários como conhecimento, terceários como físicos.
+ * Suas habilidades princípal consistem na categoria de conhecimento, porém tende a ter maior afinidade com:
+ *  Instrução;
+ *  Linguística.
+ * Suas habilidades segundárias estão entra as das categoia perícia com afinidade em:
+ *  Representação e;
+ *  Liderança.  
+ * Por ultimo suas habilidades terceárias são talentos com maior afinidade:
+ *  Etiqueta e;
+ *  Cavalgar.
+ * Obs:
  *      Cruzados são guerreiros nobres, cavaleiros, sendo assim suas habilidades e atributos diferencial um pouco dos conceitos anteriores.
  *      
  *      Seus atributos são: físico, sociais, mentais, respectivamente
  *      Suas habilidades: talentos, perícia e conhecimento.
  */ 
 public class Royal extends Person {   
+    
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Royal() {
         super(); //inicializa o construtor da super classe.
         
@@ -40,7 +45,7 @@ public class Royal extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Nobres recebem como primária atributos sociais.
+     * baseados nas regrados dos conceitos.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -56,25 +61,20 @@ public class Royal extends Person {
             /*
              * Adiciona de forma aleatória os pontos.
              * o loop termina quando os pontos acabam.
-             * 0 = força;
-             * 1 = dextreza;
-             * 2 = vigor;
              */
             while( points > 0 ){
-                if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+                if ( this.physical.get( randomNumber(this.physical.size()) ).addPoints() ) {
                    points--;
                 }
             }
         }
         else {
             /*
-             * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
-             * 0 = Carisma;
-             * 1 = Manipulação;
-             * 2 = Aparência;
+             * Adiciona os valores dos atributos finaliza 
+             * o loop quando os pontos acabarem.
              */
             while( points > 0 ){
-                if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
+                if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                    points--;
                 }
             }
@@ -83,7 +83,7 @@ public class Royal extends Person {
        
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Nobres recebem como segundários atributos mentais.
+     * baseados nas regrados dos conceitos.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -100,13 +100,11 @@ public class Royal extends Person {
         
         if ( this.concept.equals("cruzado") ) {
             /*
-             * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
-             * 0 = Carisma;
-             * 1 = Manipulação;
-             * 2 = Aparência;
+             * Adiciona os valores dos atributos finaliza 
+             * o loop quando os pontos acabarem.
              */
             while( points > 0 ){
-                if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
+                if ( this.social.get( randomNumber(this.social.size()) ).addPoints() ) {
                    points--;
                 }
             }
@@ -115,12 +113,9 @@ public class Royal extends Person {
             /*
              * Adiciona de forma aleatória os pontos.
              * o loop termina quando os pontos acabam.
-             * 0 = Percepção.
-             * 1 = Inteligência.
-             * 2 = Raciocínio.
              */
             while( points > 0 ){
-                if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+                if ( this.mental.get( randomNumber(this.mental.size()) ).addPoints() ) {
                    points--;
                 }
             }
@@ -129,7 +124,7 @@ public class Royal extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Nobres recebem como terceários atributos físicos.
+     * baseados nas regrados dos conceitos.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -138,12 +133,9 @@ public class Royal extends Person {
             /*
              * Adiciona de forma aleatória os pontos.
              * o loop termina quando os pontos acabam.
-             * 0 = Percepção.
-             * 1 = Inteligência.
-             * 2 = Raciocínio.
              */
             while( points > 0 ){
-                if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+                if ( this.mental.get( randomNumber(this.mental.size()) ).addPoints() ) {
                    points--;
                 }
             }
@@ -152,9 +144,6 @@ public class Royal extends Person {
             /*
              * Adiciona de forma aleatória os pontos.
              * o loop termina quando os pontos acabam.
-             * 0 = força;
-             * 1 = dextreza;
-             * 2 = vigor;
              */
             while( points > 0 ){
                 if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
@@ -165,15 +154,8 @@ public class Royal extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Nobres, num máximo de 3 níveis.
-     * Nobres tem como habilidade principal Conhecimento, entretanto eles tende a ter mais afinidade com:
-     *  Instrução;
-     *  Linguística e;
-     *  Senescália.
-     * Excetos cruzados tem como habilidade princípal talento, com afinidades:
-     *  Prontidão;
-     *  Esportes e;
-     *  Liderança.
+     * Define a distribuição dos pontos das Habilidades primárias dos Nobres, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -185,19 +167,11 @@ public class Royal extends Person {
         else
           points = 11;
          
+        //Verificação das distribuições diferentes.
         if ( this.concept.equals("cruzado") ) {  
             /*
-             * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-             * 0 = "Representação";
-             * 1 = "Prontidão";
-             * 2 = "Esportes"; 
-             * 3 = "Briga";
-             * 4 = "Esquiva"; 
-             * 5 = "Empatia",
-             * 6 = "Intimidação";
-             * 7 = "Crime";
-             * 8 = "Liderança"; 
-             * 9 = "Lábia".
+             * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+             * não adiciona pontos as habilidades as quais não tem como caracteristicas
              */
             if ( this.talent.get(1).addPoints() ) 
               points--;
@@ -208,9 +182,12 @@ public class Royal extends Person {
             if ( this.talent.get(8).addPoints() ) 
               points--;
             
+            /*
+             * Adiciona de forma aleatória os pontos.
+             * o loop termina quando os pontos acabam.
+             */  
             while( points > 0 ){
-                aux = randomNumber(Talent.SIZE);
-                
+                aux = randomNumber(this.talent.size());
                 if ( this.talent.get(aux).getValue() < 3 )
                   if ( this.talent.get(aux).addPoints() ) {
                      points--;
@@ -219,17 +196,8 @@ public class Royal extends Person {
         }
         else {
             /*
-             * Adiciona os valores das Habilidades finaliza o for quando os pontos acabarem.
-             * 0 = "Instrução";
-             * 1 = "Sabedoria popular";
-             * 2 = "Investigação"; 
-             * 3 = "Direito";
-             * 4 = "Linguística; 
-             * 5 = "Medicina",
-             * 6 = "Ocultismo";
-             * 7 = "Polícia;
-             * 8 = "Ciência" e; 
-             * 9 = "Senescália".
+             * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+             * não adiciona pontos as habilidades as quais não tem como caracteristicas
              */
             if ( this.knowledge.get(0).addPoints() ) 
               points--;
@@ -240,9 +208,12 @@ public class Royal extends Person {
             if ( this.knowledge.get(9).addPoints() ) 
               points--;
               
+            /*
+             * Adiciona de forma aleatória os pontos.
+             * o loop termina quando os pontos acabam.
+             */    
             while( points > 0 ){
-                aux = randomNumber(Expertise.SIZE);
-                
+                aux = randomNumber(this.knowledge.size());
                 if ( this.knowledge.get(aux).getValue() < 3 )
                   if ( this.knowledge.get(aux).addPoints() ) {
                      points--;
@@ -251,21 +222,13 @@ public class Royal extends Person {
         }
     }
     
-    /**
-     * Define a distribuição dos pontos das Habilidades dos Nobres, num máximo de 3 níveis.
-     * Nobres tem como habilidade segundária Perícias, entretanto eles tende a ter mais afinidade com:
-     *  Representação e;
-     *  Liderança.  
-     * Excetos cruzados tem como habilidade princípal talento, com afinidades:
-     *  Empatia com animais;
-     *  Etiqueta;
-     *  Armas brancas e ;
-     *  Cavalgar.
+     /**
+     * Define a distribuição dos pontos das Habilidades secundárias dos Nobres, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toSegundarySkillPoints() {
         int points = 0;
         int aux = 0;
-        
          
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
@@ -273,19 +236,11 @@ public class Royal extends Person {
         else
           points = 7;
         
-        if ( this.concept.equals("cruzado") ) {
+        //Verificação das distribuições diferentes.
+        if ( this.concept.equals("cruzado") ) {            
             /*
-             * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-             * 0 = "Empatia com animais";
-             * 1 = "Arqueirismo";
-             * 2 = "Artesanato"; 
-             * 3 = "Etiqueta";
-             * 4 = "Herborismo"; 
-             * 5 = "Armas brancas",
-             * 6 = "Música";
-             * 7 = "Cavalgar";
-             * 8 = "Furtividade"; 
-             * 9 = "Sobrevivência".
+             * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+             * não adiciona pontos as habilidades as quais não tem como caracteristicas
              */
             if ( this.expertise.get(0).addPoints() ) 
               points--;
@@ -299,9 +254,12 @@ public class Royal extends Person {
             if ( this.expertise.get(7).addPoints() ) 
               points--;
             
+            /*
+             * Adiciona de forma aleatória os pontos.
+             * o loop termina quando os pontos acabam.
+             */ 
             while( points > 0 ){
-                aux = randomNumber(Knowledge.SIZE);
-                        
+                aux = randomNumber(Knowledge.SIZE);        
                 if ( this.expertise.get(aux).getValue() < 3 )
                   if ( this.expertise.get(aux).addPoints() ) {
                      points--;
@@ -310,27 +268,21 @@ public class Royal extends Person {
         }
         else {
             /*
-             * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-             * 0 = "Representação";
-             * 1 = "Prontidão";
-             * 2 = "Esportes"; 
-             * 3 = "Briga";
-             * 4 = "Esquiva"; 
-             * 5 = "Empatia",
-             * 6 = "Intimidação";
-             * 7 = "Crime";
-             * 8 = "Liderança"; 
-             * 9 = "Lábia".
+             * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+             * não adiciona pontos as habilidades as quais não tem como caracteristicas
              */
             if ( this.talent.get(0).addPoints() ) 
               points--;
           
             if ( this.talent.get(8).addPoints() ) 
               points--;
-            
+              
+            /*
+             * Adiciona de forma aleatória os pontos.
+             * o loop termina quando os pontos acabam.
+             */ 
             while( points > 0 ){
-                aux = randomNumber(Talent.SIZE);
-                
+                aux = randomNumber(talent.size());
                 if ( this.talent.get(aux).getValue() < 3 )
                   if ( this.talent.get(aux).addPoints() ) {
                      points--;
@@ -340,14 +292,8 @@ public class Royal extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Nobres, num máximo de 3 níveis.
-     * Nobres tem como habilidade segundária Perícias, entretanto eles tende a ter mais afinidade com:
-     *  Etiqueta e;
-     *  Cavalgar.  
-     * Excetos cruzados tem como habilidade princípal talento, com afinidades:
-     *  Instrução;
-     *  Linguística e;
-     *  Senescália.
+     * Define a distribuição dos pontos das Habilidades terceárias dos Nobres, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toTertiarySkillPoints() {
         int points = 0;
@@ -359,19 +305,11 @@ public class Royal extends Person {
         else
           points = 4;
         
+        //Verificação das distribuições diferentes.
         if ( this.concept.equals("cruzado") ) {
             /*
-             * Adiciona os valores das Habilidades finaliza o for quando os pontos acabarem.
-             * 0 = "Instrução";
-             * 1 = "Sabedoria popular";
-             * 2 = "Investigação"; 
-             * 3 = "Direito";
-             * 4 = "Linguística; 
-             * 5 = "Medicina",
-             * 6 = "Ocultismo";
-             * 7 = "Polícia;
-             * 8 = "Ciência" e; 
-             * 9 = "Senescália".
+             * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+             * não adiciona pontos as habilidades as quais não tem como caracteristicas
              */
             if ( this.knowledge.get(0).addPoints() ) 
               points--;
@@ -382,6 +320,10 @@ public class Royal extends Person {
             if ( this.knowledge.get(9).addPoints() ) 
               points--;
             
+            /*
+             * Adiciona de forma aleatória os pontos.
+             * o loop termina quando os pontos acabam.
+             */
             while( points != 0 ){
                 aux = randomNumber(Expertise.SIZE);
                 
@@ -393,27 +335,21 @@ public class Royal extends Person {
         }
         else {
             /*
-             * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-             * 0 = "Empatia com animais";
-             * 1 = "Arqueirismo";
-             * 2 = "Artesanato"; 
-             * 3 = "Etiqueta";
-             * 4 = "Herborismo"; 
-             * 5 = "Armas brancas",
-             * 6 = "Música";
-             * 7 = "Cavalgar";
-             * 8 = "Furtividade"; 
-             * 9 = "Sobrevivência".
+             * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+             * não adiciona pontos as habilidades as quais não tem como caracteristicas
              */
             if ( this.expertise.get(3).addPoints() ) 
               points--;
               
             if ( this.expertise.get(7).addPoints() ) 
               points--;
-            
+              
+            /*
+             * Adiciona de forma aleatória os pontos.
+             * o loop termina quando os pontos acabam.
+             */
             while( points != 0 ){
-                aux = randomNumber(Knowledge.SIZE);
-                        
+                aux = randomNumber(this.expertise.size());                        
                 if ( this.expertise.get(aux).getValue() < 3 )
                   if ( this.expertise.get(aux).addPoints() ) {
                      points--;

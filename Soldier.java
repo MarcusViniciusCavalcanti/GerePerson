@@ -1,9 +1,16 @@
 /**
- * Classe Cavaleiro:
+ * Classe responsável pela definição dos pontos de atributos e habilidades dos Soldado.
+ * Soldados tem como atributos princípal físicos, mentais e socias, são respectivamente secundários e terceários.
+ * Suas habilidades são perícias, talentos e conhecimento.
+ * Mercenarios e assassinos recebem 2 pontos de armas brancas e 3 pontos de furtividade inicialmente.
  */ 
 
 public class Soldier extends Person {
    
+    /**
+     * Define a distribuição dos pontos dos atributos primária do personagem.
+     * baseados nas regrados dos conceitos.
+     */
     public Soldier() {
         super(); //inicializa o construtor da super classe.
         
@@ -26,12 +33,11 @@ public class Soldier extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cavaleiros recebem como primária atributos físicos.
+     * Respeitando as regras de cada conceito
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
         
-         
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 7;
@@ -45,15 +51,15 @@ public class Soldier extends Person {
          * 2 = vigor;
          */
         while( points != 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+            if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                points--;
             }
         }
     }
        
     /**
-     * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de cavaleiros recebem como segundários atributos mentais.
+     * Define a distribuição dos pontos dos atributos primária do personagem.
+     * Respeitando as regras de cada conceito
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -71,21 +77,17 @@ public class Soldier extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
          */
-        while( points != 0 ){
-            if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+         while( points != 0 ){
+            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }
         }
     }
-
+    
     /**
-     * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Define a distribuição dos pontos dos atributos primária do personagem.
+     * Respeitando as regras de cada conceito
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -93,13 +95,9 @@ public class Soldier extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
          */
         while( points != 0 ){
-            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                points--;
             }
         }
@@ -107,12 +105,8 @@ public class Soldier extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Cavalerios tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Cavalgar;
-     *  Empatia com animais;
-     *  Armas brancas e;
-     *  Sobrevivência.  
+     * Define a distribuição dos pontos das Habilidades princípal dos Solados, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -125,71 +119,68 @@ public class Soldier extends Person {
           points = 11;
                   
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
+         * adiciona os pontos de habilidades
+         * baseado no conceito do soldado.
          */
-        for(int i = 0; i < Expertise.SIZE; i++) {
-           if(i == 0 || i == 5 || i == 7) {
-              if ( this.expertise.get(i).addPoints() ) {
-                 points--;
-              }
-           }
+        if( this.concept.equals("Mercenário") || this.concept.equals("Mercenária")
+                || this.concept.equals("Assassino") || this.concept.equals("Assassino") ) {
+             for(int i = 0; i < 2; i++ )
+              if ( this.expertise.get(5).addPoints() ) 
+                points--;
+             
+             for(int i = 0; i < 3; i++ )
+              if ( this.expertise.get(8).addPoints() ) 
+                points--;
         }
+        else
+          for(int i = 0; i < 3; i++ )
+              if ( this.expertise.get(5).addPoints() ) 
+                points--;
         
+        /*
+         * Adiciona os valores dos Skill finaliza o while
+         * quando os pontos acabarem.
+         */
         while( points != 0 ){
-            aux = randomNumber(Expertise.SIZE);
-            
+            aux = randomNumber(this.expertise.size());
             if ( this.expertise.get(aux).getValue() < 3 )
-              if ( this.expertise.get(aux).addPoints() ) {
+              if ( this.expertise.get(aux).addPoints() ) 
                  points--;
-              }
         }
     }
 
+    /**
+     * Define a distribuição dos pontos das Habilidades secundária dos Solados, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
+     */
     public void toSegundarySkillPoints() {
         int points = 0;
         int aux = 0;
         
-         
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 9;
         else
           points = 7;
-                  
+                       
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Representação";
-         * 1 = "Prontidão";
-         * 2 = "Esportes"; 
-         * 3 = "Briga";
-         * 4 = "Esquiva"; 
-         * 5 = "Empatia",
-         * 6 = "Intimidação";
-         * 7 = "Crime";
-         * 8 = "Liderança"; 
-         * 9 = "Lábia".
+         * Adicona pontos inicial em briga, intimidação e liderança.
          */
-        for(int i = 0; i < Talent.SIZE; i++) {
-           if(i == 3 || i == 6 || i == 8) {
-              if ( this.talent.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
+        if ( this.talent.get(3).addPoints() )
+          points--;
+          
+        if ( this.talent.get(6).addPoints() )
+          points--;
+          
+        if ( this.talent.get(8).addPoints() )
+          points--;
         
+        /*
+         * Adiciona os valores dos Skill finaliza o while
+         * quando os pontos acabarem.
+         */
         while( points != 0 ){
-            aux = randomNumber(Talent.SIZE);
-            
+            aux = randomNumber(this.talent.size());
             if ( this.talent.get(aux).getValue() < 3 )
               if ( this.talent.get(aux).addPoints() ) {
                  points--;
@@ -197,6 +188,10 @@ public class Soldier extends Person {
         }
     }
 
+    /**
+     * Define a distribuição dos pontos das Habilidades terceária dos Solados, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
+     */
     public void toTertiarySkillPoints() {
         int points = 0;
         int aux = 0;
@@ -208,29 +203,11 @@ public class Soldier extends Person {
           points = 4;
                   
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência" e; 
-         * 9 = "Senescália".
+         * Adiciona os valores dos Skill finaliza o while 
+         * quando os pontos acabarem.
          */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
-           if(i == 0 || i == 2 || i == 7) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points != 0 ){
-            aux = randomNumber(Knowledge.SIZE);
-                    
+        while( points > 0 ){
+            aux = randomNumber(this.knowledge.size());
             if ( this.knowledge.get(aux).getValue() < 3 )
               if ( this.knowledge.get(aux).addPoints() ) {
                  points--;
@@ -247,27 +224,30 @@ public class Soldier extends Person {
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "Escudeiro";
+                  this.concept = "Homem de armas";
                 else
-                  this.concept = "Escudeira";
+                  this.concept = "Mulher de armas";
                 break;
             case 1:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro Errante";
+                  this.concept = "Mercenário";
                 else
-                  this.concept = "Cavaleira Errante";
+                  this.concept = "Mercenária";
                 break;
             case 2:
                 if ( this.gender == 'm' )
-                  this.concept = "Cortesão";
+                  this.concept = "Veterano de guerra";
                 else
-                  this.concept = "Cortesã";
+                  this.concept = "Veterana de guerra";
                 break;
             case 3:
+                this.concept = "Guarda";
+                break;
+            case 4:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro nobre";
+                  this.concept = "Assassino";
                 else
-                  this.concept = "Cavaleira nobre";
+                  this.concept = "Assassina";
                 break;
         }
     }

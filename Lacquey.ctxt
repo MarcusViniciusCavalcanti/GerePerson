@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Lacquey()
-comment0.text=\n\ \n
+comment0.text=\n\ Construtor\:\n\ Inicializa\ os\ atributos\ e\ m\u00E9todos\ da\ super\ classe\ Person\n\ Invoca\ os\ m\u00E9todos\ para\ distribui\u00E7\u00E3o\ de\ pontos\ do\ personagem.\n
 comment1.params=
 comment1.target=void\ toPrimaryAttributePoints()
-comment1.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ dos\ atributos\ prim\u00E1rio\ do\ personagem.\n\ Lacaios\ ca\u00E7adores,\ patrulheiros,\ xerifes\ e\ torturadores,\ tem\ atributos\ prim\u00E1rio\ fisicos,\n\ por\u00E9m\ dama\ de\ companhia\ ou\ gigolo\ tem\ como\ princ\u00EDpal\ social\n
+comment1.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ dos\ atributos\ prim\u00E1ria\ do\ personagem.\n\ baseados\ nas\ regrados\ dos\ conceitos.\n
 comment2.params=
 comment2.target=void\ toSegundaryAttributePoints()
-comment2.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ dos\ atributos\ secund\u00E1rios\ do\ personagem.\n\ Lacaios\ tem\ atributos\ secund\u00E1rios\ mentais,\n
+comment2.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ dos\ atributos\ secund\u00E1rios\ do\ personagem.\n\ baseados\ nas\ regrados\ dos\ conceitos.\n
 comment3.params=
 comment3.target=void\ toTertiaryAttributePoints()
-comment3.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ dos\ atributos\ terce\u00E1rios\ do\ personagem.\n\ Lacaios\ ca\u00E7adores,\ patrulheiros,\ xerifes\ e\ torturadores,\ tem\ atributos\ terce\u00E1rios\ sociais,\n\ j\u00E1\ dama\ de\ companhia\ ou\ gigolo\ tem\ como\ final\ f\u00EDsicos\n
+comment3.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ dos\ atributos\ terce\u00E1rios\ do\ personagem.\n\ baseados\ nas\ regrados\ dos\ conceitos.\n
 comment4.params=
 comment4.target=void\ toPrimarySkillPoints()
 comment4.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ das\ Habilidades\ princ\u00EDpal\ dos\ Lacaios,\ num\ m\u00E1ximo\ de\ 3\ n\u00EDveis.\n\ Respeitando\ a\ regra\ para\ cada\ conceito.\n

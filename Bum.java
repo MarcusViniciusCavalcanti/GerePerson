@@ -1,9 +1,23 @@
 /**
- * Classe Ordinário:
+ * Classe responsáve pelos conceitos Ordinário.
+ * Recebe como atributos social, físico e mental como 
+ * primário, secundário e terceŕio respectivamente.
+ * Suas habilidades são compostas por: primárias talentos,
+ * porém recebe um ponto em briga, intimidação e lábia.
+ * Secundárias perícia e recebe um ponto inicialmente em 
+ * armas brancas e furtividade.
+ * Suas terceira catergoria de habilidade são conhecimento. 
+ * Inicializando a distribuição com 1 ponto em sabedoria popular 
+ * e ocultismo.
  */ 
 
 public class Bum extends Person {
    
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Bum() {
         super(); //inicializa o construtor da super classe.
         
@@ -30,8 +44,7 @@ public class Bum extends Person {
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
-        
-         
+
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 7;
@@ -39,14 +52,11 @@ public class Bum extends Person {
           points = 6;
                   
         /*
-         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
+         * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
          */
         while( points > 0 ){
-            if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
+            if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                points--;
             }
         }
@@ -59,11 +69,7 @@ public class Bum extends Person {
     public void toSegundaryAttributePoints() {
         int points;
         
-        /*
-         * Define a quantidade de pontos baseados na linhagem
-         * Sobrenatural: 7
-         * Mortal: 6
-         */
+        //define quantidade de pontuação baseando na linhagem.
         if( this.lineage == 's' )
           points = 7;
         else
@@ -72,12 +78,9 @@ public class Bum extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 0 = força;
-         * 1 = dextreza;
-         * 2 = vigor;
          */
         while( points > 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+            if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                points--;
             }
         }
@@ -93,13 +96,9 @@ public class Bum extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 
-         * 0 = Percepção.
-         * 1 = Inteligência.
-         * 2 = Raciocínio.
          */
         while( points > 0 ){
-            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }
         }
@@ -125,19 +124,9 @@ public class Bum extends Person {
           points = 11;
                
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Representação";
-         * 1 = "Prontidão";
-         * 2 = "Esportes"; 
-         * 3 = "Briga";
-         * 4 = "Esquiva"; 
-         * 5 = "Empatia",
-         * 6 = "Intimidação";
-         * 7 = "Crime";
-         * 8 = "Liderança"; 
-         * 9 = "Lábia".
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
          */
-        
         if ( this.talent.get(3).addPoints() ) 
           points--;
         
@@ -147,49 +136,45 @@ public class Bum extends Person {
         if ( this.talent.get(9).addPoints() ) 
           points--;
         
+        /*
+         * Adiciona de forma aleatória os pontos.
+         * o loop termina quando os pontos acabam.
+         */
         while( points > 0 ){
-            aux = randomNumber(Talent.SIZE);
-            
+            aux = randomNumber(this.talent.size());
             if ( this.talent.get(aux).getValue() < 3 )
               if ( this.talent.get(aux).addPoints() ) {
                  points--;
               }
         }
-        
     }
 
     public void toSegundarySkillPoints() {
         int points = 0;
         int aux = 0;
-        
          
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 9;
         else
           points = 7;
+          
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
          */
-        if ( this.expertise.get(5).addPoints() ) 
+        if ( this.expertise.get(1).addPoints() ) 
           points--;
         
         if ( this.expertise.get(8).addPoints() ) 
           points--;
-                
+         
+        /*
+         * Adiciona de forma aleatória os pontos.
+         * o loop termina quando os pontos acabam.
+         */
         while( points > 0 ){
-            aux = randomNumber(Expertise.SIZE);
-            
+            aux = randomNumber(this.expertise.size());
             if ( this.expertise.get(aux).getValue() < 3 )
               if ( this.expertise.get(aux).addPoints() ) {
                  points--;
@@ -208,27 +193,21 @@ public class Bum extends Person {
           points = 4;
                   
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência" e; 
-         * 9 = "Senescália".
-         */        
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
+         */       
         if ( this.expertise.get(1).addPoints() ) 
           points--;
         
         if ( this.expertise.get(6).addPoints() ) 
           points--;
         
+        /*
+         * Adiciona de forma aleatória os pontos.
+         * o loop termina quando os pontos acabam.
+         */
         while( points > 0 ){
-            aux = randomNumber(Knowledge.SIZE);
-                    
+            aux = randomNumber(this.knowledge.size());
             if ( this.knowledge.get(aux).getValue() < 3 )
               if ( this.knowledge.get(aux).addPoints() ) {
                  points--;

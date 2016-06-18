@@ -1,9 +1,20 @@
 /**
- * Classe Mendigos:
+ * Classe responsável pelo conceito Mendigos. 
+ * Estes tem como atributos primários mentais para ambos os conceitos
+ * secundários físicos, entretanto conceitos aleijados não recebem pontos de força
+ * E por ultimo atributos sociais.
+ * Habilidades primárias dos Mendigos é perícia, secundário talentos
+ * e conhecimento com terceárias.
+ * Pontos em aparência não são adicionados inicialmente.
  */ 
 
 public class Mumper extends Person {
    
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Mumper() {
         super(); //inicializa o construtor da super classe.
         
@@ -21,12 +32,12 @@ public class Mumper extends Person {
         toTertiarySkillPoints();
         
         //define a distribuição dos pontos bônus.
-        //toPointsBonus();
+        toPointsBonus();
     }
 
     /**
-     * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Mendigos recebem como primária atributos Mentais.
+     * Define a distribuição dos pontos dos atributos primária dos Mendigos 
+     * recebem como primária atributos Mentais.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -36,15 +47,9 @@ public class Mumper extends Person {
           points = 7;
         else
           points = 6;
-                  
-        /*
-         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
-         * 0 = Percepção.
-         * 1 = Inteligência.
-         * 2 = Raciocínio.
-         */
+        
         while( points > 0 ){
-            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }
         }
@@ -58,27 +63,20 @@ public class Mumper extends Person {
     public void toSegundaryAttributePoints() {
         int points;
         int aux;
-        
-        /*
-         * Define a quantidade de pontos baseados na linhagem
-         * Sobrenatural: 7
-         * Mortal: 6
-         */
+
+        //Define a quantidade de pontos baseados na linhagem
         if( this.lineage == 's' )
           points = 4;
         else
           points = 5;
           
         /*
-         * Adiciona de forma aleatória os pontos, com exceção de pontos de força para aleijados.
+         * Adiciona de forma aleatória os pontos, 
+         * com exceção de pontos de força para aleijados.
          * o loop termina quando os pontos acabam.
-         * 0 = força;
-         * 1 = dextreza;
-         * 2 = vigor;
          */
         while( points > 0 ){
-            aux = randomNumber(Physical.SIZE);
-            
+            aux = randomNumber(this.physical.size());   
             //condição para impedir a adição de pontos em força caso o conceito for aleijado(a)
             if ( aux == 0 && ( this.concept.equals("aleijado") || this.concept.equals("aleijada")) )
               continue; // instrução para o loop voltar ao inicio.
@@ -98,31 +96,19 @@ public class Mumper extends Person {
         
         /*
          * Adiciona de forma aleatória os pontos, exceto pontos em aparência.
-         * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
          */
         while( points > 0 ){
-            aux = randomNumber(Social.SIZE);
+            aux = randomNumber(this.social.size());
             if ( aux != 2 )
               if ( this.social.get(aux).addPoints() ) {
                  points--;
               }
         }
-        
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Mendigos, num máximo de 3 níveis.
-     * Mendigos tem como habilidade principal Perícias, entretanto eles tende a ter mais afinidade com:
-     *  Sobrevivência;
-     *  Furtividade.
-     * Outro ponto, os mendigos dente a não ter em suas caracteristicas pontos em:
-     *  Etiqueta; 
-     *  Cavalgar;
-     *  Arqueirismo;
+     * Define a distribuição dos pontos das Habilidades primárias dos Solados, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -135,29 +121,21 @@ public class Mumper extends Person {
           points = 11;
                   
         /*
-         * Adiciona os valores dos Skill finaliza o while quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
          * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
          * não adiciona pontos as habilidades as quais não tem como caracteristicas
          */
-        
         if ( this.expertise.get(8).addPoints() ) 
           points--;
         
         if ( this.expertise.get(9).addPoints() ) 
           points--;
-                
+         
+        /*
+         * Adiciona os valores dos Skill finaliza o while 
+         * quando os pontos acabarem.
+         */ 
         while( points > 0 ){
-            aux = randomNumber(Expertise.SIZE);
+            aux = randomNumber(this.expertise.size());
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 1 || aux != 3 || aux != 7 )
                if ( this.expertise.get(aux).getValue() < 3 )
@@ -167,14 +145,8 @@ public class Mumper extends Person {
     }
 
     /**
-     * Define a distribuição dos pontos das Habilidades dos Mendigos, num máximo de 3 níveis.
-     * Mendigos tem como habilidade segundária Talentos, entretanto eles tende a ter mais afinidade com:
-     *  Intimidação;
-     *  Lábia.
-     * Outro ponto, os mendigos dente a não ter em suas caracteristicas pontos em:
-     *  Briga; 
-     *  Liderança;
-     *  Esportes;
+     * Define a distribuição dos pontos das Habilidades secundárias dos Mendigos, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toSegundarySkillPoints() {
         int points = 0;
@@ -185,19 +157,8 @@ public class Mumper extends Person {
           points = 9;
         else
           points = 7;
-                  
-        /*
-         * Adiciona os valores dos Skill finaliza o while quando os pontos acabarem.
-         * 0 = "Representação";
-         * 1 = "Prontidão";
-         * 2 = "Esportes"; 
-         * 3 = "Briga";
-         * 4 = "Esquiva"; 
-         * 5 = "Empatia",
-         * 6 = "Intimidação";
-         * 7 = "Crime";
-         * 8 = "Liderança"; 
-         * 9 = "Lábia".
+       
+        /* 
          * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
          * não adiciona pontos as habilidades as quais não tem como caracteristicas.
          */       
@@ -206,9 +167,12 @@ public class Mumper extends Person {
           
         if ( this.talent.get(9).addPoints() ) 
           points--;
-        
+                   
+        /*
+         * Adiciona os valores dos Skill finaliza o while quando os pontos acabarem.
+         */
         while( points > 0 ){
-            aux = randomNumber(Expertise.SIZE);
+            aux = randomNumber(this.talent.size());
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 2 || aux != 3 || aux != 8 )
                if ( this.talent.get(aux).getValue() < 3 )
@@ -218,15 +182,8 @@ public class Mumper extends Person {
     }
 
     /**
-     * Define a distribuição dos pontos das Habilidades dos Mendigos, num máximo de 3 níveis.
-     * Mendigos tem como habilidade terceária Conhecimento, entretanto eles tende a ter mais afinidade com:
-     *  Sabedoria popular e;
-     *  Ocultismo.
-     * Outro ponto, os mendigos dente a não ter em suas caracteristicas pontos em:
-     *  Instrução; 
-     *  Direito;
-     *  Linguística e;
-     *  Ciência;
+     * Define a distribuição dos pontos das Habilidades terceária dos Mendigos, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toTertiarySkillPoints() {
         int points = 0;
@@ -237,20 +194,9 @@ public class Mumper extends Person {
           points = 5;
         else
           points = 4;
-                  
+          
         /*
-         * Adiciona os valores dos Skill finaliza o while quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência" e; 
-         * 9 = "Senescália".
-         * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+         *Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
          * não adiciona pontos as habilidades as quais não tem como caracteristicas.
          */
         if ( this.knowledge.get(1).addPoints() ) 
@@ -259,8 +205,12 @@ public class Mumper extends Person {
         if ( this.knowledge.get(6).addPoints() ) 
           points--;
         
+        /*
+         * Adiciona os valores dos Skill finaliza 
+         * o while quando os pontos acabarem.
+         */
         while( points > 0 ){
-            aux = randomNumber(Knowledge.SIZE);
+            aux = randomNumber(knowledge.size());
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 0 || aux != 3 || aux != 4 || aux != 8 )
                if ( this.knowledge.get(aux).getValue() < 3 )

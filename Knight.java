@@ -45,7 +45,7 @@ public class Knight extends Person {
          * 2 = vigor;
          */
         while( points > 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+            if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                points--;
             }
         }
@@ -157,8 +157,7 @@ public class Knight extends Person {
 
     public void toSegundarySkillPoints() {
         int points = 0;
-        int aux = 0;
-        
+        int aux = 0;     
          
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )

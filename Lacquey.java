@@ -28,9 +28,11 @@
  * Onde perícia recebe 1 ponto inicialmente armas brancas.
  */ 
 public class Lacquey extends Person {
-
+    
     /**
-     * 
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
      */
     public Lacquey() {
         super(); //inicializa o construtor da super classe.
@@ -53,9 +55,8 @@ public class Lacquey extends Person {
     }
 
     /**
-     * Define a distribuição dos pontos dos atributos primário do personagem.
-     * Lacaios caçadores, patrulheiros, xerifes e torturadores, tem atributos primário fisicos,
-     * porém dama de companhia ou gigolo tem como princípal social
+     * Define a distribuição dos pontos dos atributos primária do personagem.
+     * baseados nas regrados dos conceitos.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -69,12 +70,12 @@ public class Lacquey extends Person {
         if ( this.concept.equals("Dama de companhia") || this.concept.equals("gigolo") 
                 || this.concept.equals("Trovador") || this.concept.equals("Trovadora") )
           while( points > 0 ){
-              if ( this.social.get(randomNumber(Social.SIZE)).addPoints() )
+              if ( this.social.get(randomNumber(this.social.size())).addPoints() )
                 points--;
           }
         else
           while( points > 0 ){
-              if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+              if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                  points--;
               }
           }
@@ -82,7 +83,7 @@ public class Lacquey extends Person {
        
     /**
      * Define a distribuição dos pontos dos atributos secundários do personagem.
-     * Lacaios tem atributos secundários mentais,
+     * baseados nas regrados dos conceitos.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -98,7 +99,7 @@ public class Lacquey extends Person {
           points = 6;
         
         while( points > 0 ){
-            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }
         }
@@ -106,8 +107,7 @@ public class Lacquey extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos terceários do personagem.
-     * Lacaios caçadores, patrulheiros, xerifes e torturadores, tem atributos terceários sociais,
-     * já dama de companhia ou gigolo tem como final físicos
+     * baseados nas regrados dos conceitos.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -116,12 +116,12 @@ public class Lacquey extends Person {
         if ( this.concept.equals("Dama de companhia") || this.concept.equals("gigolo") 
                 || this.concept.equals("Trovador") || this.concept.equals("Trovadora") )
           while( points > 0 ){
-              if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() )
+              if ( this.physical.get(randomNumber(this.physical.size())).addPoints() )
                 points--;
           }
         else
           while( points > 0 ){
-              if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
+              if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                  points--;
               }
           }
@@ -158,7 +158,7 @@ public class Lacquey extends Person {
           
           //Adiciona os valores das habilidades finaliza o loop termina quando os pontos acabarem.  
           while( points > 0 ){
-              aux = randomNumber(Talent.SIZE);
+              aux = randomNumber(this.talent.size());
               if ( this.talent.get(aux).getValue() < 3 )
                 if ( this.talent.get(aux).addPoints() )
                   points--;
@@ -176,7 +176,7 @@ public class Lacquey extends Person {
                points--;
                
              while( points > 0 ){
-                 aux = randomNumber(Expertise.SIZE);
+                 aux = randomNumber(this.knowledge.size());
                  if ( this.knowledge.get(aux).getValue() < 3 )
                    if ( this.knowledge.get(aux).addPoints() )
                      points--;
@@ -198,7 +198,7 @@ public class Lacquey extends Person {
             }
           
             while( points > 0 ){
-                aux = randomNumber(Expertise.SIZE);
+                aux = randomNumber(this.expertise.size());
                 if ( this.expertise.get(aux).getValue() < 3 )
                   if ( this.expertise.get(aux).addPoints() )
                     points--;
@@ -232,7 +232,7 @@ public class Lacquey extends Person {
             points--;
             
           while( points > 0 ){
-              aux = randomNumber(Talent.SIZE);
+              aux = randomNumber(this.talent.size());
               if ( this.expertise.get(aux).getValue() < 3 )
                 if ( this.expertise.get(aux).addPoints() ) 
                    points--;
@@ -243,7 +243,7 @@ public class Lacquey extends Person {
             points--;
                 
           while( points > 0 ){
-              aux = randomNumber(Talent.SIZE);
+              aux = randomNumber(this.talent.size());
               if ( this.talent.get(aux).getValue() < 3 )
                 if ( this.talent.get(aux).addPoints() ) 
                    points--;
@@ -275,7 +275,7 @@ public class Lacquey extends Person {
             points--;
             
           while( points > 0 ){
-              aux = randomNumber(Expertise.SIZE);
+              aux = randomNumber(this.expertise.size());
               if ( this.expertise.get(aux).getValue() < 3 )
                 if ( this.expertise.get(aux).addPoints() ) 
                    points--;
@@ -284,7 +284,7 @@ public class Lacquey extends Person {
         else {
           if( this.concept.equals("Torturador") || this.concept.equals("Torturadora") )
             while( points > 0 ){
-                aux = randomNumber(Expertise.SIZE);
+                aux = randomNumber(this.expertise.size());
                 if ( this.expertise.get(aux).getValue() < 3 )
                   if ( this.expertise.get(aux).addPoints() ) 
                     points--;
@@ -298,7 +298,7 @@ public class Lacquey extends Person {
               points--;
                 
             while( points > 0 ){
-                aux = randomNumber(Knowledge.SIZE);
+                aux = randomNumber(this.knowledge.size());
                 if ( this.knowledge.get(aux).getValue() < 3 )
                   if ( this.knowledge.get(aux).addPoints() ) 
                     points--;

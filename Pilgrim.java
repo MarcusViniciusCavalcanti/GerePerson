@@ -14,6 +14,11 @@
 
 public class Pilgrim extends Person {
    
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Pilgrim() {
         super(); //inicializa o construtor da super classe.
         
@@ -48,13 +53,11 @@ public class Pilgrim extends Person {
           points = 6;
                   
         /*
-         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
-         * 0 = força;
-         * 1 = dextreza;
-         * 2 = vigor;
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
          */
         while( points > 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+            if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                points--;
             }
         }
@@ -67,25 +70,18 @@ public class Pilgrim extends Person {
     public void toSegundaryAttributePoints() {
         int points;
         
-        /*
-         * Define a quantidade de pontos baseados na linhagem
-         * Sobrenatural: 7
-         * Mortal: 6
-         */
+        // Define a quantidade de pontos baseados na linhagem
         if( this.lineage == 's' )
           points = 7;
         else
           points = 6;
           
         /*
-         * Adiciona de forma aleatória os pontos.
-         * o loop termina quando os pontos acabam.
-         * 0 = Percepção.
-         * 1 = Inteligência.
-         * 2 = Raciocínio.
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
          */
         while( points > 0 ){
-            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }
         }
@@ -99,14 +95,11 @@ public class Pilgrim extends Person {
         int points = 3;
         
         /*
-         * Adiciona de forma aleatória os pontos.
-         * o loop termina quando os pontos acabam.
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
          */
         while( points > 0 ){
-            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                points--;
             }
         }
@@ -114,10 +107,8 @@ public class Pilgrim extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Pelegrinos tem como habilidade principal Conhecimento, entretanto eles tende a ter mais afinidade com:
-     *  Sabedoria popular;
-     *  Ocultismo.
+     * Define a distribuição dos pontos das Habilidades primários dos Pelegrinos, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -128,28 +119,23 @@ public class Pilgrim extends Person {
           points = 13;
         else
           points = 11;
+          
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência" e; 
-         * 9 = "Senescália".
+         * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+         * não adiciona pontos as habilidades as quais não tem como caracteristicas
          */
         if ( this.knowledge.get(1).addPoints() ) 
           points--;
           
         if ( this.knowledge.get(6).addPoints() ) 
           points--;
-            
+        
+        /*
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
+         */
         while( points > 0 ){
-            aux = randomNumber(Knowledge.SIZE);
-                    
+            aux = randomNumber(this.knowledge.size()); 
             if ( this.knowledge.get(aux).getValue() < 3 )
               if ( this.knowledge.get(aux).addPoints() ) {
                  points--;
@@ -158,9 +144,8 @@ public class Pilgrim extends Person {
     }
 
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Pelegrinos tem como habilidade secundária perícia, entretanto eles tende a ter mais afinidade com:
-     *  Sobrevivência
+     * Define a distribuição dos pontos das Habilidades secundários dos Pelegrinos, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toSegundarySkillPoints() {
         int points = 0;
@@ -171,26 +156,21 @@ public class Pilgrim extends Person {
           points = 9;
         else
           points = 7;
+          
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
+         * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+         * não adiciona pontos as habilidades as quais não tem como caracteristicas
          */
         for(int i = 0; i < 2; i++)
             if ( this.expertise.get(9).addPoints() )
               points--;
    
+        /*
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
+         */ 
         while( points > 0 ){
-            aux = randomNumber(Expertise.SIZE);
-            
+            aux = randomNumber(this.expertise.size());
             if ( this.expertise.get(aux).getValue() < 3 )
               if ( this.expertise.get(aux).addPoints() )
                  points--;
@@ -199,9 +179,8 @@ public class Pilgrim extends Person {
     }
 
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Pelegrinos tem como ultima habilidade Talento, entretanto eles tende a ter mais afinidade com:
-     *  Empatia
+     * Define a distribuição dos pontos das Habilidades terceários dos Pelegrinos, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toTertiarySkillPoints() {
         int points = 0;
@@ -212,25 +191,20 @@ public class Pilgrim extends Person {
           points = 5;
         else
           points = 4;
+          
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Representação";
-         * 1 = "Prontidão";
-         * 2 = "Esportes"; 
-         * 3 = "Briga";
-         * 4 = "Esquiva"; 
-         * 5 = "Empatia",
-         * 6 = "Intimidação";
-         * 7 = "Crime";
-         * 8 = "Liderança"; 
-         * 9 = "Lábia".
+         * Adiciona um ponto as habilidades pré-estabelecida com maior afinidade e,
+         * não adiciona pontos as habilidades as quais não tem como caracteristicas
          */
     	if ( this.talent.get(5).addPoints() ) 
     	 points--;
         
+        /*
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
+         */ 
         while( points > 0 ){
-            aux = randomNumber(Talent.SIZE);
-            
+            aux = randomNumber(this.talent.size());
             if ( this.talent.get(aux).getValue() < 3 )
               if ( this.talent.get(aux).addPoints() ) 
                  points--;
