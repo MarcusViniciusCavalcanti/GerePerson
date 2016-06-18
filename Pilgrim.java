@@ -241,7 +241,7 @@ public class Pilgrim extends Person {
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
-        int i = randomNumber(3);
+        int i = randomNumber(4);
         
         switch ( i ) {
             case 0:             
@@ -257,7 +257,7 @@ public class Pilgrim extends Person {
                   this.concept = " Monja louca";
                 break;
             case 3:
-               this.concept = "Palmeirim";
+                this.concept = "Palmeirim";
                 break;
         }
     }

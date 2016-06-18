@@ -1,8 +1,37 @@
 /**
- * Classe Lacaio:
+ * Responsável pelo conceitos Lacaios.
+ * Lacaios caçadores, patrulheiros, xerifes e torturadores, tem atributos: fisicos, mentais e sociais nesta ordem, ao passo que,
+ * lacaios trovadores, dama de companhia ou gigolo recebem como atributos: sociais, mentais e físicos.
+ * 
+ * Os lacaios patrulheiros e xerifes tem como habilidades primarias conhecimentos. 
+ * Recebendo 1 ponto inicial em: 
+ *  Investigação;
+ *  Direito e;
+ *  Polícia.
+ * Suas habilidades secundárias são talento com afinidades em:
+ *  Prontidão;
+ * E perícias suas habilidades terceárias tem como caracteristica principal:
+ *  Armas brancas;
+ *  
+ * Os lacaio caçador  tem como primárias perícias recebe 3 pontos em arqueirismo e 2 em furtividade inicialmente.
+ * Secundárias talentos. E terceárias conhecimentos com maior afinidades;
+ *  Sabedoria popular e;
+ *  Investigação.
+ *  
+ * Trovadores e dama de companhia ou gigolo tem como habilidades princípal talento.
+ * adicionando 1 ponto em representação e 2 em lábia. Suas habilidades secundárias é perícia
+ * é principais:
+ *  Música.
+ *  Já suas habilidades terceárias são conhecimentos.
+ * 
+ * Por ultimo lacaios torturadores recebem como habilidades primarias perícia, conhecimento e talento.
+ * Onde perícia recebe 1 ponto inicialmente armas brancas.
  */ 
-
 public class Lacquey extends Person {
+
+    /**
+     * 
+     */
     public Lacquey() {
         super(); //inicializa o construtor da super classe.
         
@@ -24,35 +53,36 @@ public class Lacquey extends Person {
     }
 
     /**
-     * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cavaleiros recebem como primária atributos físicos.
+     * Define a distribuição dos pontos dos atributos primário do personagem.
+     * Lacaios caçadores, patrulheiros, xerifes e torturadores, tem atributos primário fisicos,
+     * porém dama de companhia ou gigolo tem como princípal social
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
-        
-         
+
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 7;
         else
           points = 6;
-                  
-        /*
-         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
-         * 0 = força;
-         * 1 = dextreza;
-         * 2 = vigor;
-         */
-        while( points != 0 ){
-            if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
-               points--;
-            }
-        }
+        
+        if ( this.concept.equals("Dama de companhia") || this.concept.equals("gigolo") 
+                || this.concept.equals("Trovador") || this.concept.equals("Trovadora") )
+          while( points > 0 ){
+              if ( this.social.get(randomNumber(Social.SIZE)).addPoints() )
+                points--;
+          }
+        else
+          while( points > 0 ){
+              if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
+                 points--;
+              }
+          }
     }
        
     /**
-     * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de cavaleiros recebem como segundários atributos mentais.
+     * Define a distribuição dos pontos dos atributos secundários do personagem.
+     * Lacaios tem atributos secundários mentais,
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -66,52 +96,41 @@ public class Lacquey extends Person {
           points = 7;
         else
           points = 6;
-          
-        /*
-         * Adiciona de forma aleatória os pontos.
-         * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
-         */
-        while( points != 0 ){
-            if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+        
+        while( points > 0 ){
+            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
         }
     }
 
     /**
-     * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Define a distribuição dos pontos dos atributos terceários do personagem.
+     * Lacaios caçadores, patrulheiros, xerifes e torturadores, tem atributos terceários sociais,
+     * já dama de companhia ou gigolo tem como final físicos
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
         
-        /*
-         * Adiciona de forma aleatória os pontos.
-         * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
-         */
-        while( points != 0 ){
-            if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
-               points--;
-            }
-        }
+        //Adiciona os valores dos Skill finaliza o for quando os pontos acabarem. 
+        if ( this.concept.equals("Dama de companhia") || this.concept.equals("gigolo") 
+                || this.concept.equals("Trovador") || this.concept.equals("Trovadora") )
+          while( points > 0 ){
+              if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() )
+                points--;
+          }
+        else
+          while( points > 0 ){
+              if ( this.social.get(randomNumber(Social.SIZE)).addPoints() ) {
+                 points--;
+              }
+          }
         
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Cavalerios tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Cavalgar;
-     *  Empatia com animais;
-     *  Armas brancas e;
-     *  Sobrevivência.  
+     * Define a distribuição dos pontos das Habilidades princípal dos Lacaios, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -122,80 +141,120 @@ public class Lacquey extends Person {
           points = 13;
         else
           points = 11;
-                  
-        /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
-         */
-        for(int i = 0; i < Expertise.SIZE; i++) {
-           if(i == 0 || i == 5 || i == 7) {
-              if ( this.expertise.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points != 0 ){
-            aux = randomNumber(Expertise.SIZE);
-            
-            if ( this.expertise.get(aux).getValue() < 3 )
-              if ( this.expertise.get(aux).addPoints() ) {
-                 points--;
-              }
-        }
-    }
 
+        /*
+         * Vai verirficar qual conceito o personagem tem 
+         * faz a distribuição dos pontos primários 
+         * respeitando a regra de cada conceito
+         */
+        if ( this.concept.equals("Gigolo") || this.concept.equals("Dama de companhia") 
+                      || this.concept.equals("Trovador") || this.concept.equals("Trovadora") ) {
+          for( int i = 0; i < 2; i++ )
+                if ( this.talent.get(9).addPoints() ) 
+                  points--;
+                    
+          if ( this.talent.get(0).addPoints() ) 
+            points--;
+          
+          //Adiciona os valores das habilidades finaliza o loop termina quando os pontos acabarem.  
+          while( points > 0 ){
+              aux = randomNumber(Talent.SIZE);
+              if ( this.talent.get(aux).getValue() < 3 )
+                if ( this.talent.get(aux).addPoints() )
+                  points--;
+          }
+        }
+        else {    
+          if ( this.concept.equals("Xerife") || this.concept.equals("Patrulheiro") || this.concept.equals("Patrulheira") ) {
+             if ( this.knowledge.get(2).addPoints() )
+               points--;
+             
+             if ( this.knowledge.get(3).addPoints() )
+               points--;
+               
+             if ( this.knowledge.get(7).addPoints() )
+               points--;
+               
+             while( points > 0 ){
+                 aux = randomNumber(Expertise.SIZE);
+                 if ( this.knowledge.get(aux).getValue() < 3 )
+                   if ( this.knowledge.get(aux).addPoints() )
+                     points--;
+             }    
+          }
+          else {
+            if( this.concept.equals("Caçador") || this.concept.equals("Caçadora") ) {
+              for( int i = 0; i < 3; i++ )
+                  if ( this.expertise.get(1).addPoints() ) 
+                    points--;
+            
+              for( int i = 0; i < 2; i++ )
+                  if ( this.expertise.get(8).addPoints() ) 
+                    points--;
+                }
+            else {
+              if ( this.expertise.get(5).addPoints() ) 
+                points--;
+            }
+          
+            while( points > 0 ){
+                aux = randomNumber(Expertise.SIZE);
+                if ( this.expertise.get(aux).getValue() < 3 )
+                  if ( this.expertise.get(aux).addPoints() )
+                    points--;
+            }  
+          }
+        }       
+    }
+    
+    /**
+     * Define a distribuição dos pontos das Habilidades secundárias dos Lacaios, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
+     */
     public void toSegundarySkillPoints() {
         int points = 0;
         int aux = 0;
-        
-         
+                 
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 9;
         else
           points = 7;
-                  
+       
         /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Representação";
-         * 1 = "Prontidão";
-         * 2 = "Esportes"; 
-         * 3 = "Briga";
-         * 4 = "Esquiva"; 
-         * 5 = "Empatia",
-         * 6 = "Intimidação";
-         * 7 = "Crime";
-         * 8 = "Liderança"; 
-         * 9 = "Lábia".
+         * Vai verirficar qual conceito o personagem tem 
+         * faz a distribuição dos pontos secundários 
+         * respeitando a regra de cada conceito
          */
-        for(int i = 0; i < Talent.SIZE; i++) {
-           if(i == 3 || i == 6 || i == 8) {
-              if ( this.talent.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points != 0 ){
-            aux = randomNumber(Talent.SIZE);
+        if ( this.concept.equals("Trovador") || this.concept.equals("Trovadora") 
+                    || this.concept.equals("Gigolo") || this.concept.equals("Dama de companhia") ) {
+          if ( this.expertise.get(6).addPoints() )
+            points--;
             
-            if ( this.talent.get(aux).getValue() < 3 )
-              if ( this.talent.get(aux).addPoints() ) {
-                 points--;
-              }
+          while( points > 0 ){
+              aux = randomNumber(Talent.SIZE);
+              if ( this.expertise.get(aux).getValue() < 3 )
+                if ( this.expertise.get(aux).addPoints() ) 
+                   points--;
+          }
+        }        
+        else {
+          if ( this.talent.get(1).addPoints() )
+            points--;
+                
+          while( points > 0 ){
+              aux = randomNumber(Talent.SIZE);
+              if ( this.talent.get(aux).getValue() < 3 )
+                if ( this.talent.get(aux).addPoints() ) 
+                   points--;
+          }
         }
     }
 
+    /**
+     * Define a distribuição dos pontos das Habilidades terceários dos Lacaios, num máximo de 3 níveis.
+     * Respeitando a regra para cada conceito.
+     */
     public void toTertiarySkillPoints() {
         int points = 0;
         int aux = 0;
@@ -205,35 +264,46 @@ public class Lacquey extends Person {
           points = 5;
         else
           points = 4;
-                  
-        /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência" e; 
-         * 9 = "Senescália".
-         */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
-           if(i == 0 || i == 2 || i == 7) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
         
-        while( points != 0 ){
-            aux = randomNumber(Knowledge.SIZE);
-                    
-            if ( this.knowledge.get(aux).getValue() < 3 )
-              if ( this.knowledge.get(aux).addPoints() ) {
-                 points--;
-              }
+        /*
+         * Vai verirficar qual conceito o personagem tem 
+         * faz a distribuição dos pontos terceários 
+         * respeitando a regra de cada conceito
+         */
+        if( this.concept.equals("Xerife") || this.concept.equals("Patrulheiro") || this.concept.equals("Patrulheira") ) {
+          if( this.expertise.get(5).addPoints() )
+            points--;
+            
+          while( points > 0 ){
+              aux = randomNumber(Expertise.SIZE);
+              if ( this.expertise.get(aux).getValue() < 3 )
+                if ( this.expertise.get(aux).addPoints() ) 
+                   points--;
+          }
+        }
+        else {
+          if( this.concept.equals("Torturador") || this.concept.equals("Torturadora") )
+            while( points > 0 ){
+                aux = randomNumber(Expertise.SIZE);
+                if ( this.expertise.get(aux).getValue() < 3 )
+                  if ( this.expertise.get(aux).addPoints() ) 
+                    points--;
+            }
+          else {
+            if ( this.concept.equals("Caçador") || this.concept.equals("Caçador") )
+              if( this.knowledge.get(1).addPoints() )
+                points--;
+                
+            if( this.knowledge.get(2).addPoints() )
+              points--;
+                
+            while( points > 0 ){
+                aux = randomNumber(Knowledge.SIZE);
+                if ( this.knowledge.get(aux).getValue() < 3 )
+                  if ( this.knowledge.get(aux).addPoints() ) 
+                    points--;
+            }
+          }
         }
     }
     
@@ -241,32 +311,41 @@ public class Lacquey extends Person {
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
-        int i = randomNumber(4);
+        int i = 4;//randomNumber(6);
         
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "Escudeiro";
+                  this.concept = "Caçador";
                 else
-                  this.concept = "Escudeira";
+                  this.concept = "Caçadora";
                 break;
             case 1:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro Errante";
+                  this.concept = "Patrulheiro";
                 else
-                  this.concept = "Cavaleira Errante";
+                  this.concept = "Patrulheira";
                 break;
             case 2:
                 if ( this.gender == 'm' )
-                  this.concept = "Cortesão";
+                  this.concept = "Trovador";
                 else
-                  this.concept = "Cortesã";
+                  this.concept = "Trovadora";
                 break;
             case 3:
+                this.concept = "Xerife";
+                break;
+            case 4:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro nobre";
+                  this.concept = "Torturador";
                 else
-                  this.concept = "Cavaleira nobre";
+                  this.concept = "Torturadora";
+                break;
+            case 5:
+                if ( this.gender == 'm' )
+                  this.concept = "Gigolo";
+                else
+                  this.concept = "Dama de companhia";
                 break;
         }
     }

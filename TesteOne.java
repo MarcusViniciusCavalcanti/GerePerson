@@ -11,7 +11,7 @@ public class TesteOne
         Scanner read = new Scanner(System.in);
          boolean exit = false;
         while (exit == false) {
-            Person person = new Pilgrim(); 
+            Person person = new Lacquey(); 
                 
             System.out.println("nome: " + person.getName() + " " + person.getLastName() + "\t\t" + "Conceito: "+ person.getConcept() + "\t\t" + "Idade: " + person.getAge());
             System.out.println();

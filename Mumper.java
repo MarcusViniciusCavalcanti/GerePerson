@@ -273,7 +273,7 @@ public class Mumper extends Person {
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
-        int i = randomNumber(5);
+        int i = randomNumber(6);
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )

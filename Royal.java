@@ -426,7 +426,7 @@ public class Royal extends Person {
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
-        int i = randomNumber(4);
+        int i = randomNumber(5);
         
         switch ( i ) {
             case 0:
