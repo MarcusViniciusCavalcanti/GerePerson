@@ -44,7 +44,7 @@ public class Mumper extends Person {
          * 2 = Raciocínio.
          */
         while( points > 0 ){
-            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
+            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }
         }
@@ -77,7 +77,7 @@ public class Mumper extends Person {
          * 2 = vigor;
          */
         while( points > 0 ){
-            aux = randomNumber(Physical.SIZE);
+            aux = randomNumber(this.physical.size());
             
             //condição para impedir a adição de pontos em força caso o conceito for aleijado(a)
             if ( aux == 0 && ( this.concept.equals("aleijado") || this.concept.equals("aleijada")) )
@@ -105,7 +105,7 @@ public class Mumper extends Person {
          * 2 = aparencia.
          */
         while( points > 0 ){
-            aux = randomNumber(Social.SIZE);
+            aux = randomNumber(this.social.size());
             if ( aux != 2 )
               if ( this.social.get(aux).addPoints() ) {
                  points--;
@@ -157,7 +157,7 @@ public class Mumper extends Person {
           points--;
                 
         while( points > 0 ){
-            aux = randomNumber(Expertise.SIZE);
+            aux = randomNumber(this.expertise.size());
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 1 || aux != 3 || aux != 7 )
                if ( this.expertise.get(aux).getValue() < 3 )
@@ -208,7 +208,7 @@ public class Mumper extends Person {
           points--;
         
         while( points > 0 ){
-            aux = randomNumber(Expertise.SIZE);
+            aux = randomNumber(this.talent.size());
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 2 || aux != 3 || aux != 8 )
                if ( this.talent.get(aux).getValue() < 3 )
@@ -260,7 +260,7 @@ public class Mumper extends Person {
           points--;
         
         while( points > 0 ){
-            aux = randomNumber(Knowledge.SIZE);
+            aux = randomNumber(this.knowledge.size());
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 0 || aux != 3 || aux != 4 || aux != 8 )
                if ( this.knowledge.get(aux).getValue() < 3 )
