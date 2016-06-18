@@ -1,5 +1,9 @@
 /**
- * Classe Artesão:
+ * Classe Craftsman: Classe responsável pelo conceitos artesão elencados me:
+ *  Ferreiro, alfaiata, costureiro, escultor;
+ *  Define os atributos primários como mental, segundários como sociais, terceários como físicos.
+ *  Suas habilidades princípal consistem na categoria de perícia suas habilidades segundárias
+ *  estão na categoia conhecimento e suas habilidades terciárias são talentos.
  */ 
 
 public class Craftsman extends Person {
@@ -26,7 +30,7 @@ public class Craftsman extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cavaleiros recebem como primária atributos físicos.
+     * Conceitos de artesão recebem como primária atributos físicos.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -54,7 +58,7 @@ public class Craftsman extends Person {
        
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de cavaleiros recebem como segundários atributos mentais.
+     * Conceitos de artesão recebem como segundários atributos mentais.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -86,7 +90,7 @@ public class Craftsman extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Conceitos de artesão recebem como terceários atributos Sociais.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -106,12 +110,10 @@ public class Craftsman extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Cavalerios tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Cavalgar;
-     *  Empatia com animais;
-     *  Armas brancas e;
-     *  Sobrevivência.  
+     * Define a distribuição dos pontos das Habilidades dos artesões, num máximo de 3 níveis.
+     * Artesões tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
+     *  Artesanato e;
+     *  Etiqueta
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -155,6 +157,12 @@ public class Craftsman extends Person {
         
     }
 
+    /**
+     * Define a distribuição dos pontos das Habilidades dos artesões, num máximo de 3 níveis.
+     * Artesões tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
+     *  Representação e;
+     *  Empatia.
+     */
     public void toSegundarySkillPoints() {
         int points = 0;
         int aux = 0;
@@ -199,6 +207,12 @@ public class Craftsman extends Person {
         
     }
 
+    /**
+     * Define a distribuição dos pontos das Habilidades dos artesões, num máximo de 3 níveis.
+     * Artesões tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
+     *  Instrução e;
+     *  Linguística.
+     */
     public void toTertiarySkillPoints() {
         int points = 0;
         int aux = 0;
