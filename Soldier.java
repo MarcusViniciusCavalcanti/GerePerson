@@ -79,6 +79,7 @@ public class Soldier extends Person {
          * o loop termina quando os pontos acabam.
          */
          while( points != 0 ){
+
             if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }

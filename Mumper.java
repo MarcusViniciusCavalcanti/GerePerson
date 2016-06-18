@@ -210,7 +210,7 @@ public class Mumper extends Person {
          * o while quando os pontos acabarem.
          */
         while( points > 0 ){
-            aux = randomNumber(knowledge.size());
+            aux = randomNumber(this.knowledge.size());
             //Condição para verificar se a habilidade escolhida não faz parte das exceções.
             if ( aux != 0 || aux != 3 || aux != 4 || aux != 8 )
                if ( this.knowledge.get(aux).getValue() < 3 )

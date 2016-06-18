@@ -67,6 +67,10 @@ public class Lacquey extends Person {
         else
           points = 6;
         
+        /*
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
+         */ 
         if ( this.concept.equals("Dama de companhia") || this.concept.equals("gigolo") 
                 || this.concept.equals("Trovador") || this.concept.equals("Trovadora") )
           while( points > 0 ){
@@ -98,6 +102,10 @@ public class Lacquey extends Person {
         else
           points = 6;
         
+        /*
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
+         */
         while( points > 0 ){
             if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
@@ -112,7 +120,10 @@ public class Lacquey extends Person {
     public void toTertiaryAttributePoints() {
         int points = 3;
         
-        //Adiciona os valores dos Skill finaliza o for quando os pontos acabarem. 
+        /*
+         * Adiciona os valores dos atributos finaliza 
+         * o loop quando os pontos acabarem.
+         */
         if ( this.concept.equals("Dama de companhia") || this.concept.equals("gigolo") 
                 || this.concept.equals("Trovador") || this.concept.equals("Trovadora") )
           while( points > 0 ){
@@ -230,7 +241,7 @@ public class Lacquey extends Person {
                     || this.concept.equals("Gigolo") || this.concept.equals("Dama de companhia") ) {
           if ( this.expertise.get(6).addPoints() )
             points--;
-            
+
           while( points > 0 ){
               aux = randomNumber(this.talent.size());
               if ( this.expertise.get(aux).getValue() < 3 )

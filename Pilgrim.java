@@ -103,7 +103,6 @@ public class Pilgrim extends Person {
                points--;
             }
         }
-        
     }
     
     /**

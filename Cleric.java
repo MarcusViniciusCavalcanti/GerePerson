@@ -1,10 +1,14 @@
 /**
- * Classe Artista:
+ * Classe Ceric: Classe responsável pelo conceitos cléricos elencados me:
+ *  Monge, leigo, estudante, sacerdote;
+ *  Define os atributos primários como Mentais, segundários como sociais, terceários como físicos.
+ *  Suas habilidades princípal consistem na categoria de conhecimento suas habilidades segundárias
+ *  estão entra as das categoia talentos e suas habilidades terciárias são perícias.
  */ 
 
-public class Artist extends Person {
-    
-    public Artist() {
+public class Cleric extends Person {
+   
+    public Cleric() {
         super(); //inicializa o construtor da super classe.
         
         //define conceito
@@ -26,7 +30,7 @@ public class Artist extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cavaleiros recebem como primária atributos físicos.
+     * Conceitos de cledrigos recebem como primária atributos Sociais.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -37,7 +41,7 @@ public class Artist extends Person {
           points = 7;
         else
           points = 6;
-          
+        
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
@@ -51,11 +55,12 @@ public class Artist extends Person {
                points--;
             }
         }          
+        
     }
        
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de cavaleiros recebem como segundários atributos mentais.
+     * Conceitos de clérigos recebem como atributos segundários mentais.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -73,9 +78,10 @@ public class Artist extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * Percapção
-         * Inteligência
-         * Raciocínio
+         * 
+         * 0 = Percepção.
+         * 1 = Inteligência.
+         * 2 = Reciocínio.
          */
         while( points > 0 ){
             if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
@@ -86,7 +92,7 @@ public class Artist extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Conceitos de clérigos recebem como terceários atributos físicos.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -105,12 +111,11 @@ public class Artist extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Cavalerios tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Cavalgar;
-     *  Empatia com animais;
-     *  Armas brancas e;
-     *  Sobrevivência.  
+     * Define a distribuição dos pontos das Habilidades dos clérigos, num máximo de 3 níveis.
+     * Clérigos tem como habilidade principal Conhecimento, entretanto eles tende a ter mais afinidade com:
+     *  Instrução;
+     *  Sabedoria popular e;
+     *  Linguístiva.  
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -121,6 +126,55 @@ public class Artist extends Person {
           points = 13;
         else
           points = 11;
+                  
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Instrução";
+         * 1 = "Sabedoria popular";
+         * 2 = "Investigação"; 
+         * 3 = "Direito";
+         * 4 = "Linguística; 
+         * 5 = "Medicina",
+         * 6 = "Ocultismo";
+         * 7 = "Polícia;
+         * 8 = "Ciência" e; 
+         * 9 = "Senescália".
+         */
+        for(int i = 0; i < this.knowledge.size(); i++) {
+           if(i == 0 || i == 1 || i == 4) {
+              if ( this.knowledge.get(i).addPoints() ) {
+                 points--;
+              }
+           }
+        }
+        
+        while( points > 0 ){
+            aux = randomNumber(this.knowledge.size());
+                    
+            if ( this.knowledge.get(aux).getValue() < 3 )
+              if ( this.knowledge.get(aux).addPoints() ) {
+                 points--;
+              }
+        }          
+    }
+
+    /**
+     * Define a distribuição dos pontos das Habilidades dos clérigos, num máximo de 3 níveis.
+     * Clérigos tem como habilidade secundária Conhecimento, entretanto eles tende a ter mais afinidade com:
+     *  Representação;
+     *  Empatia e;
+     *  Liderança.  
+     */
+    public void toSegundarySkillPoints() {
+        int points = 0;
+        int aux = 0;
+        
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 9;
+        else
+          points = 7;
                   
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
@@ -135,9 +189,8 @@ public class Artist extends Person {
          * 8 = "Liderança"; 
          * 9 = "Lábia".
          */
-        
         for(int i = 0; i < this.talent.size(); i++) {
-           if(i == 0 || i == 5 || i == 9) {
+           if(i == 0 || i == 5 || i == 8) {
               if ( this.talent.get(i).addPoints() ) {
                  points--;
               }
@@ -152,51 +205,13 @@ public class Artist extends Person {
                  points--;
               }
         }
-        
     }
 
-    public void toSegundarySkillPoints() {
-        int points = 0;
-        int aux = 0;
-        
-         
-        //define quantidade de pontuação baseando na linhagem.
-        if ( this.lineage == 's' )
-          points = 9;
-        else
-          points = 7;
-        
-        /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência"; 
-         * 9 = "Senescália".
-         */
-        for(int i = 0; i < this.knowledge.size(); i++) {
-           if(i == 0 || i == 4) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points > 0 ){
-            aux = randomNumber(this.knowledge.size());
-            
-            if ( this.knowledge.get(aux).getValue() < 3 )
-              if ( this.knowledge.get(aux).addPoints() ) {
-                 points--;
-              }
-        }
-    }
-
+    /**
+     * Define a distribuição dos pontos das Habilidades dos clérigos, num máximo de 3 níveis.
+     * Clérigos tem como habilidade terciária perícia, entretanto eles tende a ter mais afinidade com:
+     *  Etiqueta
+     */
     public void toTertiarySkillPoints() {
         int points = 0;
         int aux = 0;
@@ -206,7 +221,6 @@ public class Artist extends Person {
           points = 5;
         else
           points = 4;
-                  
         
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
@@ -221,14 +235,9 @@ public class Artist extends Person {
          * 8 = "Furtividade"; 
          * 9 = "Sobrevivência".
          */
-        for(int i = 0; i < this.expertise.size(); i++) {
-           if(i == 3 || i == 6) {
-              if ( this.expertise.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
+        if ( this.expertise.get(3).addPoints() ) 
+            points--;
+         
         while( points > 0 ){
             aux = randomNumber(this.expertise.size());
             
@@ -236,7 +245,7 @@ public class Artist extends Person {
               if ( this.expertise.get(aux).addPoints() ) {
                  points--;
               }
-        } 
+        }
     }
     
     /**
@@ -248,27 +257,24 @@ public class Artist extends Person {
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "Pintor";
+                  this.concept = "Monge";
                 else
-                  this.concept = "Pintora";
+                  this.concept = "Escudeira";
                 break;
             case 1:
                 if ( this.gender == 'm' )
-                  this.concept = "Músico";
+                  this.concept = "Leigo";
                 else
-                  this.concept = "Música";
+                  this.concept = "Leiga";
                 break;
             case 2:
-                if ( this.gender == 'm' )
-                  this.concept = "Tecelão";
-                else
-                  this.concept = "Tecelã";
+                this.concept = "Estudante";
                 break;
             case 3:
                 if ( this.gender == 'm' )
-                  this.concept = "Ator";
+                  this.concept = "Sacerdote";
                 else
-                  this.concept = "Atriz";
+                  this.concept = "Sacerdotisa";
                 break;
         }
     }
