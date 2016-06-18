@@ -71,9 +71,9 @@ public class Bum extends Person {
         
         //define quantidade de pontuação baseando na linhagem.
         if( this.lineage == 's' )
-          points = 7;
+          points = 5;
         else
-          points = 6;
+          points = 4;
           
         /*
          * Adiciona de forma aleatória os pontos.
@@ -219,7 +219,7 @@ public class Bum extends Person {
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
-        int i = randomNumber(6);
+        int i = randomNumber(8);
         
         switch ( i ) {
             case 0:
@@ -255,6 +255,15 @@ public class Bum extends Person {
                 else 
                   this.concept = "Freira excumungada";
                 break;
+            case 6:
+                if ( this.gender == 'm' )
+                  this.concept = "Judeu";
+                else 
+                  this.concept = "Judia";
+                break;  
+            case 7:
+                this.concept = "Nobre deserdado";
+                break;      
         }
     }
 }

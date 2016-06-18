@@ -66,9 +66,9 @@ public class Mumper extends Person {
 
         //Define a quantidade de pontos baseados na linhagem
         if( this.lineage == 's' )
-          points = 4;
-        else
           points = 5;
+        else
+          points = 4;
           
         /*
          * Adiciona de forma aleatória os pontos, 
