@@ -265,9 +265,9 @@ public class Knight extends Person {
                 break;
             case 3:
                 if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro nobre";
+                  this.concept = "Cavaleiro pobre";
                 else
-                  this.concept = "Cavaleira nobre";
+                  this.concept = "Cavaleira pobre";
                 break;
         }
     }

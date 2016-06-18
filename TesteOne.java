@@ -9,7 +9,7 @@ public class TesteOne
 {
     public static void main(String[] args) {  
         
-        Person person = new Mumper(); 
+        Person person = new Royal(); 
             
         System.out.println("nome: " + person.getName() + " " + person.getLastName() + "\t\t" + "Conceito: "+ person.getConcept() + "\t\t" + "Idade: " + person.getAge());
         System.out.println();
