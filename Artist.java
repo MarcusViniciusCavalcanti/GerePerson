@@ -26,7 +26,7 @@ public class Artist extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cavaleiros recebem como primária atributos físicos.
+     * Conceitos de artista recebem como primária atributos físicos.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -55,7 +55,7 @@ public class Artist extends Person {
        
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de cavaleiros recebem como segundários atributos mentais.
+     * Conceitos de artista recebem como segundários atributos mentais.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -86,7 +86,7 @@ public class Artist extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Conceitos de artista recebem como terceários atributos Sociais.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -105,12 +105,11 @@ public class Artist extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Cavalerios tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Cavalgar;
-     *  Empatia com animais;
-     *  Armas brancas e;
-     *  Sobrevivência.  
+     * Define a distribuição dos pontos das Habilidades dos Artistas, num máximo de 3 níveis.
+     * Artistas tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
+     *  Representação;
+     *  Empatia e;
+     *  Lábia;
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -155,6 +154,12 @@ public class Artist extends Person {
         
     }
 
+     /**
+     * Define a distribuição dos pontos das Habilidades dos Artistas, num máximo de 3 níveis.
+     * Artistas tem como habilidade secundaria conhecimento, entretanto eles tende a ter mais afinidade com:
+     *  Instrução e;
+     *  Linguística.
+     */
     public void toSegundarySkillPoints() {
         int points = 0;
         int aux = 0;
@@ -197,6 +202,12 @@ public class Artist extends Person {
         }
     }
 
+     /**
+     * Define a distribuição dos pontos das Habilidades dos Artistas, num máximo de 3 níveis.
+     * Artistas tem como habilidade terciária perícia, entretanto eles tende a ter mais afinidade com:
+     *  Etiqueta e;
+     *  Música.
+     */
     public void toTertiarySkillPoints() {
         int points = 0;
         int aux = 0;
