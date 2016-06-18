@@ -63,13 +63,6 @@ public class Mental {
         
         return false;
     }
-
-    /**
-     * Retorna os valores dos pontos
-     */
-    public int getValue() {
-        return this.value;
-    }
     
     /**
      * Popula a lista de atributos mentais.

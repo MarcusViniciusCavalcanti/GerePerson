@@ -1,6 +1,15 @@
 /**
- * Classe Pelegrino:
- * 
+ * Classe responsável pelo conceitos Pelegrinos elencados me:
+ *  barão, herdeiro real, cruzado, bastardo, libertino;
+ * Define os atributos primários como fisicos, segundários como conhecimento, terceários como sociais.
+ * Suas habilidades princípal consistem na categoria de conhecimento, porém tende a ter maior afinidade com:
+ *  Sabedoria popular;
+ *  Ocultismo.
+ * Suas habilidades segundárias estão entra as das categoia perícia com afinidade em:
+ *  Sobrevivência, recebem 2 pontos de sobrevivência iniciais.
+ *  Herborismo.  
+ * Por ultimo suas habilidades terceárias são talentos com maior afinidade:
+ *  Empatia;
  */ 
 
 public class Pilgrim extends Person {
@@ -27,12 +36,11 @@ public class Pilgrim extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cavaleiros recebem como primária atributos físicos.
+     * Pelegrinos recebem como primária atributos físicos.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
-        
-         
+  
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 7;
@@ -45,7 +53,7 @@ public class Pilgrim extends Person {
          * 1 = dextreza;
          * 2 = vigor;
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.physical.get(randomNumber(Physical.SIZE)).addPoints() ) {
                points--;
             }
@@ -54,7 +62,7 @@ public class Pilgrim extends Person {
        
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de cavaleiros recebem como segundários atributos mentais.
+     * Pelegrinos recebem como segundários atributos mentais.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -72,13 +80,12 @@ public class Pilgrim extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 
-         * 0 = carisma.
-         * 1 = manipulação.
-         * 2 = aparencia.
+         * 0 = Percepção.
+         * 1 = Inteligência.
+         * 2 = Raciocínio.
          */
-        while( points != 0 ){
-            if ( this.mental.get(randomNumber(Social.SIZE)).addPoints() ) {
+        while( points > 0 ){
+            if ( this.mental.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
         }
@@ -86,7 +93,7 @@ public class Pilgrim extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Pelegrinos recebem como terceários atributos Sociais.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -94,12 +101,11 @@ public class Pilgrim extends Person {
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
-         * 
          * 0 = carisma.
          * 1 = manipulação.
          * 2 = aparencia.
          */
-        while( points != 0 ){
+        while( points > 0 ){
             if ( this.social.get(randomNumber(Mental.SIZE)).addPoints() ) {
                points--;
             }
@@ -109,11 +115,9 @@ public class Pilgrim extends Person {
     
     /**
      * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
-     * Cavalerios tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Cavalgar;
-     *  Empatia com animais;
-     *  Armas brancas e;
-     *  Sobrevivência.  
+     * Pelegrinos tem como habilidade principal Conhecimento, entretanto eles tende a ter mais afinidade com:
+     *  Sabedoria popular;
+     *  Ocultismo.
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -124,90 +128,6 @@ public class Pilgrim extends Person {
           points = 13;
         else
           points = 11;
-                  
-        /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Empatia com animais";
-         * 1 = "Arqueirismo";
-         * 2 = "Artesanato"; 
-         * 3 = "Etiqueta";
-         * 4 = "Herborismo"; 
-         * 5 = "Armas brancas",
-         * 6 = "Música";
-         * 7 = "Cavalgar";
-         * 8 = "Furtividade"; 
-         * 9 = "Sobrevivência".
-         */
-        for(int i = 0; i < Expertise.SIZE; i++) {
-           if(i == 0 || i == 5 || i == 7) {
-              if ( this.expertise.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points != 0 ){
-            aux = randomNumber(Expertise.SIZE);
-            
-            if ( this.expertise.get(aux).getValue() < 3 )
-              if ( this.expertise.get(aux).addPoints() ) {
-                 points--;
-              }
-        }
-    }
-
-    public void toSegundarySkillPoints() {
-        int points = 0;
-        int aux = 0;
-        
-         
-        //define quantidade de pontuação baseando na linhagem.
-        if ( this.lineage == 's' )
-          points = 9;
-        else
-          points = 7;
-                  
-        /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Representação";
-         * 1 = "Prontidão";
-         * 2 = "Esportes"; 
-         * 3 = "Briga";
-         * 4 = "Esquiva"; 
-         * 5 = "Empatia",
-         * 6 = "Intimidação";
-         * 7 = "Crime";
-         * 8 = "Liderança"; 
-         * 9 = "Lábia".
-         */
-        for(int i = 0; i < Talent.SIZE; i++) {
-           if(i == 3 || i == 6 || i == 8) {
-              if ( this.talent.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points != 0 ){
-            aux = randomNumber(Talent.SIZE);
-            
-            if ( this.talent.get(aux).getValue() < 3 )
-              if ( this.talent.get(aux).addPoints() ) {
-                 points--;
-              }
-        }
-    }
-
-    public void toTertiarySkillPoints() {
-        int points = 0;
-        int aux = 0;
-         
-        //define quantidade de pontuação baseando na linhagem.
-        if ( this.lineage == 's' )
-          points = 5;
-        else
-          points = 4;
-                  
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
          * 0 = "Instrução";
@@ -221,15 +141,13 @@ public class Pilgrim extends Person {
          * 8 = "Ciência" e; 
          * 9 = "Senescália".
          */
-        for(int i = 0; i < Knowledge.SIZE; i++) {
-           if(i == 0 || i == 2 || i == 7) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points != 0 ){
+        if ( this.knowledge.get(1).addPoints() ) 
+          points--;
+          
+        if ( this.knowledge.get(6).addPoints() ) 
+          points--;
+            
+        while( points > 0 ){
             aux = randomNumber(Knowledge.SIZE);
                     
             if ( this.knowledge.get(aux).getValue() < 3 )
@@ -238,37 +156,108 @@ public class Pilgrim extends Person {
               }
         }
     }
+
+    /**
+     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
+     * Pelegrinos tem como habilidade secundária perícia, entretanto eles tende a ter mais afinidade com:
+     *  Sobrevivência
+     */
+    public void toSegundarySkillPoints() {
+        int points = 0;
+        int aux = 0;
+                 
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 9;
+        else
+          points = 7;
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Empatia com animais";
+         * 1 = "Arqueirismo";
+         * 2 = "Artesanato"; 
+         * 3 = "Etiqueta";
+         * 4 = "Herborismo"; 
+         * 5 = "Armas brancas",
+         * 6 = "Música";
+         * 7 = "Cavalgar";
+         * 8 = "Furtividade"; 
+         * 9 = "Sobrevivência".
+         */
+        for(int i = 0; i < 2; i++)
+            if ( this.expertise.get(9).addPoints() )
+              points--;
+   
+        while( points > 0 ){
+            aux = randomNumber(Expertise.SIZE);
+            
+            if ( this.expertise.get(aux).getValue() < 3 )
+              if ( this.expertise.get(aux).addPoints() )
+                 points--;
+        }
+
+    }
+
+    /**
+     * Define a distribuição dos pontos das Habilidades dos Cavaleiros, num máximo de 3 níveis.
+     * Pelegrinos tem como ultima habilidade Talento, entretanto eles tende a ter mais afinidade com:
+     *  Empatia
+     */
+    public void toTertiarySkillPoints() {
+        int points = 0;
+        int aux = 0;
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 5;
+        else
+          points = 4;
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Representação";
+         * 1 = "Prontidão";
+         * 2 = "Esportes"; 
+         * 3 = "Briga";
+         * 4 = "Esquiva"; 
+         * 5 = "Empatia",
+         * 6 = "Intimidação";
+         * 7 = "Crime";
+         * 8 = "Liderança"; 
+         * 9 = "Lábia".
+         */
+    	if ( this.talent.get(5).addPoints() ) 
+    	 points--;
+        
+        while( points > 0 ){
+            aux = randomNumber(Talent.SIZE);
+            
+            if ( this.talent.get(aux).getValue() < 3 )
+              if ( this.talent.get(aux).addPoints() ) 
+                 points--;
+        }
+    }
     
     /**
      * Define o conceito do personagem de forma aleatória.
      */
     private void toConcept() {      
-        int i = randomNumber(4);
+        int i = randomNumber(3);
         
         switch ( i ) {
-            case 0:
-                if ( this.gender == 'm' )
-                  this.concept = "Escudeiro";
-                else
-                  this.concept = "Escudeira";
+            case 0:             
+                this.concept = "Cruzado";
                 break;
             case 1:
-                if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro Errante";
-                else
-                  this.concept = "Cavaleira Errante";
+                this.concept = "Penitente";
                 break;
             case 2:
                 if ( this.gender == 'm' )
-                  this.concept = "Cortesão";
+                  this.concept = " Monge louco";
                 else
-                  this.concept = "Cortesã";
+                  this.concept = " Monja louca";
                 break;
             case 3:
-                if ( this.gender == 'm' )
-                  this.concept = "Cavaleiro nobre";
-                else
-                  this.concept = "Cavaleira nobre";
+               this.concept = "Palmeirim";
                 break;
         }
     }

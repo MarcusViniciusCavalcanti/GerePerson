@@ -7,11 +7,7 @@ comment1.target=java.lang.String\ getNameAttribute()
 comment1.text=\n\ @return\:\ nome\ do\ atributo.\n
 comment2.params=
 comment2.target=int\ getValue()
-<<<<<<< HEAD
 comment2.text=\n\ Valor\ das\ quantidade\ de\ pontos\ que\ o\ atributo\ tem.\n\ @return\:\ quantidade\ de\ pontos.\n
-=======
-comment2.text=\n\ Retorna\ os\ valores\ dos\ pontos\n
->>>>>>> 4f6b32ef351645ee7935e39a20e0c07fa763395c
 comment3.params=
 comment3.target=boolean\ addPoints()
 comment3.text=\n\ Adiciona\ pontos\ ao\ atributo\n\ @return\ \:\ retorna\ se\ a\ quantidade\ de\ pontos\ ultrapassou\ o\ limite\ pr\u00E9-estabelecido.\n\ verdadeiro\ para\ sim,\ e\ n\u00E3o\ adiciona\ mais\ nenhum\ ponto,\ false\ para\ n\u00E3o\ e\ adiciona\ o\ ponto\n

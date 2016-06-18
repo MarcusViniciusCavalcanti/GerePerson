@@ -7,19 +7,11 @@ comment1.target=java.lang.String\ getNameAttribute()
 comment1.text=\n\ @return\ o\ nome\ do\ atributo.\n
 comment2.params=
 comment2.target=int\ getValue()
-<<<<<<< HEAD
 comment2.text=\n\ @return\ o\ valor\ dos\ pontos\ do\ atributo.\n
-=======
-comment2.text=\n\ Retorna\ os\ valores\ dos\ pontos\n
->>>>>>> 4f6b32ef351645ee7935e39a20e0c07fa763395c
 comment3.params=
 comment3.target=boolean\ addPoints()
 comment3.text=\n\ Adiciona\ pontos\ ao\ atributo\n\ @return\ se\ os\ pontos\ foram\ adicionados\ true\ para\ adicionado\ false\ para\ n\u00E3o\n\ caso\ o\ atributo\ j\u00E1\ tenha\ o\ valor\ m\u00E1ximo\ de\ 5\n
 comment4.params=index
 comment4.target=void\ setAttributeName(int)
-<<<<<<< HEAD
 comment4.text=\n\ Popula\ a\ lista\ de\ atributos\ social.\n\ @param\ index\:\ recebe\ a\ posi\u00E7\u00E3o\ do\ nome\ do\ atributo.\n\ 0\ \=\ carisma\n\ 1\ \=\ manipula\u00E7\u00E3o.\n\ 2\ \=\ aparencia.\n
-=======
-comment4.text=\n\ Popula\ a\ lista\ de\ atributos\ social.\n\ @param\ index\:\ recebe\ a\ posi\u00E7\u00E3o\ do\ nome\ do\ atributo.\n
->>>>>>> 4f6b32ef351645ee7935e39a20e0c07fa763395c
 numComments=5

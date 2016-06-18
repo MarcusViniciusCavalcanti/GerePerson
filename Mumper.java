@@ -1,5 +1,5 @@
 /**
- * Classe Cavaleiro:
+ * Classe Mendigos:
  */ 
 
 public class Mumper extends Person {
