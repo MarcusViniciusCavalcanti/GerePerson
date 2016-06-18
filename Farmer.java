@@ -1,14 +1,14 @@
 /**
- * Classe Craftsman: Classe responsável pelo conceitos artesão elencados me:
- *  Ferreiro, alfaiata, costureiro, escultor;
- *  Define os atributos primários como mental, segundários como sociais, terceários como físicos.
+ * Classe Farmer: Classe responsável pelo conceitos camponês elencados me:
+ *  Criado, fazeneiro, pastor, servo;
+ *  Define os atributos primários como físicos, segundários como sociais, terceários como mentais.
  *  Suas habilidades princípal consistem na categoria de perícia suas habilidades segundárias
- *  estão na categoia talento e suas habilidades terciárias são conhecimento.
+ *  estão na categoia conhecimento e suas habilidades terciárias são talentos.
  */ 
 
-public class Craftsman extends Person {
-    
-    public Craftsman() {
+public class Farmer extends Person {
+   
+    public Farmer() {
         super(); //inicializa o construtor da super classe.
         
         //define conceito
@@ -30,7 +30,7 @@ public class Craftsman extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de artesão recebem como primária atributos físicos.
+     * Conceitos de Camponês recebem como primária atributos físicos.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -40,17 +40,16 @@ public class Craftsman extends Person {
         if ( this.lineage == 's' )
           points = 7;
         else
-          points = 6;
-                  
+          points = 6; 
+        
         /*
-         * Adiciona de forma aleatória os pontos.
-         * o loop termina quando os pontos acabam.
-         * Percapção
-         * Inteligência
-         * Raciocínio
+         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
+         * 0 = força;
+         * 1 = dextreza;
+         * 2 = vigor;
          */
         while( points > 0 ){
-            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
+            if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
                points--;
             }
         }
@@ -58,7 +57,7 @@ public class Craftsman extends Person {
        
     /**
      * Define a distribuição dos pontos dos atributos segundária do personagem.
-     * Conceitos de artesão recebem como segundários atributos mentais.
+     * Conceitos de camponês recebem como atributos segundários sociais.
      */
     public void toSegundaryAttributePoints() {
         int points;
@@ -72,7 +71,8 @@ public class Craftsman extends Person {
           points = 5;
         else
           points = 4;
-          
+        
+        
         /*
          * Adiciona de forma aleatória os pontos.
          * o loop termina quando os pontos acabam.
@@ -85,24 +85,27 @@ public class Craftsman extends Person {
             if ( this.social.get(randomNumber(this.social.size())).addPoints() ) {
                points--;
             }
-        }
+        }           
+        
     }
 
     /**
      * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de artesão recebem como terceários atributos Sociais.
+     * Conceitos de camponês recebem como terceários atributos mentais.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
         
         /*
-         * Adiciona os valores dos atributos finaliza o for quando os pontos acabarem.
-         * 0 = força;
-         * 1 = dextreza;
-         * 2 = vigor;
+         * Adiciona de forma aleatória os pontos.
+         * o loop termina quando os pontos acabam.
+         * 
+         * 0 = Percepção.
+         * 1 = Inteligência.
+         * 2 = Reciocínio.
          */
         while( points > 0 ){
-            if ( this.physical.get(randomNumber(this.physical.size())).addPoints() ) {
+            if ( this.mental.get(randomNumber(this.mental.size())).addPoints() ) {
                points--;
             }
         }
@@ -110,10 +113,11 @@ public class Craftsman extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades dos artesões, num máximo de 3 níveis.
-     * Artesões tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Artesanato e;
-     *  Etiqueta
+     * Define a distribuição dos pontos das Habilidades do camponês, num máximo de 3 níveis.
+     * Camponeses tem como habilidade principal Pericia, entretanto eles tende a ter mais afinidade com:
+     *  Empatia com animais e;
+     *  Herborismo; 
+     *  recebendo 2 pontos iniciais para os mesmos.
      */
     public void toPrimarySkillPoints() {
         int points = 0;
@@ -124,7 +128,7 @@ public class Craftsman extends Person {
           points = 13;
         else
           points = 11;
-       
+        
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
          * 0 = "Empatia com animais";
@@ -138,14 +142,16 @@ public class Craftsman extends Person {
          * 8 = "Furtividade"; 
          * 9 = "Sobrevivência".
          */
-        for(int i = 0; i < this.expertise.size(); i++) {
-           if(i == 2 || i == 3) {
-              if ( this.expertise.get(i).addPoints() ) {
-                 points--;
-              }
+        for(int i = 0; i < 2; i++) {
+           if ( this.expertise.get(0).addPoints() ) {
+              points--;
            }
+              
+           if ( this.expertise.get(4).addPoints() ) {
+                 points--;
+           } 
         }
-        
+         
         while( points > 0 ){
             aux = randomNumber(this.expertise.size());
             
@@ -153,15 +159,14 @@ public class Craftsman extends Person {
               if ( this.expertise.get(aux).addPoints() ) {
                  points--;
               }
-        } 
-        
+        }  
+              
     }
 
     /**
-     * Define a distribuição dos pontos das Habilidades dos artesões, num máximo de 3 níveis.
-     * Artesões tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Representação e;
-     *  Empatia.
+     * Define a distribuição dos pontos das Habilidades dos camponeses, num máximo de 3 níveis.
+     * camponeses tem como habilidade secundária Conhecimento, entretanto eles tende a ter mais afinidade com:
+     *  Sabedoria popular;  
      */
     public void toSegundarySkillPoints() {
         int points = 0;
@@ -173,7 +178,50 @@ public class Craftsman extends Person {
           points = 9;
         else
           points = 7;
-                  
+        
+        /*
+         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
+         * 0 = "Instrução";
+         * 1 = "Sabedoria popular";
+         * 2 = "Investigação"; 
+         * 3 = "Direito";
+         * 4 = "Linguística; 
+         * 5 = "Medicina",
+         * 6 = "Ocultismo";
+         * 7 = "Polícia;
+         * 8 = "Ciência" e; 
+         * 9 = "Senescália".
+         */
+        
+        if ( this.knowledge.get(1).addPoints() ) {
+           points--;
+        }
+        
+        while( points > 0 ){
+            aux = randomNumber(this.knowledge.size());
+                    
+            if ( this.knowledge.get(aux).getValue() < 3 )
+              if ( this.knowledge.get(aux).addPoints() ) {
+                 points--;
+              }
+        }              
+       
+    }
+
+    /**
+     * Define a distribuição dos pontos das Habilidades dos camponeses, num máximo de 3 níveis.
+     * camponeses tem como habilidade terciária talento, não há maior afinidade com com nenhuma habilidade.
+     */
+    public void toTertiarySkillPoints() {
+        int points = 0;
+        int aux = 0;
+         
+        //define quantidade de pontuação baseando na linhagem.
+        if ( this.lineage == 's' )
+          points = 5;
+        else
+          points = 4;
+         
         /*
          * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
          * 0 = "Representação";
@@ -188,67 +236,11 @@ public class Craftsman extends Person {
          * 9 = "Lábia".
          */
         
-        for(int i = 0; i < this.talent.size(); i++) {
-           if(i == 0 || i == 5) {
-              if ( this.talent.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
         while( points > 0 ){
             aux = randomNumber(this.talent.size());
             
             if ( this.talent.get(aux).getValue() < 3 )
               if ( this.talent.get(aux).addPoints() ) {
-                 points--;
-              }
-        } 
-        
-    }
-
-    /**
-     * Define a distribuição dos pontos das Habilidades dos artesões, num máximo de 3 níveis.
-     * Artesões tem como habilidade principal perícia, entretanto eles tende a ter mais afinidade com:
-     *  Instrução e;
-     *  Linguística.
-     */
-    public void toTertiarySkillPoints() {
-        int points = 0;
-        int aux = 0;
-         
-        //define quantidade de pontuação baseando na linhagem.
-        if ( this.lineage == 's' )
-          points = 5;
-        else
-          points = 4;
-                  
-        /*
-         * Adiciona os valores dos Skill finaliza o for quando os pontos acabarem.
-         * 0 = "Instrução";
-         * 1 = "Sabedoria popular";
-         * 2 = "Investigação"; 
-         * 3 = "Direito";
-         * 4 = "Linguística; 
-         * 5 = "Medicina",
-         * 6 = "Ocultismo";
-         * 7 = "Polícia;
-         * 8 = "Ciência"; 
-         * 9 = "Senescália".
-         */
-        for(int i = 0; i < this.knowledge.size(); i++) {
-           if(i == 0 || i == 4) {
-              if ( this.knowledge.get(i).addPoints() ) {
-                 points--;
-              }
-           }
-        }
-        
-        while( points > 0 ){
-            aux = randomNumber(this.knowledge.size());
-            
-            if ( this.knowledge.get(aux).getValue() < 3 )
-              if ( this.knowledge.get(aux).addPoints() ) {
                  points--;
               }
         }
@@ -263,24 +255,27 @@ public class Craftsman extends Person {
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "Ferreiro";
+                  this.concept = "Criado";
                 else
-                  this.concept = "Ferreiro";
+                  this.concept = "Criada";
                 break;
             case 1:
-                this.concept = "Alfaiate";
+                if ( this.gender == 'm' )
+                  this.concept = "Fazendeiro";
+                else
+                  this.concept = "Fazendeira";
                 break;
             case 2:
                 if ( this.gender == 'm' )
-                  this.concept = "Costureiro";
+                  this.concept = "Pastor";
                 else
-                  this.concept = "Costureira";
+                  this.concept = "Pastora";
                 break;
             case 3:
                 if ( this.gender == 'm' )
-                  this.concept = "Escultor";
+                  this.concept = "Servo";
                 else
-                  this.concept = "Escultora";
+                  this.concept = "Serva";
                 break;
         }
     }
