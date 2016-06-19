@@ -515,6 +515,8 @@ public class PersonToString {
     
     public String toString2() {
        String content = "";
+       
+       
        String attribute[][] = new String[Physical.SIZE][NUMBER_OF_ATTRIBUTE_LIST];
        String skill[][] = new String[Talent.SIZE][NUMBER_OF_SKILL_LIST];
        

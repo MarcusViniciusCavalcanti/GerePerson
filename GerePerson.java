@@ -11,9 +11,7 @@ public class GerePerson
     public static void main(String[] args) {  
         Scanner read = new Scanner(System.in);
         Random  rand = new Random();
-        
-        
-        
+      
         System.out.println("########################################################################");
         System.out.println("#                                                                      #");
         System.out.println("#                       Gerador de Personagem                          #");
