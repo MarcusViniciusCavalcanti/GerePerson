@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.params=fileName\ content
 comment0.target=CreateTxt(java.lang.String,\ java.lang.String)
+comment0.text=\n\ Construtor\:\ Cria\ a\ pasta\ para\ os\ arquivos\ na\ raiz\ da\ aplica\u00E7\u00E3o.\n\ Chama\ o\ m\u00E9todo\ que\ gera\ o\ nome\ do\ arquivo.\n\ Chama\ o\ m\u00E9todo\ que\ escreve\ dados\ no\ arquivo\ txt.\n\ @param\:\ Nome\ do\ arquivo.\n\ @param\:\ Dados\ do\ arquivo.\n
 comment1.params=content
 comment1.target=void\ recordFile(java.lang.String)
+comment1.text=\n\ M\u00E9todo\ que\ escreve\ dados\ no\ arquivo\ txt.\n\ @param\:\ Conte\u00FAdo\ do\ arquivo\ .txt.\n
 comment2.params=
 comment2.target=void\ createPath()
 comment2.text=\n\ Gera\ pasta\ na\ raiz\ da\ aplica\u00E7\u00E3o\ com\ o\ nome\ ArquivosTXT\n
