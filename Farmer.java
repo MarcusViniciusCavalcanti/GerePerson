@@ -8,7 +8,6 @@
  * @author (Matheus Mazepa e Vinicius Cavalcanti) 
  * @version (19.06.2016)
  */ 
-
 public class Farmer extends Person {
     /**
      * Construtor:
@@ -166,8 +165,7 @@ public class Farmer extends Person {
               if ( this.expertise.get(aux).addPoints() ) {
                  points--;
               }
-        }  
-              
+        }   
     }
 
     /**
@@ -212,7 +210,6 @@ public class Farmer extends Person {
                  points--;
               }
         }              
-       
     }
 
     /**

@@ -9,7 +9,6 @@ import java.util.Random;
  * @version (19.06.2016)
  */
 public class DbName {
-     
     private ArrayList<String> maleNames;
     private ArrayList<String> femaleNames;
     private ArrayList<String> lastName;
@@ -17,18 +16,18 @@ public class DbName {
     private static final Random rand = new Random();
     
     /**
-     * Construtor:
-     * Instancias as arrayList dos nomes e sobrenomes.
-     */
+    * Construtor:
+    * Instancias as arrayList dos nomes e sobrenomes.
+    */
     public DbName() {
         maleNames = new ArrayList<>();
         femaleNames = new ArrayList<>();
         lastName = new ArrayList<>();
     }
-    
-   /**
-     * Nomes masculinos que seram adicionado a lista de nomes
-     */
+
+    /**
+    * Nomes masculinos que seram adicionado a lista de nomes
+    */
     private void createMaleNames() {
         this.maleNames.add("Aros");
         this.maleNames.add("Lonios");
