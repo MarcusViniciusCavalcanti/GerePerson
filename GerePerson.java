@@ -37,7 +37,7 @@ public class GerePerson {
         boolean exit = false;
         while (exit == false) {              
             int aux = 0;
-            aux = rand.nextInt(16);
+            aux = rand.nextInt(15);
             Person person = null;
             
             switch (aux) {
@@ -66,7 +66,7 @@ public class GerePerson {
                      person = new Cleric();
                      break;
                  case 8:
-                     person = new Royal();
+                     person = new Foreign();
                      break;
                  case 9:
                      person = new Soldier();
@@ -85,9 +85,6 @@ public class GerePerson {
                      break;
                 case 14:
                      person = new Lacquey();
-                     break;
-                case 15:
-                     person = new Foreign();
                      break;
             }
             System.out.println(header);  
