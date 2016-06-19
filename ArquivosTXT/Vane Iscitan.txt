@@ -1,0 +1,35 @@
+########################################################################
+#                                                                      #
+#                       Gerador de Personagem                          #
+#                                                                      #
+########################################################################
+
+
+nome: Vane Iscitan		Conceito: Costureira		Idade: 26
+
+                                   ----------- A T R I B U T O S -----------
+
+     Físicos   			Sociais 			     Mentais
+   Força: oo---		    Carisma: ooo--		         Percepção: oooo-
+   Força: oo---		    Carisma: ooo--		         Percepção: oooo-
+Destreza: ooo--		Manipulação: ooo--		      Inteligência: oo---
+   Vigor: o----		  Aparência: oooo-		        Raciocínio: ooooo
+
+
+                                 ----------- H A B I L I D A D E S -----------
+
+     Talentos    			 Perícias 			      Conhecimentos
+Representação: oooo-		Empatia com animais: o----		        Instrução: o----
+    Prontidão: o----		        Arqueirismo: -----		Sabedoria popular: -----
+     Esportes: o----		         Artesanato: o----		     Investigação: -----
+        Briga: -----		           Etiqueta: ooo--		          Direito: o----
+      Esquiva: -----		         Herborismo: oo---		      Linguística: o----
+      Empatia: oo---		      Armas brancas: o----		         Medicina: -----
+  Intimidação: -----		             Música: oo---		        Ocultismo: o----
+        Crime: o----		           Cavalgar: o----		          Polícia: o----
+    Liderança: o----		        Furtividade: -----		          Ciência: -----
+        Lábia: -----		      Sobrevivência: oo---		       Senescália: -----
+
+					Força de Vontade:
+					    ooooooo---
+
