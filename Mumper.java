@@ -78,7 +78,7 @@ public class Mumper extends Person {
         while( points > 0 ){
             aux = randomNumber(this.physical.size());   
             //condição para impedir a adição de pontos em força caso o conceito for aleijado(a)
-            if ( aux == 0 && ( this.concept.equals("aleijado") || this.concept.equals("aleijada")) )
+            if ( aux == 0 && ( this.concept.equals("Aleijado") || this.concept.equals("Aleijada")) )
               continue; // instrução para o loop voltar ao inicio.
             else 
               if( this.physical.get(aux).addPoints() )
@@ -227,35 +227,35 @@ public class Mumper extends Person {
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "aleijado";
+                  this.concept = "Aleijado";
                 else
-                  this.concept = "aleijada";
+                  this.concept = "Aleijada";
                 break;
             case 1:
                 if ( this.gender == 'm' )
-                  this.concept = "escravo fugitivo";
+                  this.concept = "Escravo fugitivo";
                 else
-                  this.concept = "escrava fugitiva";
+                  this.concept = "Escrava fugitiva";
                 break;
             case 2:
                 if ( this.gender == 'm' )
-                  this.concept = "devedor";
+                  this.concept = "Devedor";
                 else
-                  this.concept = "devedora";
+                  this.concept = "Devedora";
                 break;
             case 3:
-                this.concept = "delinquente";
+                this.concept = "Delinquente";
                 break;
             case 4:
                 if (this.gender == 'm' )
-                  this.concept = "mutilado";
+                  this.concept = "Mutilado";
                 else
-                  this.concept = "multilada";
+                  this.concept = "Multilada";
             case 5:
                 if ( this.gender == 'm' )
-                  this.concept = "veterado";
+                  this.concept = "Veterado";
                 else
-                  this.concept = "veterada";
+                  this.concept = "Veterada";
         }
     }
 }

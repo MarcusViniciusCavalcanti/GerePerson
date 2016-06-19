@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=index
 comment0.target=Talent(int)
-comment0.text=\n\ Construtor\:\n\ Inicializa\ a\ habilidade\ pedindo\ qual\ nome\ ser\u00E1\ dado\ e\ instancia\ a\ vari\u00E1vel\ \n\ da\ inst\u00E2ncia\ value\ com\ 1.\n\ @param\ index\:\ qual\ nome\ ser\u00E1\ setado\ para\ este\ objeto.\n\ 0\ \=\ "Representa\u00E7\u00E3o";\n\ 1\ \=\ "Prontid\u00E3o";\n\ 2\ \=\ "Esportes";\ \n\ 3\ \=\ "Briga";\n\ 4\ \=\ "Esquiva";\ \n\ 5\ \=\ "Empatia",\n\ 6\ \=\ "Intimida\u00E7\u00E3o";\n\ 7\ \=\ "Crime";\n\ 8\ \=\ "Lideran\u00E7a"\ e;\ \n\ 9\ \=\ "L\u00E1bia".\n
+comment0.text=\n\ Construtor\:\n\ Inicializa\ a\ habilidade\ pedindo\ qual\ nome\ ser\u00E1\ dado\ e\ instancia\ a\ vari\u00E1vel\ \n\ da\ inst\u00E2ncia\ value\ com\ 0.\n\ @param\ index\:\ qual\ nome\ ser\u00E1\ setado\ para\ este\ objeto.\n\ 0\ \=\ "Representa\u00E7\u00E3o";\n\ 1\ \=\ "Prontid\u00E3o";\n\ 2\ \=\ "Esportes";\ \n\ 3\ \=\ "Briga";\n\ 4\ \=\ "Esquiva";\ \n\ 5\ \=\ "Empatia",\n\ 6\ \=\ "Intimida\u00E7\u00E3o";\n\ 7\ \=\ "Crime";\n\ 8\ \=\ "Lideran\u00E7a"\ e;\ \n\ 9\ \=\ "L\u00E1bia".\n
 comment1.params=
 comment1.target=java.lang.String\ getNameSkill()
 comment1.text=\n\ @return\ O\ nome\ do\ habilidade.\n

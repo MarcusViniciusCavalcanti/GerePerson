@@ -8,6 +8,11 @@
 
 public class Artist extends Person {
     
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Artist() {
         super(); //inicializa o construtor da super classe.
         

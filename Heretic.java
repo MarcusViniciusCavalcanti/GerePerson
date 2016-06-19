@@ -7,6 +7,11 @@
  *  Por ultimo suas habilidades terceárias são talentos.
  */ 
 public class Heretic extends Person {   
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Heretic() {
         super(); //inicializa o construtor da super classe.
         

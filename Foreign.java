@@ -194,7 +194,6 @@ public class Foreign extends Person {
               if ( this.talent.get(aux).addPoints() ) 
                  points--;
           }
-   
         }
         /*
          * Adiciona os valores dos Skill finaliza o while

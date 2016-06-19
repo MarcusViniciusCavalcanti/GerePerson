@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=index
 comment0.target=Expertise(int)
-comment0.text=\n\ Construtor\:\n\ Inicializa\ a\ habilidade\ pedindo\ qual\ nome\ ser\u00E1\ dado\ e\ instancia\ a\ vari\u00E1vel\ \n\ da\ inst\u00E2ncia\ value\ com\ 1.\n\ @param\ index\:\ qual\ nome\ ser\u00E1\ setado\ para\ este\ objeto.\n\ 0\ \=\ "Empatia\ com\ animais";\n\ 1\ \=\ "Arqueirismo";\n\ 2\ \=\ "Artesanato";\ \n\ 3\ \=\ "Etiqueta";\n\ 4\ \=\ "Herborismo";\ \n\ 5\ \=\ "Armas\ brancas",\n\ 6\ \=\ "M\u00FAsica";\n\ 7\ \=\ "Cavalgar";\n\ 8\ \=\ "Furtividade"\ e;\ \n\ 9\ \=\ "Sobreviv\u00EAncia".\n
+comment0.text=\n\ Construtor\:\n\ Inicializa\ a\ habilidade\ pedindo\ qual\ nome\ ser\u00E1\ dado\ e\ instancia\ a\ vari\u00E1vel\ \n\ da\ inst\u00E2ncia\ value\ com\ 0.\n\ @param\ index\:\ qual\ nome\ ser\u00E1\ setado\ para\ este\ objeto.\n\ 0\ \=\ "Empatia\ com\ animais";\n\ 1\ \=\ "Arqueirismo";\n\ 2\ \=\ "Artesanato";\ \n\ 3\ \=\ "Etiqueta";\n\ 4\ \=\ "Herborismo";\ \n\ 5\ \=\ "Armas\ brancas",\n\ 6\ \=\ "M\u00FAsica";\n\ 7\ \=\ "Cavalgar";\n\ 8\ \=\ "Furtividade"\ e;\ \n\ 9\ \=\ "Sobreviv\u00EAncia".\n
 comment1.params=
 comment1.target=java.lang.String\ getNameSkill()
 comment1.text=\n\ @return\ O\ nome\ do\ habilidade.\n

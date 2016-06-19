@@ -7,7 +7,11 @@
  */ 
 
 public class Craftsman extends Person {
-    
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Craftsman() {
         super(); //inicializa o construtor da super classe.
         
@@ -34,8 +38,7 @@ public class Craftsman extends Person {
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
-        
-         
+
         //define quantidade de pontuação baseando na linhagem.
         if ( this.lineage == 's' )
           points = 7;
@@ -148,7 +151,6 @@ public class Craftsman extends Person {
         
         while( points > 0 ){
             aux = randomNumber(this.expertise.size());
-            
             if ( this.expertise.get(aux).getValue() < 3 )
               if ( this.expertise.get(aux).addPoints() ) {
                  points--;

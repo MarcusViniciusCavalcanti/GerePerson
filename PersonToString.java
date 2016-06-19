@@ -31,7 +31,6 @@ public class PersonToString {
      *  Nome (baseado no gênero) e;
      *  Sobrenome;
      * Inicializa definindo um valor inicial de pontos de vontade.
-     * @param value: espera um valor inteiro dos pontos de vontade.
      */
     public PersonToString() {
         toGender();    //define gênero.

@@ -1,9 +1,17 @@
 /**
- * Classe Cavaleiro:
+ * Classe Knight: Classe responsável pelo conceitos cavaleiros elencados me:
+ *  Ecudeiro, Cavaleiro errante, Cortesão, Cavaleiro pobre;
+ *  Define os atributos primários como físicos, segundários como sociais, terceários como Mentais.
+ *  Suas habilidades princípal consistem na categoria de perícias suas habilidades segundárias
+ *  estão entra as das categoia talentos e suas habilidades terciárias são conhecimentos.
  */ 
 
 public class Knight extends Person {
-   
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Knight() {
         super(); //inicializa o construtor da super classe.
         

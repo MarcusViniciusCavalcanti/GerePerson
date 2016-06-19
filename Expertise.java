@@ -12,7 +12,7 @@ public class Expertise {
     /**
      * Construtor:
      * Inicializa a habilidade pedindo qual nome será dado e instancia a variável 
-     * da instância value com 1.
+     * da instância value com 0.
      * @param index: qual nome será setado para este objeto.
      * 0 = "Empatia com animais";
      * 1 = "Arqueirismo";

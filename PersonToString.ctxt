@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PersonToString()
-comment0.text=\n\ Construtor\:\ Inicializa\ os\ m\u00E9todo\ que\ definiram\:\n\ \ G\u00EAnero;\n\ \ Linhage;\n\ \ Idade;\n\ \ Nome\ (baseado\ no\ g\u00EAnero)\ e;\n\ \ Sobrenome;\n\ Inicializa\ definindo\ um\ valor\ inicial\ de\ pontos\ de\ vontade.\n\ @param\ value\:\ espera\ um\ valor\ inteiro\ dos\ pontos\ de\ vontade.\n
+comment0.text=\n\ Construtor\:\ Inicializa\ os\ m\u00E9todo\ que\ definiram\:\n\ \ G\u00EAnero;\n\ \ Linhage;\n\ \ Idade;\n\ \ Nome\ (baseado\ no\ g\u00EAnero)\ e;\n\ \ Sobrenome;\n\ Inicializa\ definindo\ um\ valor\ inicial\ de\ pontos\ de\ vontade.\n
 comment1.params=
 comment1.target=char\ getLineage()
 comment1.text=\n\ @return\:\ Linhagem\ do\ personagem\ M\ para\ mortal,\ S\ para\ sobrenatural\n
