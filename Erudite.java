@@ -6,6 +6,11 @@
  *  estão entra as das categoia talentos e suas habilidades terciárias são perícias.
  */ 
 public class Erudite extends Person {   
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Erudite() {
         super(); //inicializa o construtor da super classe.
         
