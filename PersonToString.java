@@ -274,20 +274,20 @@ public class PersonToString {
                     aux = randomNumber(this.NUMBER_OF_SKILL_LIST);
                     if ( points > 2) {
                         if ( aux == 0 ) {
-                            aux = randomNumber(Expertise.SIZE);
+                            aux = randomNumber(this.expertise.size());
                             if ( this.expertise.get(aux).addPoints() ) {
                                 points -= 2;
                             }
                         }
                         else {
                             if ( aux == 1 ) {
-                                aux = randomNumber(Talent.SIZE);
+                                aux = randomNumber(this.talent.size());
                                 if ( this.talent.get(aux).addPoints() ) {
                                     points -= 2;
                                 }   
                             }
                             else {              
-                                aux = randomNumber(Knowledge.SIZE);
+                                aux = randomNumber(this.knowledge.size());
                                 if ( this.knowledge.get(aux).addPoints() ) {
                                     points -= 2;
                                 }
@@ -303,20 +303,20 @@ public class PersonToString {
                     aux = randomNumber(this.NUMBER_OF_ATTRIBUTE_LIST);
                     if (points > 5 ){
                         if ( aux == 0 ) {
-                            aux = randomNumber(Physical.SIZE);
+                            aux = randomNumber(this.physical.size());
                             if ( this.physical.get(aux).addPoints() ) {
                                 points -= 5;
                             }
                         }
                         else {
                             if ( aux == 1 ) {
-                                aux = randomNumber(Social.SIZE);
+                                aux = randomNumber(this.social.size());
                                 if ( this.social.get(aux).addPoints() ) {
                                     points -= 5;
                                 }
                             }
                             else {
-                                aux = randomNumber(Mental.SIZE);
+                                aux = randomNumber(this.mental.size());
                                 if ( this.mental.get(aux).addPoints() ) {
                                     points -= 5;
                                 }
@@ -513,52 +513,4 @@ public class PersonToString {
         return content;
     }
     
-    public String toString2() {
-       String content = "";
-       String attribute[][] = new String[Physical.SIZE][NUMBER_OF_ATTRIBUTE_LIST];
-       String skill[][] = new String[Talent.SIZE][NUMBER_OF_SKILL_LIST];
-       
-       content += "nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: "+ this.concept + "\t\t" + "Idade: " + this.age +"\n" + "\n";
-       content += "\t\t\t----------- A T R I B U T O S -----------\n";
-       content += "\n\t Físicos \t\t\t Sociais \t\t Mentais \n\n";
-       for (int i = 0; i < NUMBER_OF_ATTRIBUTE_LIST; i++ ){
-           attribute[i][0] = withSpace(this.physical.get(i).getNameAttribute()) +" "+ getPhysical(i);
-           attribute[i][1] = withSpace(this.social.get(i).getNameAttribute()) +" "+ getSocial(i);
-           attribute[i][2] = withSpace(this.mental.get(i).getNameAttribute()) +" "+ getMental(i);
-       }
-       
-       for (int i = 0; i < Talent.SIZE; i++ ){
-           skill[i][0] = withSpace(this.talent.get(i).getNameSkill()) +" "+ getTalent(i);
-           skill[i][1] = withSpace(this.expertise.get(i).getNameSkill()) +" "+ getExpertise(i);
-           skill[i][2] = withSpace(this.knowledge.get(i).getNameSkill()) +" "+ getKnowledge(i);
-       }
-       
-       for (int i = 0; i < NUMBER_OF_ATTRIBUTE_LIST; i++ ){
-          for (int j = 0; j < NUMBER_OF_ATTRIBUTE_LIST; j++ ){
-             content += attribute[i][j] + " ";
-          }
-          content += "\n";
-       }
-       content += "\n\t\t\t----------- H A B I L I D A D E -----------\n";
-       content += "\n\t Talentos \t\t\t Perícias \t\t Conhecimentos \n\n";
-       for (int i = 0; i < Talent.SIZE; i++ ){
-          for (int j = 0; j < NUMBER_OF_SKILL_LIST; j++ ){
-             content += skill[i][j] + " ";
-          }
-          content += "\n";
-       }
-       
-       content+= "\n\t\t\t\t\tForça de Vontade:" + "\n";
-       content+= "\t\t\t\t\t    " + getWillPower() + "\n\n";
-       
-       return content;
-    }
-    
-    private String withSpace(String name) {
-       String aux = name;
-       while (aux.length() < 19) {
-          aux = " " + aux; 
-       }
-       return aux;
-    }
 }

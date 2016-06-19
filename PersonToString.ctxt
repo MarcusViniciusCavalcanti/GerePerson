@@ -70,10 +70,6 @@ comment29.target=java.lang.String\ toString()
 comment3.params=
 comment3.target=int\ getAge()
 comment3.text=\n\ @return\:\ idade\ do\ personagem.\n
-comment30.params=
-comment30.target=java.lang.String\ toString2()
-comment31.params=name
-comment31.target=java.lang.String\ withSpace(java.lang.String)
 comment4.params=
 comment4.target=java.lang.String\ getName()
 comment4.text=\n\ @return\ \ primeiro\ nome.\n
@@ -92,4 +88,4 @@ comment8.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ dos\ pontos\ dos\ atribut
 comment9.params=asAttribute
 comment9.target=java.lang.String\ getMental(int)
 comment9.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ dos\ pontos\ dos\ atributos\ em\ string.\n\ Return\:\ valor\ do\ atributo\ de\ categoria\ mental\ j\u00E1\ formatado\ (ooo--)\ do\ personagem.\n\ @param\:\ \u00EDndice\ do\ atributo.\n\ 0\ \=\ percep\u00E7\u00E3o;\n\ 1\ \=\ intelig\u00EAncia;\n\ 2\ \=\ racioc\u00EDnio.\n
-numComments=32
+numComments=30
