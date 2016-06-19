@@ -7,7 +7,11 @@
  */ 
 
 public class Cleric extends Person {
-   
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Cleric() {
         super(); //inicializa o construtor da super classe.
         
@@ -30,7 +34,7 @@ public class Cleric extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos primária do personagem.
-     * Conceitos de cledrigos recebem como primária atributos Sociais.
+     * Conceitos de clérigos recebem como primária atributos Sociais.
      */
     public void toPrimaryAttributePoints() {
         int points = 0;
@@ -258,7 +262,7 @@ public class Cleric extends Person {
                 if ( this.gender == 'm' )
                   this.concept = "Monge";
                 else
-                  this.concept = "Escudeira";
+                  this.concept = "Monja";
                 break;
             case 1:
                 if ( this.gender == 'm' )
