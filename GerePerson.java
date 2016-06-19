@@ -23,7 +23,7 @@ public class GerePerson
         boolean exit = false;
         while (exit == false) {
             int aux = 0;
-            aux = rand.nextInt(3);
+            aux = rand.nextInt(15);
             Person person = null;
             
             switch (aux) {
