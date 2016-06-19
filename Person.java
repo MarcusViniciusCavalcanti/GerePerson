@@ -1,10 +1,13 @@
 import java.util.Random;
 import java.util.ArrayList;
 /**
- * classe Person com o toString 
- * se curtir a ideia so passar o metodo para a person se nao curtir sla
+ * Super classe Personagem, define nome, gênero, linhagem e idade de forma aleatória
+ * para as demais classes. 
+ * Além de definir a coleção de atributos e de habilidades.
+ * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */ 
-
 public class Person {
     protected char lineage;
     protected char gender;
