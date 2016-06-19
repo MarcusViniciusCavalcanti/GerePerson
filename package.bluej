@@ -144,11 +144,11 @@ dependency9.from=GerePerson
 dependency9.to=Knight
 dependency9.type=UsesDependency
 objectbench.height=76
-objectbench.width=1660
-package.editor.height=819
-package.editor.width=1552
-package.editor.x=0
-package.editor.y=23
+objectbench.width=1285
+package.editor.height=611
+package.editor.width=1189
+package.editor.x=31
+package.editor.y=-3
 package.numDependencies=48
 package.numTargets=32
 package.showExtends=true
@@ -226,11 +226,7 @@ target13.y=200
 target14.editor.height=750
 target14.editor.width=1419
 target14.editor.x=31
-<<<<<<< HEAD
-target14.editor.y=39
-=======
 target14.editor.y=23
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target14.height=50
 target14.name=Craftsman
 target14.naviview.expanded=true
@@ -302,14 +298,9 @@ target19.naviview.expanded=true
 target19.showInterface=false
 target19.type=ClassTarget
 target19.typeParameters=
-target19.width=80
-<<<<<<< HEAD
-target19.x=370
-target19.y=240
-=======
+target19.width=110
 target19.x=260
 target19.y=270
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target2.editor.height=750
 target2.editor.width=1335
 target2.editor.x=31
@@ -336,10 +327,10 @@ target20.typeParameters=
 target20.width=80
 target20.x=750
 target20.y=430
-target21.editor.height=957
-target21.editor.width=1680
-target21.editor.x=0
-target21.editor.y=23
+target21.editor.height=750
+target21.editor.width=1335
+target21.editor.x=31
+target21.editor.y=18
 target21.height=50
 target21.name=GerePerson
 target21.naviview.expanded=false
@@ -347,21 +338,12 @@ target21.showInterface=false
 target21.type=ClassTarget
 target21.typeParameters=
 target21.width=150
-<<<<<<< HEAD
-target21.x=0
-target21.y=440
-target22.editor.height=700
-target22.editor.width=900
-target22.editor.x=71
-target22.editor.y=18
-=======
 target21.x=30
 target21.y=140
 target22.editor.height=957
 target22.editor.width=1680
 target22.editor.x=0
 target22.editor.y=23
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target22.height=50
 target22.name=Cleric
 target22.naviview.expanded=false
@@ -382,13 +364,8 @@ target23.showInterface=false
 target23.type=ClassTarget
 target23.typeParameters=
 target23.width=80
-<<<<<<< HEAD
-target23.x=70
-target23.y=0
-=======
 target23.x=150
 target23.y=370
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target24.editor.height=750
 target24.editor.width=1335
 target24.editor.x=31
@@ -402,15 +379,6 @@ target24.typeParameters=
 target24.width=80
 target24.x=240
 target24.y=370
-<<<<<<< HEAD
-target25.editor.height=700
-target25.editor.width=900
-target25.editor.x=71
-target25.editor.y=59
-target25.height=50
-target25.name=Heretic
-target25.naviview.expanded=false
-=======
 target25.editor.height=958
 target25.editor.width=1680
 target25.editor.x=0
@@ -418,7 +386,6 @@ target25.editor.y=23
 target25.height=50
 target25.name=Heretic
 target25.naviview.expanded=true
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target25.showInterface=false
 target25.type=ClassTarget
 target25.typeParameters=
@@ -451,28 +418,16 @@ target27.typeParameters=
 target27.width=170
 target27.x=1000
 target27.y=620
-target28.editor.height=700
-target28.editor.width=900
-target28.editor.x=40
-target28.editor.y=43
+target28.editor.height=771
+target28.editor.width=1335
+target28.editor.x=31
+target28.editor.y=-3
 target28.height=50
 target28.name=GerePersonOpcao
 target28.naviview.expanded=true
 target28.showInterface=false
 target28.type=ClassTarget
 target28.typeParameters=
-<<<<<<< HEAD
-target28.width=150
-target28.x=40
-target28.y=320
-target29.editor.height=700
-target29.editor.width=900
-target29.editor.x=71
-target29.editor.y=59
-target29.height=50
-target29.name=Farmer
-target29.naviview.expanded=false
-=======
 target28.width=130
 target28.x=1220
 target28.y=150
@@ -483,7 +438,6 @@ target29.editor.y=62
 target29.height=50
 target29.name=Farmer
 target29.naviview.expanded=true
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target29.showInterface=false
 target29.type=ClassTarget
 target29.typeParameters=
@@ -506,11 +460,7 @@ target3.y=500
 target30.editor.height=729
 target30.editor.width=1335
 target30.editor.x=31
-<<<<<<< HEAD
-target30.editor.y=47
-=======
 target30.editor.y=23
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target30.height=50
 target30.name=Person
 target30.naviview.expanded=true
@@ -562,11 +512,7 @@ target4.y=330
 target5.editor.height=700
 target5.editor.width=900
 target5.editor.x=71
-<<<<<<< HEAD
-target5.editor.y=68
-=======
 target5.editor.y=23
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target5.height=50
 target5.name=Erudite
 target5.naviview.expanded=false
@@ -576,25 +522,19 @@ target5.typeParameters=
 target5.width=80
 target5.x=420
 target5.y=10
-target6.editor.height=937
-target6.editor.width=1640
-target6.editor.x=1791
-target6.editor.y=23
+target6.editor.height=750
+target6.editor.width=1335
+target6.editor.x=31
+target6.editor.y=18
 target6.height=50
 target6.name=PersonToString
 target6.naviview.expanded=true
 target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
-<<<<<<< HEAD
-target6.width=130
-target6.x=970
-target6.y=140
-=======
 target6.width=120
 target6.x=1380
 target6.y=150
->>>>>>> 96d00dbfee5b33f68107059354f1a5bb6136fd58
 target7.editor.height=750
 target7.editor.width=1335
 target7.editor.x=31
