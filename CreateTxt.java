@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -8,24 +9,39 @@ import java.io.IOException;
  * @version (a version number or a date)
  */
 public class CreateTxt {
+    private File path;
     private FileWriter file;
     private PrintWriter recordFile;
     private String filePath;
     private String fileName;
     
-    public CreateTxt(String fileName, String filePath, String content) {
-        setFileName(fileName);  // gera o nome do arquivo.
-        toFilePath(filePath);   // define o caminho do arquivo.  
+    public CreateTxt(String fileName, String content) {
+        createPath();           // cria pasta para os arquivos na raiz da aplicação.
+        createFile(fileName);   // gera o nome do arquivo.
+        recordFile(content);    // escreve dados no arquivo txt.
+
+    }
         
-        createFile();
-        recordFile(content);
+    public void recordFile(String content) {
+       recordFile = new PrintWriter(file);
+       recordFile.printf(content);
+       recordFile.close();
+    }
+        
+    /**
+     * Gera pasta na raiz da aplicação com o nome ArquivosTXT
+     */
+    private void createPath() {
+       this.path = new File("ArquivosTXT");
+       this.path.mkdir();
     }
     
     /**
-     * Cria o arquivo txt.
+     * Gera o nome do arquivo baseado no nome do personagem.
+     * @param: nome do arquivo
+     * @return: se criado com sucesso verdadeiro falso se não foi gerado.
      */
-    private void createFile(){
-        
+    private boolean createFile(String fileName) {
         /*
          * APAGAR DEPOIS DE ENTENDER.
          * bloco try catch e como será tratado o erro caso algum problema
@@ -39,32 +55,14 @@ public class CreateTxt {
          * e = variável to tipo exception que vai manipular
          * no caso botei um janela de erro caso aconteça isso.
          */
+
         try {
-            this.file = new FileWriter(this.filePath + this.fileName);
+            file =  new FileWriter("ArquivosTXT" +"/"+ fileName + ".txt");
+            return true;
         }
-        catch (Exception e) {
-            
+        catch(IOException ex) {
+            return false;
         }
-    }
-    
-    private void recordFile(String content) {
-        this.recordFile = new PrintWriter(this.file);
-        this.recordFile.printf(content);
-        this.recordFile.close();
-    }
-        
-    /**
-     * Define o caminho da pasta que será gravado o arquivo.
-     */
-    private void toFilePath(String path) {
-        this.filePath = path;
-    }
-    
-    /**
-     * Gera o nome do arquivo baseado no nome do personagem.
-     */
-    private void setFileName(String fileName) {
-        this.fileName = fileName + ".txt";
     }
 }
 

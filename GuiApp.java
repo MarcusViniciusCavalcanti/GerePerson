@@ -100,9 +100,12 @@ public class GuiApp extends JFrame {
 		lblValueAppearance = new JLabel();
 		
 		lblMental = new JLabel();
-		lblReasoning = new JLabel();
-		lblIntelligence = new JLabel();
 		lblPerception = new JLabel();
+		lblIntelligence = new JLabel();
+		lblReasoning = new JLabel();
+		lblValuePerception = new JLabel();
+		lblValueIntelligence = new JLabel();
+		lblValueReasoning = new JLabel();
 		
         //Tittulo
 		lblTitleAttribute.setText("------ A T R I B U T O S ------");
@@ -176,6 +179,40 @@ public class GuiApp extends JFrame {
 		contentPane.add(lblValueAppearance);
 		lblValueAppearance.setBounds(303, 168, 50, 15);
 		
+		//Mental
+		lblMental.setText("MENTAIS");
+		lblMental.setBackground(new Color(0, 51, 255));
+		lblMental.setForeground(new Color(0, 102, 204));
+		contentPane.add(lblMental);
+		lblMental.setBounds(new Rectangle(new Point(430, 105), lblMental.getPreferredSize()));
+				
+		//Percepção
+		lblPerception.setText("Percepção:");
+		contentPane.add(lblPerception);
+		lblPerception.setBounds(new Rectangle(new Point(404, 128), lblPerception.getPreferredSize()));
+		
+		lblValuePerception.setText("ooooo");
+		contentPane.add(lblValuePerception);
+		lblValuePerception.setBounds(483, 128, 50, 15);
+		
+		//Inteligência
+		lblIntelligence.setText("Inteligência:");
+		contentPane.add(lblIntelligence);
+		lblIntelligence.setBounds(new Rectangle(new Point(394, 148), lblIntelligence.getPreferredSize()));
+		
+		lblValueIntelligence.setText("ooooo");
+		contentPane.add(lblValueIntelligence);
+		lblValueIntelligence.setBounds(483, 148, 50, 15);
+
+		//Raciocínio
+		lblReasoning.setText("Raciocínio:");
+		contentPane.add(lblReasoning);
+		lblReasoning.setBounds(new Rectangle(new Point(406, 168), lblReasoning.getPreferredSize()));
+		
+		lblValueReasoning.setText("ooooo");
+		contentPane.add(lblValueReasoning);
+		lblValueReasoning.setBounds(483, 168, 50, 15);
+
 		
     }
 }
