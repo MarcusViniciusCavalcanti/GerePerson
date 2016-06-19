@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Artist()
+comment0.text=\n\ Construtor\:\n\ Inicializa\ os\ atributos\ e\ m\u00E9todos\ da\ super\ classe\ Person\n\ Invoca\ os\ m\u00E9todos\ para\ distribui\u00E7\u00E3o\ de\ pontos\ do\ personagem.\n
 comment1.params=
 comment1.target=void\ toPrimaryAttributePoints()
 comment1.text=\n\ Define\ a\ distribui\u00E7\u00E3o\ dos\ pontos\ dos\ atributos\ prim\u00E1ria\ do\ personagem.\n\ Conceitos\ de\ artista\ recebem\ como\ prim\u00E1ria\ atributos\ f\u00EDsicos.\n
