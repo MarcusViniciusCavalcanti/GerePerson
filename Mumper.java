@@ -88,7 +88,7 @@ public class Mumper extends Person {
 
     /**
      * Define a distribuição dos pontos dos atributos terceária do personagem.
-     * Conceitos de cavaleiros recebem como terceários atributos Sociais.
+     * Conceitos de Mendigos recebem como terceários atributos Sociais.
      */
     public void toTertiaryAttributePoints() {
         int points = 3;
@@ -107,7 +107,7 @@ public class Mumper extends Person {
     }
     
     /**
-     * Define a distribuição dos pontos das Habilidades primárias dos Solados, num máximo de 3 níveis.
+     * Define a distribuição dos pontos das Habilidades primárias dos mendigos, num máximo de 3 níveis.
      * Respeitando a regra para cada conceito.
      */
     public void toPrimarySkillPoints() {
