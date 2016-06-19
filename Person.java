@@ -162,14 +162,6 @@ public class Person {
         
         return info;
     }
-
-    /**
-     * Define a quantidade dos pontos de força de vontade.
-     * @param value: valor inteiro que ajusta o valor.
-     */
-    public void setWillPower(int value) {
-        this.willPower = value;
-    }
     
     /**
      * Método que retonar um valor aleatório.

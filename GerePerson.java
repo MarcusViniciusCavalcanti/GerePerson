@@ -60,24 +60,21 @@ public class GerePerson
                  case 10:
                      person = new Erudite();
                      break;
-//                case 11:
-//                     person = new Knight();
-//                     break;
-//                case 12:
-//                     person = new Knight();
-//                     break;
-//                case 13:
-//                     person = new Knight();
-//                     break;
-//                case 14:
-//                     person = new Knight();
-//                     break;
-//                case 15:
-//                     person = new Knight();
-//                     break;
-//                case 16:
-//                     person = new Knight();
-//                     break;
+                case 11:
+                     person = new Heretic();
+                     break;
+                case 12:
+                     person = new Farmer();
+                     break;
+                case 13:
+                     person = new Pilgrim();
+                     break;
+                case 14:
+                     person = new Lacquey();
+                     break;
+                case 15:
+                     person = new Foreign();
+                     break;
             }
             
             System.out.println("nome: " + person.getName() + " " + person.getLastName() + "\t\t" + "Conceito: "+ person.getConcept() + "\t\t" + "Idade: " + person.getAge());
