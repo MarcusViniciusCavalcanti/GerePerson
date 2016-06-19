@@ -20,8 +20,8 @@ public class Person {
     protected ArrayList<Expertise> expertise;
     protected ArrayList<Knowledge> knowledge;
     
-    protected final int NUMBER_OF_SKILL_LIST = 3;
-    protected final int NUMBER_OF_ATTRIBUTE_LIST = 3;
+    private final int NUMBER_OF_SKILL_LIST = 3;
+    private final int NUMBER_OF_ATTRIBUTE_LIST = 3;
 
     /**
      * Construtor: Inicializa os método que definiram:
@@ -489,6 +489,10 @@ public class Person {
         }
     }
     
+    /**
+     * Sobrescreve método toString para o metodo específico.
+     * @return: Retorna uma String como a formatação desejada.
+     */
     public String toString() {
         String content = "\n\n" + "nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: "+ this.concept + "\t\t" + "Idade: " + this.age + "\n\n" +
                             "                                   ----------- A T R I B U T O S -----------\n\n" + 

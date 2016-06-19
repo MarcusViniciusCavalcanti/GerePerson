@@ -67,6 +67,7 @@ comment28.target=void\ addKnowledgeSkill()
 comment28.text=\n\ adiciona\ habilidades\ conhecimento\ ao\ personagem\n
 comment29.params=
 comment29.target=java.lang.String\ toString()
+comment29.text=\n\ Sobrescreve\ m\u00E9todo\ toString\ para\ o\ metodo\ espec\u00EDfico.\n\ @return\:\ Retorna\ uma\ String\ como\ a\ formata\u00E7\u00E3o\ desejada.\n
 comment3.params=
 comment3.target=int\ getAge()
 comment3.text=\n\ @return\:\ idade\ do\ personagem.\n
