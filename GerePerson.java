@@ -13,6 +13,7 @@ public class GerePerson
         Random  rand = new Random();
         
         
+        
         System.out.println("########################################################################");
         System.out.println("#                                                                      #");
         System.out.println("#                       Gerador de Personagem                          #");
@@ -157,6 +158,7 @@ public class GerePerson
                 default:
                     System.out.println("Opção inválida!");
             }
+            System.out.printf("\u001b");
         }
         
     }

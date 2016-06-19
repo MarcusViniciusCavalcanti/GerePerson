@@ -3,6 +3,7 @@ import java.util.ArrayList;
 /**
  * Super classe Personagem, define nome, gênero, linhagem e idade de forma aleatória
  * para as demais classes. 
+ * Os retornos dos valores já formatados (oo---).
  * Além de definir a coleção de atributos e de habilidades.
  */ 
 

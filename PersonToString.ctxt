@@ -1,18 +1,22 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PersonToString()
-comment0.text=\n\ Construtor\:\ Inicializa\ os\ m\u00E9todo\ que\ definiram\:\n\ \ G\u00EAnero;\n\ \ Linhage;\n\ \ Idade;\n\ \ Nome\ (baseado\ no\ g\u00EAnero)\ e;\n\ \ Sobrenome;\n\ Inicializa\ definindo\ um\ valor\ inicial\ de\ pontos\ de\ vontade.\n\ @param\ value\:\ espera\ um\ valor\ inteiro\ dos\ pontos\ de\ vontade.\n
+comment0.text=\n\ Construtor\:\ Inicializa\ os\ m\u00E9todo\ que\ definiram\:\n\ \ G\u00EAnero;\n\ \ Linhage;\n\ \ Idade;\n\ \ Nome\ (baseado\ no\ g\u00EAnero)\ e;\n\ \ Sobrenome;\n\ Inicializa\ definindo\ um\ valor\ inicial\ de\ pontos\ de\ vontade.\n
 comment1.params=
 comment1.target=char\ getLineage()
-comment1.text=\n\ Retorna\ linhagem\ m\:\ mortal,\ s\:\ sobrenatural.\n
+comment1.text=\n\ @return\:\ Linhagem\ do\ personagem\ M\ para\ mortal,\ S\ para\ sobrenatural\n
 comment10.params=asSkill
 comment10.target=java.lang.String\ getTalent(int)
+comment10.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ dos\ pontos\ dos\ habilidades\ em\ string.\n\ Return\:\ valor\ das\ habiliades\ de\ categoria\ talento\ j\u00E1\ formatado\ (ooo--)\ do\ personagem.\n\ @param\:\ qual\ habilidade\ deseja\ ver\ o\ valor.\n\ 0\ \=\ "Representa\u00E7\u00E3o";\n\ 1\ \=\ "Prontid\u00E3o";\n\ 2\ \=\ "Esportes";\ \n\ 3\ \=\ "Briga";\n\ 4\ \=\ "Esquiva";\ \n\ 5\ \=\ "Empatia",\n\ 6\ \=\ "Intimida\u00E7\u00E3o";\n\ 7\ \=\ "Crime";\n\ 8\ \=\ "Lideran\u00E7a";\ \n\ 9\ \=\ "L\u00E1bia".\n
 comment11.params=asSkill
 comment11.target=java.lang.String\ getExpertise(int)
+comment11.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ dos\ pontos\ dos\ habilidades\ em\ string.\n\ Return\:\ valor\ das\ habiliades\ de\ categoria\ per\u00EDcias\ j\u00E1\ formatado\ (ooo--)\ do\ personagem.\n\ @param\:\ qual\ habilidade\ deseja\ ver\ o\ valor.\n\ 0\ \=\ "Empatia\ com\ animais";\n\ 1\ \=\ "Arqueirismo";\n\ 2\ \=\ "Artesanato";\ \n\ 3\ \=\ "Etiqueta";\n\ 4\ \=\ "Herborismo";\ \n\ 5\ \=\ "Armas\ brancas",\n\ 6\ \=\ "M\u00FAsica";\n\ 7\ \=\ "Cavalgar";\n\ 8\ \=\ "Furtividade";\ \n\ 9\ \=\ "Sobreviv\u00EAncia".\n
 comment12.params=asSkill
 comment12.target=java.lang.String\ getKnowledge(int)
+comment12.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ dos\ pontos\ dos\ habilidades\ em\ string.\n\ Return\:\ valor\ das\ habiliades\ de\ categoria\ per\u00EDcias\ j\u00E1\ formatado\ (ooo--)\ do\ personagem.\n\ @param\:\ qual\ habilidade\ deseja\ ver\ o\ valor.\n\ 0\ \=\ "Instru\u00E7\u00E3o";\n\ 1\ \=\ "Sabedoria\ popular";\n\ 2\ \=\ "Investiga\u00E7\u00E3o";\ \n\ 3\ \=\ "Direito";\n\ 4\ \=\ "Lingu\u00EDstica;\ \n\ 5\ \=\ "Medicina",\n\ 6\ \=\ "Ocultismo";\n\ 7\ \=\ "Pol\u00EDcia;\n\ 8\ \=\ "Ci\u00EAncia"\ e;\ \n\ 9\ \=\ "Senesc\u00E1lia".\n
 comment13.params=
 comment13.target=java.lang.String\ getWillPower()
+comment13.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ de\ pontos\ em\ for\u00E7a\ de\ vontade\n\ Return\:\ valor\ dos\ pontos\ j\u00E1\ formatado\ (ooo--)\ do\ personagem.\n
 comment14.params=value
 comment14.target=void\ setWillPower(int)
 comment14.text=\n\ Define\ a\ quantidade\ dos\ pontos\ de\ for\u00E7a\ de\ vontade.\n\ @param\ value\:\ valor\ inteiro\ que\ ajusta\ o\ valor.\n
@@ -23,8 +27,8 @@ comment16.params=
 comment16.target=void\ toPointsBonus()
 comment16.text=\n\ Distribute\ os\ pontos\ bonus\n
 comment17.params=n
-comment17.target=java.lang.String\ toBall(int)
-comment17.text=\n\ Espera\ um\ valor\ int\ para\ se\ transforar\ em\ uma\ String\ em\ "ooo--"\n\ retorna\ esta\ String.\n
+comment17.target=java.lang.String\ formatPoints(int)
+comment17.text=\n\ Espera\ um\ valor\ int\ para\ se\ transforar\ em\ uma\ String\ no\ formatod\ ("ooo--")\n\ @param\:\ valor\ dos\ pontos.\n\ @return\:\ valor\ dos\ pontos\ j\u00E1\ formatados.\n\ \n
 comment18.params=
 comment18.target=void\ toLineage()
 comment18.text=\n\ Define\ a\ Linagem\ do\ personagem.\n\ S\:\ sobrenatural,\ M\:\ mortal.\n
@@ -33,7 +37,7 @@ comment19.target=void\ toGender()
 comment19.text=\n\ Define\ o\ genero\ do\ personagem.\n\ retorna\ um\ valor\ char\ masculino\:\ m,\ feminino\:\ f.\n
 comment2.params=
 comment2.target=char\ getGender()
-comment2.text=\n\ Retorna\ g\u00EAnero\ m\:\ masculino,\ f\:\ feminino\n
+comment2.text=\n\ @return\:\ g\u00EAnero\ do\ personagem\ M\ masculino,\ F\ feminino.\n
 comment20.params=
 comment20.target=void\ toAge()
 comment20.text=\n\ Define\ a\ idade.\n\ recebe\ valor\ aleat\u00F3rio\ de\ 0\ a\ 100.\n\ Caso\ valor\ aleat\u00F3rio\ for\ menor\ que\ 16\ idade\ pede\ outro\ n\u00FAmero.\n
@@ -65,19 +69,23 @@ comment29.params=
 comment29.target=java.lang.String\ toString()
 comment3.params=
 comment3.target=int\ getAge()
-comment3.text=\n\ Retorna\ a\ idade.\n
+comment3.text=\n\ @return\:\ idade\ do\ personagem.\n
 comment4.params=
 comment4.target=java.lang.String\ getName()
-comment4.text=\n\ Retorna\ o\ primeiro\ nome.\n
+comment4.text=\n\ @return\ \ primeiro\ nome.\n
 comment5.params=
 comment5.target=java.lang.String\ getLastName()
-comment5.text=\n\ Retorna\ o\ segundo\ nome.\n
+comment5.text=\n\ @return\:\ sobrenome.\n
 comment6.params=
 comment6.target=java.lang.String\ getConcept()
+comment6.text=\n\ @return\:\ conceito\ do\ personagem\ \n
 comment7.params=asAttribute
 comment7.target=java.lang.String\ getPhysical(int)
+comment7.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ dos\ pontos\ dos\ atributos\ em\ string.\n\ Return\:\ valor\ do\ atributo\ de\ categoria\ f\u00EDsico\ j\u00E1\ formatado\ (ooo--)\ do\ personagem.\n\ @param\:\ \u00EDndice\ do\ atributo.\n\ 0\ \=\ for\u00E7a;\n\ 1\ \=\ destreza;\n\ 2\ \=\ vigor.\n
 comment8.params=asAttribute
 comment8.target=java.lang.String\ getSocial(int)
+comment8.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ dos\ pontos\ dos\ atributos\ em\ string.\n\ Return\:\ valor\ do\ atributo\ de\ categoria\ social\ j\u00E1\ formatado\ (ooo--)\ do\ personagem.\n\ @param\:\ \u00EDndice\ do\ atributo.\n\ 0\ \=\ carisma;\n\ 1\ \=\ manipula\u00E7\u00E3o;\n\ 2\ \=\ Apar\u00EAncia.\n
 comment9.params=asAttribute
 comment9.target=java.lang.String\ getMental(int)
+comment9.text=\n\ M\u00E9todo\ que\ retonar\ o\ valor\ dos\ pontos\ dos\ atributos\ em\ string.\n\ Return\:\ valor\ do\ atributo\ de\ categoria\ mental\ j\u00E1\ formatado\ (ooo--)\ do\ personagem.\n\ @param\:\ \u00EDndice\ do\ atributo.\n\ 0\ \=\ percep\u00E7\u00E3o;\n\ 1\ \=\ intelig\u00EAncia;\n\ 2\ \=\ racioc\u00EDnio.\n
 numComments=30

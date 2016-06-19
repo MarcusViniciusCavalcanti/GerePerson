@@ -31,7 +31,6 @@ public class PersonToString {
      *  Nome (baseado no gênero) e;
      *  Sobrenome;
      * Inicializa definindo um valor inicial de pontos de vontade.
-     * @param value: espera um valor inteiro dos pontos de vontade.
      */
     public PersonToString() {
         toGender();    //define gênero.
@@ -70,80 +69,156 @@ public class PersonToString {
     }
 
     /**
-     * Retorna linhagem m: mortal, s: sobrenatural.
+     * @return: Linhagem do personagem M para mortal, S para sobrenatural
      */
     public char getLineage() {
         return this.lineage;
     }
 
     /**
-     * Retorna gênero m: masculino, f: feminino
+     * @return: gênero do personagem M masculino, F feminino.
      */
     public char getGender() {
         return this.gender;
     }
 
     /**
-     * Retorna a idade.
+     * @return: idade do personagem.
      */
     public int getAge() {
         return this.age;
     }
 
     /**
-     * Retorna o primeiro nome.
+     * @return  primeiro nome.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Retorna o segundo nome.
+     * @return: sobrenome.
      */
     public String getLastName() {
         return this.lastName;
     }
     
+    /**
+     * @return: conceito do personagem 
+     */
     public String getConcept() {
         return this.concept;
     }
     
+    /**
+     * Método que retonar o valor dos pontos dos atributos em string.
+     * Return: valor do atributo de categoria físico já formatado (ooo--) do personagem.
+     * @param: índice do atributo.
+     * 0 = força;
+     * 1 = destreza;
+     * 2 = vigor.
+     */
     public String getPhysical(int asAttribute) {
         String info = "";
-        info = toBall(this.physical.get(asAttribute).getValue());
+        info = formatPoints(this.physical.get(asAttribute).getValue());
         return info;
     }
     
+    /**
+     * Método que retonar o valor dos pontos dos atributos em string.
+     * Return: valor do atributo de categoria social já formatado (ooo--) do personagem.
+     * @param: índice do atributo.
+     * 0 = carisma;
+     * 1 = manipulação;
+     * 2 = Aparência.
+     */
     public String getSocial(int asAttribute) {
         String info = "";
-        info = toBall(this.social.get(asAttribute).getValue());
+        info = formatPoints(this.social.get(asAttribute).getValue());
         return info;
     }
     
+    /**
+     * Método que retonar o valor dos pontos dos atributos em string.
+     * Return: valor do atributo de categoria mental já formatado (ooo--) do personagem.
+     * @param: índice do atributo.
+     * 0 = percepção;
+     * 1 = inteligência;
+     * 2 = raciocínio.
+     */
     public String getMental(int asAttribute) {
         String info = "";
-        info = toBall(this.mental.get(asAttribute).getValue());
+        info = formatPoints(this.mental.get(asAttribute).getValue());
         return info;
     }
     
+    /**
+     * Método que retonar o valor dos pontos dos habilidades em string.
+     * Return: valor das habiliades de categoria talento já formatado (ooo--) do personagem.
+     * @param: qual habilidade deseja ver o valor.
+     * 0 = "Representação";
+     * 1 = "Prontidão";
+     * 2 = "Esportes"; 
+     * 3 = "Briga";
+     * 4 = "Esquiva"; 
+     * 5 = "Empatia",
+     * 6 = "Intimidação";
+     * 7 = "Crime";
+     * 8 = "Liderança"; 
+     * 9 = "Lábia".
+     */
     public String getTalent(int asSkill) {
         String info = "";
-        info = toBall(this.talent.get(asSkill).getValue());
+        info = formatPoints(this.talent.get(asSkill).getValue());
         return info;
     }
     
+    /**
+     * Método que retonar o valor dos pontos dos habilidades em string.
+     * Return: valor das habiliades de categoria perícias já formatado (ooo--) do personagem.
+     * @param: qual habilidade deseja ver o valor.
+     * 0 = "Empatia com animais";
+     * 1 = "Arqueirismo";
+     * 2 = "Artesanato"; 
+     * 3 = "Etiqueta";
+     * 4 = "Herborismo"; 
+     * 5 = "Armas brancas",
+     * 6 = "Música";
+     * 7 = "Cavalgar";
+     * 8 = "Furtividade"; 
+     * 9 = "Sobrevivência".
+     */
     public String getExpertise(int asSkill) {
         String info = "";
-        info = toBall(this.expertise.get(asSkill).getValue());
+        info = formatPoints(this.expertise.get(asSkill).getValue());
         return info;
     }
     
+    /**
+     * Método que retonar o valor dos pontos dos habilidades em string.
+     * Return: valor das habiliades de categoria perícias já formatado (ooo--) do personagem.
+     * @param: qual habilidade deseja ver o valor.
+     * 0 = "Instrução";
+     * 1 = "Sabedoria popular";
+     * 2 = "Investigação"; 
+     * 3 = "Direito";
+     * 4 = "Linguística; 
+     * 5 = "Medicina",
+     * 6 = "Ocultismo";
+     * 7 = "Polícia;
+     * 8 = "Ciência" e; 
+     * 9 = "Senescália".
+     */
     public String getKnowledge(int asSkill) {
         String info = "";
-        info = toBall(this.knowledge.get(asSkill).getValue());
+        info = formatPoints(this.knowledge.get(asSkill).getValue());
         return info;
     }
     
+    /**
+     * Método que retonar o valor de pontos em força de vontade
+     * Return: valor dos pontos já formatado (ooo--) do personagem.
+     */
     public String getWillPower() {
         String info = "";
         
@@ -258,10 +333,12 @@ public class PersonToString {
     }
        
     /**
-     * Espera um valor int para se transforar em uma String em "ooo--"
-     * retorna esta String.
+     * Espera um valor int para se transforar em uma String no formatod ("ooo--")
+     * @param: valor dos pontos.
+     * @return: valor dos pontos já formatados.
+     * 
      */
-    private String toBall(int n) {
+    private String formatPoints(int n) {
        String ball = ""; 
        
        //adiciona as bolas
@@ -413,32 +490,26 @@ public class PersonToString {
     }
     
     public String toString() {
-       String content =      "########################################################################\n"
-                           + "#                                                                      #\n" 
-                           + "#                       Gerador de Personagem                          #\n"
-                           + "#                                                                      #\n"
-                           + "########################################################################\n"+ "\n\n" +
-                                "nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: "+ this.concept + "\t\t" + "Idade: " + this.age +"\n" + "\n" +
-                                "                                   ----------- A T R I B U T O S -----------\n\n" + 
-                                "     Físicos   \t\t\tSociais \t\t\t     Mentais\n" + 
-                                "   Força: " + getPhysical(0) + "\t\t" + "    Carisma: " + getSocial(0) + "\t\t      " + "   Percepção: " + getMental(0) + "\n" +
-                                "   Força: " + getPhysical(0) + "\t\t" + "    Carisma: " + getSocial(0) + "\t\t      " + "   Percepção: " + getMental(0) + "\n" +
-                                "Destreza: " + getPhysical(1) + "\t\t" + "Manipulação: " + getSocial(1) + "\t\t      " + "Inteligência: " + getMental(1) + "\n" +
-                                "   Vigor: " + getPhysical(2) + "\t\t" + "  Aparência: " + getSocial(2) + "\t\t      " + "  Raciocínio: " + getMental(2) + "\n" +
-                                "\n\n                                 ----------- H A B I L I D A D E S -----------\n\n" +
-                                "     Talentos    \t\t\t Perícias \t\t\t      Conhecimentos\n" +
-                                "Representação: " + getTalent(0) + "\t\t" + "Empatia com animais: " + getExpertise(0) + "\t\t" + "        Instrução: " + getKnowledge(0) + "\n" +
-                                "    Prontidão: " + getTalent(1) + "\t\t" + "        Arqueirismo: " + getExpertise(1) + "\t\t" + "Sabedoria popular: " + getKnowledge(1) + "\n" +
-                                "     Esportes: " + getTalent(2) + "\t\t" + "         Artesanato: " + getExpertise(2) + "\t\t" + "     Investigação: " + getKnowledge(2) + "\n" +
-                                "        Briga: " + getTalent(3) + "\t\t" + "           Etiqueta: " + getExpertise(3) + "\t\t" + "          Direito: " + getKnowledge(3) + "\n" +
-                                "      Esquiva: " + getTalent(4) + "\t\t" + "         Herborismo: " + getExpertise(4) + "\t\t" + "      Linguística: " + getKnowledge(4) + "\n" +
-                                "      Empatia: " + getTalent(5) + "\t\t" + "      Armas brancas: " + getExpertise(5) + "\t\t" + "         Medicina: " + getKnowledge(5) + "\n" +  
-                                "  Intimidação: " + getTalent(6) + "\t\t" + "             Música: " + getExpertise(6) + "\t\t" + "        Ocultismo: " + getKnowledge(6) + "\n" +
-                                "        Crime: " + getTalent(7) + "\t\t" + "           Cavalgar: " + getExpertise(7) + "\t\t" + "          Polícia: " + getKnowledge(7) + "\n" +
-                                "    Liderança: " + getTalent(8) + "\t\t" + "        Furtividade: " + getExpertise(8) + "\t\t" + "          Ciência: " + getKnowledge(8) + "\n" +
-                                "        Lábia: " + getTalent(9) + "\t\t" + "      Sobrevivência: " + getExpertise(9) + "\t\t" + "       Senescália: " + getKnowledge(9) + "\n" +      
-                                "\n\t\t\t\t\tForça de Vontade:" + "\n" +
-                                "\t\t\t\t\t    " + this.willPower + "\n\n";
-       return content;
+        String content = "\n\n" + "nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: "+ this.concept + "\t\t" + "Idade: " + this.age + "\n\n" +
+                            "                                   ----------- A T R I B U T O S -----------\n\n" + 
+                            "     Físicos   \t\t\tSociais \t\t\t     Mentais\n" + 
+                            "   Força: " + getPhysical(0) + "\t\t" + "    Carisma: " + getSocial(0) + "\t\t      " + "   Percepção: " + getMental(0) + "\n" +
+                            "Destreza: " + getPhysical(1) + "\t\t" + "Manipulação: " + getSocial(1) + "\t\t      " + "Inteligência: " + getMental(1) + "\n" +
+                            "   Vigor: " + getPhysical(2) + "\t\t" + "  Aparência: " + getSocial(2) + "\t\t      " + "  Raciocínio: " + getMental(2) + "\n" +
+                            "\n\n                                 ----------- H A B I L I D A D E S -----------\n\n" +
+                            "     Talentos    \t\t\t Perícias \t\t\t      Conhecimentos\n" +
+                            "Representação: " + getTalent(0) + "\t\t" + "Empatia com animais: " + getExpertise(0) + "\t\t" + "        Instrução: " + getKnowledge(0) + "\n" +
+                            "    Prontidão: " + getTalent(1) + "\t\t" + "        Arqueirismo: " + getExpertise(1) + "\t\t" + "Sabedoria popular: " + getKnowledge(1) + "\n" +
+                            "     Esportes: " + getTalent(2) + "\t\t" + "         Artesanato: " + getExpertise(2) + "\t\t" + "     Investigação: " + getKnowledge(2) + "\n" +
+                            "        Briga: " + getTalent(3) + "\t\t" + "           Etiqueta: " + getExpertise(3) + "\t\t" + "          Direito: " + getKnowledge(3) + "\n" +
+                            "      Esquiva: " + getTalent(4) + "\t\t" + "         Herborismo: " + getExpertise(4) + "\t\t" + "      Linguística: " + getKnowledge(4) + "\n" +
+                            "      Empatia: " + getTalent(5) + "\t\t" + "      Armas brancas: " + getExpertise(5) + "\t\t" + "         Medicina: " + getKnowledge(5) + "\n" +  
+                            "  Intimidação: " + getTalent(6) + "\t\t" + "             Música: " + getExpertise(6) + "\t\t" + "        Ocultismo: " + getKnowledge(6) + "\n" +
+                            "        Crime: " + getTalent(7) + "\t\t" + "           Cavalgar: " + getExpertise(7) + "\t\t" + "          Polícia: " + getKnowledge(7) + "\n" +
+                            "    Liderança: " + getTalent(8) + "\t\t" + "        Furtividade: " + getExpertise(8) + "\t\t" + "          Ciência: " + getKnowledge(8) + "\n" +
+                            "        Lábia: " + getTalent(9) + "\t\t" + "      Sobrevivência: " + getExpertise(9) + "\t\t" + "       Senescália: " + getKnowledge(9) + "\n" +      
+                            "\n\t\t\t\t\tForça de Vontade:" + "\n" +
+                            "\t\t\t\t\t    " + getWillPower() + "\n\n";
+        return content;
     }
 }
