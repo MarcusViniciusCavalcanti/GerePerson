@@ -11,31 +11,33 @@ public class GerePersonOpcao {
         Scanner read = new Scanner(System.in);
         Random  rand = new Random();
         
-        header();
-        System.out.println("deseja gerar um arquivo TXT com os dados do personagem? \n Sim[s]\nNão[n]");
+        String header =      "########################################################################\n"
+                           + "#                                                                      #\n" 
+                           + "#                       Gerador de Personagem                          #\n"
+                           + "#                                                                      #\n"
+                           + "########################################################################";
+        
+        System.out.println(header); 
+        
+        System.out.println("Deseja gerar um arquivo TXT com os dados do personagem? \n Sim[s]\nNão[n]");
         System.out.print("O que deseja fazer? ");
         char txtOp = read.next().charAt(0);
         boolean generateTxt = false;
-            switch (txtOp) {
-                case 's': case 'S':
-                    generateTxt = true;
-                    break;
-                case 'n': case 'N':
-                    generateTxt = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-            }
+        switch (txtOp) {
+            case 's': case 'S':
+                generateTxt = true;
+                break;
+            case 'n': case 'N':
+                generateTxt = false;
+                break;
+            default:
+                System.out.println("Opção inválida!");
+        }
         
         boolean exit = false;
-        boolean header = false;
-        while (exit == false) {
-            
-            if ( header )
-              header();
-                           
+        while (exit == false) {              
             int aux = 0;
-            aux = rand.nextInt(3);
+            aux = rand.nextInt(16);
             Person person = null;
             
             switch (aux) {
@@ -88,7 +90,7 @@ public class GerePersonOpcao {
                      person = new Foreign();
                      break;
             }
-              
+            System.out.println(header);  
             System.out.println(person);
             
             if ( generateTxt ) {
@@ -106,23 +108,14 @@ public class GerePersonOpcao {
             switch (op) {
                 case 's': case 'S':
                     exit = false;
-                    header = true;
                     break;
                 case 'n': case 'N':
                     exit = true;
                     break;
                 default:
-                    System.out.println("Opção inválida!");
+                System.out.println("Opção inválida!");
             }
             System.out.print("\f");
         }
-    }
-    
-    public static void header() {
-        System.out.println( "########################################################################\n"
-                           + "#                                                                      #\n" 
-                           + "#                       Gerador de Personagem                          #\n"
-                           + "#                                                                      #\n"
-                           + "########################################################################\n"+ "\n\n");
     }
 }

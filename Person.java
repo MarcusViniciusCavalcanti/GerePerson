@@ -494,7 +494,7 @@ public class Person {
      * @return: Retorna uma String como a formatação desejada.
      */
     public String toString() {
-        String content = "\n\n" + "nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: "+ this.concept + "\t\t" + "Idade: " + this.age + "\n\n" +
+        String content = "\n" + "nome: " + this.name + " " + this.lastName + "\t\t" + "Conceito: "+ this.concept + "\t\t" + "Idade: " + this.age + "\n\n" +
                             "                                   ----------- A T R I B U T O S -----------\n\n" + 
                             "     Físicos   \t\t\tSociais \t\t\t     Mentais\n" + 
                             "   Força: " + getPhysical(0) + "\t\t" + "    Carisma: " + getSocial(0) + "\t\t      " + "   Percepção: " + getMental(0) + "\n" +
