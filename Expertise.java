@@ -1,6 +1,20 @@
 import java.util.ArrayList;
 /**
+ * Classe das habilidades de categoria Perícia.
+ * recebe o valor e instancia o nome da habilidade baseando em uma lista pré-definida 
+ * 0 = "Empatia com animais";
+ * 1 = "Arqueirismo";
+ * 2 = "Artesanato"; 
+ * 3 = "Etiqueta";
+ * 4 = "Herborismo"; 
+ * 5 = "Armas brancas",
+ * 6 = "Música";
+ * 7 = "Cavalgar";
+ * 8 = "Furtividade" e; 
+ * 9 = "Sobrevivência".
  * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */
 public class Expertise {
     private String name;

@@ -1,16 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=DbName()
+comment0.text=\n\ Construtor\:\n\ Instancias\ as\ arrayList\ dos\ nomes\ e\ sobrenomes.\n
 comment1.params=
 comment1.target=void\ createMaleNames()
-comment1.text=\n\ Se\ o\ genero\ do\ personagem\ for\ masculino\ ele\ adiciona\ a\ ArrayList\ de\ nomes\ masculinos.\n
+comment1.text=\n\ Nomes\ masculinos\ que\ seram\ adicionado\ a\ lista\ de\ nomes\n
 comment2.params=
 comment2.target=void\ createFemaleNames()
+comment2.text=\n\ Nomes\ femininos\ que\ seram\ adicionado\ a\ lista\ de\ nomes\n
 comment3.params=
 comment3.target=void\ createLastName()
+comment3.text=\n\ Sobrenomes\ que\ seram\ adicionado\ a\ lista\ de\ sobrenomes\n
 comment4.params=genero
 comment4.target=java.lang.String\ getName(char)
-comment4.text=\n\ O\ m\u00E9todo\ retorna\ um\ nome\ aleatorio\ masculino\ ou\ feminino\ dependendo\ do\ genero\n\ que\ ser\u00E1\ passado\ pelo\ personagem\ como\ parametro.\n
+comment4.text=\n\ O\ m\u00E9todo\ retorna\ um\ nome\ aleatorio\ masculino\ ou\ feminino\ dependendo\ do\ genero\n\ @param\:\ g\u00EAnero\ do\ personagem.\n\ @return\:\ nome\ do\ personagem\n
 comment5.params=
 comment5.target=java.lang.String\ getLastName()
+comment5.text=\n\ O\ m\u00E9todo\ retorna\ um\ sobrenome\ aleatorio\ \n\ @return\:\ sobrenome\ do\ personagem\n
 numComments=6

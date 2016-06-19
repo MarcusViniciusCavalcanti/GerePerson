@@ -16,16 +16,16 @@ public class GerePersonOpcao {
         System.out.print("O que deseja fazer? ");
         char txtOp = read.next().charAt(0);
         boolean generateTxt = false;
-            switch (txtOp) {
-                case 's': case 'S':
-                    generateTxt = true;
-                    break;
-                case 'n': case 'N':
-                    generateTxt = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-            }
+        switch (txtOp) {
+            case 's': case 'S':
+                generateTxt = true;
+                break;
+            case 'n': case 'N':
+                generateTxt = false;
+                break;
+            default:
+                System.out.println("Opção inválida!");
+        }
         
         boolean exit = false;
         boolean header = false;
@@ -60,16 +60,16 @@ public class GerePersonOpcao {
                 case 6:
                     person = new Bum();
                     break;
-                 case 7:
-                     person = new Cleric();
-                     break;
-                 case 8:
-                     person = new Royal();
-                     break;
-                 case 9:
-                     person = new Soldier();
-                     break;
-                 case 10:
+                case 7:
+                    person = new Cleric();
+                    break;
+                case 8:
+                    person = new Royal();
+                    break;
+                case 9:
+                    person = new Soldier();
+                    break;
+                case 10:
                      person = new Erudite();
                      break;
                 case 11:

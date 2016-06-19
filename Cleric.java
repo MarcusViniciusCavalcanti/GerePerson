@@ -4,6 +4,9 @@
  *  Define os atributos primários como Mentais, segundários como sociais, terceários como físicos.
  *  Suas habilidades princípal consistem na categoria de conhecimento suas habilidades segundárias
  *  estão entra as das categoia talentos e suas habilidades terciárias são perícias.
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */ 
 
 public class Cleric extends Person {

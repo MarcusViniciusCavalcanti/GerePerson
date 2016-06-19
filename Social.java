@@ -9,6 +9,9 @@ import java.util.ArrayList;
  *  1 = manipulação;
  *  2 = aparencia.
  *  constate publica que armazena a quantidade de atributos diferentes baseados no nome.
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */
 public class Social {
 	private String name;

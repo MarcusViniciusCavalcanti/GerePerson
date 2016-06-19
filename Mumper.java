@@ -6,6 +6,9 @@
  * Habilidades primárias dos Mendigos é perícia, secundário talentos
  * e conhecimento com terceárias.
  * Pontos em aparência não são adicionados inicialmente.
+ * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */ 
 
 public class Mumper extends Person {

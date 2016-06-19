@@ -4,6 +4,9 @@
  *  Define os atributos primários como físicos, segundários como sociais, terceários como Mentais.
  *  Suas habilidades princípal consistem na categoria de perícias suas habilidades segundárias
  *  estão entra as das categoia talentos e suas habilidades terciárias são conhecimentos.
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */ 
 
 public class Knight extends Person {

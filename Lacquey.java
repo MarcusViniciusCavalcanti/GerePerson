@@ -26,6 +26,9 @@
  * 
  * Por ultimo lacaios torturadores recebem como habilidades primarias perícia, conhecimento e talento.
  * Onde perícia recebe 1 ponto inicialmente armas brancas.
+ * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016) 
  */ 
 public class Lacquey extends Person {
     

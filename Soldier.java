@@ -3,6 +3,9 @@
  * Soldados tem como atributos princípal físicos, mentais e socias, são respectivamente secundários e terceários.
  * Suas habilidades são perícias, talentos e conhecimento.
  * Mercenarios e assassinos recebem 2 pontos de armas brancas e 3 pontos de furtividade inicialmente.
+ * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */ 
 
 public class Soldier extends Person {

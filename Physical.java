@@ -9,6 +9,9 @@ import java.util.ArrayList;
  *  1 = Destreza;
  *  2 = Vigor.
  *  constate publica que armazena a quantidade de atributos diferentes baseados no nome.
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */
 public class Physical {
     private String name;

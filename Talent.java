@@ -1,5 +1,21 @@
 import java.util.ArrayList;
-
+/**
+ * Classe das habilidades de categoria talentos.
+ * recebe o valor e instancia o nome da habilidade baseando em uma lista pré-definida 
+ * 0 = "Representação";
+ * 1 = "Prontidão";
+ * 2 = "Esportes"; 
+ * 3 = "Briga";
+ * 4 = "Esquiva"; 
+ * 5 = "Empatia",
+ * 6 = "Intimidação";
+ * 7 = "Crime";
+ * 8 = "Liderança" e; 
+ * 9 = "Lábia".
+ * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
+ */
 public class Talent { 
     private String name;
     private int value;

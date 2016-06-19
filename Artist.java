@@ -4,6 +4,9 @@
  *  Define os atributos primários como social, segundários como mental, terceários como físicos.
  *  Suas habilidades princípal consistem na categoria de Talento suas habilidades segundárias
  *  estão na categoia conhecimento e suas habilidades terciárias são perícia.
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)  
  */ 
 
 public class Artist extends Person {

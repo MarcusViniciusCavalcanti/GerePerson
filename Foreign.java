@@ -4,6 +4,9 @@
  * Suas habilidades são talentos, perícias e conhecimento.
  * Com exceção do conceito espião;
  * O qual tem suas habilidades em perícia, talentos e conhecimento.
+ * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016) 
  */ 
 
 public class Foreign extends Person {

@@ -5,6 +5,9 @@
  *  Suas habilidades princípal consistem na categoria de conhecimento;
  *  Suas habilidades segundárias estão entra as das categoia perícia;
  *  Por ultimo suas habilidades terceárias são talentos.
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */ 
 public class Heretic extends Person {   
     /**

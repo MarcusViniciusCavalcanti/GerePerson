@@ -4,6 +4,9 @@
  *  Define os atributos primários como mental, segundários como sociais, terceários como físicos.
  *  Suas habilidades princípal consistem na categoria de perícia suas habilidades segundárias
  *  estão na categoia talento e suas habilidades terciárias são conhecimento.
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016) 
  */ 
 
 public class Craftsman extends Person {

@@ -9,6 +9,9 @@
  * Suas terceira catergoria de habilidade são conhecimento. 
  * Inicializando a distribuição com 1 ponto em sabedoria popular 
  * e ocultismo.
+ * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016) 
  */ 
 
 public class Bum extends Person {

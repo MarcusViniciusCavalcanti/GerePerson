@@ -4,6 +4,9 @@
  *  Define os atributos primários como físicos, segundários como sociais, terceários como mentais.
  *  Suas habilidades princípal consistem na categoria de perícia suas habilidades segundárias
  *  estão na categoia conhecimento e suas habilidades terciárias são talentos.
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */ 
 
 public class Farmer extends Person {

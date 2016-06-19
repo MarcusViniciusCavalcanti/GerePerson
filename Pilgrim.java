@@ -10,6 +10,9 @@
  *  Herborismo.  
  * Por ultimo suas habilidades terceárias são talentos com maior afinidade:
  *  Empatia;
+ *  
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016) 
  */ 
 
 public class Pilgrim extends Person {

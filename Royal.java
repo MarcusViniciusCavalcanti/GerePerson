@@ -15,6 +15,9 @@
  *      
  *      Seus atributos são: físico, sociais, mentais, respectivamente
  *      Suas habilidades: talentos, perícia e conhecimento.
+ *      
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)      
  */ 
 public class Royal extends Person {   
     

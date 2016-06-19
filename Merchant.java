@@ -7,6 +7,9 @@
  * os demais 1 ponto em empatia com animais, artesanato e harborismo.
  * Por ultimo suas habilidades terceárias conhecimentos recebendo 
  * inicialmente 1 ponto em sabedoria popular e medicina.
+ * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */ 
 
 public class Merchant extends Person {

@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.Random;
 /**
- * Write a description of class RepositoryName here.
+ * Classe responsável por alocar todos os nomes e sobrenomes que o personagem pode ter
+ * retorna de forma aleatoria um sobrenome, ao passo que, os nomes dependem do gênero para 
+ * o retorno, masculino devolve masculino e vice-versa.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */
 public class DbName {
      
@@ -14,15 +16,19 @@ public class DbName {
    
     private static final Random rand = new Random();
     
+    /**
+     * Construtor:
+     * Instancias as arrayList dos nomes e sobrenomes.
+     */
     public DbName() {
         maleNames = new ArrayList<>();
         femaleNames = new ArrayList<>();
         lastName = new ArrayList<>();
     }
     
-    /**
-    * Se o genero do personagem for masculino ele adiciona a ArrayList de nomes masculinos.
-    */
+   /**
+     * Nomes masculinos que seram adicionado a lista de nomes
+     */
     private void createMaleNames() {
         this.maleNames.add("Aros");
         this.maleNames.add("Lonios");
@@ -76,6 +82,9 @@ public class DbName {
         this.maleNames.add("Freud");    
     }
     
+    /**
+     * Nomes femininos que seram adicionado a lista de nomes
+     */
     private void createFemaleNames() {
         this.femaleNames.add("Haula");
         this.femaleNames.add("Saal");
@@ -129,6 +138,9 @@ public class DbName {
         this.femaleNames.add("Pharana");
     }
    
+    /**
+     * Sobrenomes que seram adicionado a lista de sobrenomes
+     */
     private void createLastName() {
         this.lastName.add("Mazepa"); 
         this.lastName.add("Bliger");
@@ -255,7 +267,8 @@ public class DbName {
     
     /**
      * O método retorna um nome aleatorio masculino ou feminino dependendo do genero
-     * que será passado pelo personagem como parametro.
+     * @param: gênero do personagem.
+     * @return: nome do personagem
      */
     public String getName(char genero) {
         if (genero == 'm'){
@@ -267,6 +280,10 @@ public class DbName {
         return this.femaleNames.get(rand.nextInt(this.femaleNames.size()));
     }
    
+    /**
+     * O método retorna um sobrenome aleatorio 
+     * @return: sobrenome do personagem
+     */
     public String getLastName() {
         createLastName();
         return this.lastName.get(rand.nextInt(this.lastName.size())); 

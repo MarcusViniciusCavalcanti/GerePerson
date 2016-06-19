@@ -1,10 +1,10 @@
 import java.util.Scanner;
 import java.util.Random;
 /**
- * Write a description of class GerePerson here.
+ * Classe main que inicializa a aplicação.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */
 public class GerePerson
 {   

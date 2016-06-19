@@ -1,7 +1,21 @@
 import java.util.ArrayList;
 
 /**
+ * Classe das habilidades de categoria conhecimento.
+ * recebe o valor e instancia o nome da habilidade baseando em uma lista pré-definida 
+ * 0 = "Instrução";
+ * 1 = "Sabedoria popular";
+ * 2 = "Investigação"; 
+ * 3 = "Direito";
+ * 4 = "Linguística; 
+ * 5 = "Medicina",
+ * 6 = "Ocultismo";
+ * 7 = "Polícia;
+ * 8 = "Ciência" e; 
+ * 9 = "Senescália".
  * 
+ * @author (Matheus Mazepa e Vinicius Cavalcanti) 
+ * @version (19.06.2016)
  */
 public class Knowledge {
     private String name;
