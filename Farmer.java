@@ -7,7 +7,11 @@
  */ 
 
 public class Farmer extends Person {
-   
+    /**
+     * Construtor:
+     * Inicializa os atributos e métodos da super classe Person
+     * Invoca os métodos para distribuição de pontos do personagem.
+     */
     public Farmer() {
         super(); //inicializa o construtor da super classe.
         
