@@ -238,7 +238,7 @@ public class Bum extends Person {
                   this.concept = "Prostituta";
                 break;
             case 2:
-                this.concept = "agiota,";
+                this.concept = "Agiota";
                 break;
             case 3:
                 if ( this.gender == 'm' )

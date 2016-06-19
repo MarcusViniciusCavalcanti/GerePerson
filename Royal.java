@@ -370,7 +370,7 @@ public class Royal extends Person {
         switch ( i ) {
             case 0:
                 if ( this.gender == 'm' )
-                  this.concept = "Barão,";
+                  this.concept = "Barão";
                 else
                   this.concept = "Baronesa";
                 break;
